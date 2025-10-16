@@ -14,95 +14,110 @@ label start:
     scene exteriorRanchoAtardecer
 
     "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
-
-    with fade
-    "En muchos lugares de la argentina se escucha hablar de la Salamanca, la cueva del Diablo donde brujos y alimanias bailan con las almas de los condenados.
-    No es facil saber llegar, ni tampoco el entrar." 
-    
-    with dissolve
-    "Pero quien lo logre, puede obtener dones extraordinarios, las mejores destrezas en el canto? 
-    Solo si estas dispuesto a pagarlo...."
-    
-    scene exteriorRanchoNoche
-
-    with fade
-    "Otra dia que termina, en este pueblito pampero. 
-    Santos encara hacia la pulperia.
-
-    Va pensando: mis dotes no me alcanzan para ser el mejor guitarrero, 
-    el mejor cantor, el mas habilidoso ni el mas famoso."
-
-    scene exteriorPulperia
-
-    with fade
-    "Santos entra a la pulperia"
-
-    scene interiorPulperia_2
     play music misterio volume 0.5 fadein 0.2
 
-    with fade
-    "La pulpería está llena de humo, guitarras y voces. Un viejo de mirada profunda murmura sobre la Salamanca."
-    
-    show viejo_neutro at right
-    with dissolve
-    viejo "... si se anima a agarrar viaje, porque llegar nomas ya es de valientes..."
-    hide viejo_neutro
 
-    show santos_neutro at left
+    with fade
+    "En las llanuras abiertas de la pampa, cuando el sol se esconde detrás del horizonte y el viento lleva consigo ecos de antiguos cantares, vive un jóven payador llamado Santos."
+    with dissolve
+    "Dicen que su voz puede calmar al caballo más bravo y que canta con la fuerza del que sueña, aunque le falta camino por andar antes de ganarse un nombre y el brillo en su tierra."
+    
+    scene exteriorRanchoNoche
+    with fade
+    "Esa noche, mientras las sombras cubren el campo, Santos siente el peso de su propio deseo: alcanzar la gloria, ser recordado, cantar como nadie lo ha hecho antes."
+
+    show santos_espaldas at left:
+        zoom 0.5
+    with dissolve
+
+    san "Padre... siempre dijiste que el alma libre es la que más canta."
+    san "Pero a veces siento que mi voz no basta. Que hay algo allá lejos... algo que me falta descubrir."
+
+    hide santos_espaldas
+    with dissolve
+
+    "El viento sopla y parece responderle con un susurro. En su mente, se enciende el recuerdo de una frase que su padre le había dicho muchos años atrás."
+    "No hay canto más fuerte que el que nace del alma libre." #buscar recurso
+    show santos_ojos_cerrados at left:
+        zoom 0.5
+    with dissolve
+    "Santos cierra los ojos, sin saber que esa frase será la última luz que lo guíe antes de que la oscuridad lo llame por su nombre."
+    "Esa misma noche, atraído por el rumor de guitarras y voces lejanas, decide acercarse a la pulpería del pueblo..."
+    hide santos_ojos_cerrados
+    scene exteriorPulperia
+    with fade
+    "Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
+    "Santos se detiene unos segundos, como si presintiera que al cruzar esa puerta su vida ya no sería la misma."   
+    show santos_entero at left:
+        zoom 0.5
+    with dissolve
+    "Respira hondo, se acomoda la guitarra al hombro y decide entrar."
+    hide santos_entero
+
+    scene interiorPulperia_2
+    with fade
+    "El aire está espeso por el humo del tabaco. Gauchos beben, otros juegan a los naipes."
+    "Un viejo de mirada extraña lo observa desde el fondo de una mesa mientras habla de la Salamanca, la cueva donde dicen que el diablo concede dones."
+    show santos_neutro_iz at left:
+        xzoom -1
     with dissolve
     "Santos Vega escucha, tentado por la ambición de ser el mejor cantor."
 
+    show viejo_neutro at right:
+        zoom 0.9
     with dissolve
-    san "Buenas tardes.."
+    viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
 
-    show viejo_neutro at right 
-    #with fade
+    #show santos_neutro at left
     with dissolve
-    viejo "Buenas tardes me dice usted, un gaucho mas del monton, sin fama ni encanto.
-    No se crea que yo ando contando secretos a cualquier tirao."
+    san "Y vos, viejo... ¿Qué sabés de voces y de raíces?"
+    san "¿Qué podés saber de Salamancas?"
+    viejo "Sé de muchas cosas, muchacho."
+    viejo "La ubicación de ese lugar donde el Señor de la Salamanca da dones a los valientes... si están dispuestos a aceptar su pacto."
+
 
     hide viejo_neutro
-    hide santos_neutro
-
+    with dissolve
+    hide santos_neutro_iz
+    with dissolve
+    
     scene interiorPulperia_1
-
     with fade
+    show santos_entero at center:
+        zoom 0.5
+    with dissolve
     "Santos se acerca a la barra y pide una caña"
+    "Él cree que con tragos el viejo le facilitará la ubicación secreta"
+    hide santos_entero
+    with dissolve
 
     scene interiorPulperia_2
-
-    show santos_neutro at left
+    with fade
+    show viejo_neutro at right:
+        zoom 0.9
+    with dissolve
+    show santos_neutro_iz at left:
+        xzoom -1
     with dissolve
     san "Tome viejo, se lo manda el pulpero"
+    san "Y 'pa dónde queda ese lugar?"
 
-    show viejo_neutro at right
-    with dissolve
-    viejo "Sientese. Me llamo Don Ernesto, para empezar.."
+    viejo   "La Salamanca está allá, {w=0.3} \n
+            donde la tierra ruge sin cesar,{w=0.3} \n
+            y la luna en el cielo no se ve brillar,{w=0.3} \n
+            quien allí vaya, secretos va a hallar.{w=0.3}"
 
-    $ viejo = Character ("Don Ernesto")
+    viejo "Tienes la palabra secreta, muchacho."
+    viejo "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado"
+    viejo "Pon tu guitarra al hombro, que no hay gloria para el que no la busca."
 
-    with dissolve
-    viejo "pero no te puedo decir mas"
-
-    with dissolve
-    san "Lindo nombre, pero no me alcanza.
     
-    Te escuche hablar sobre la Salamanca, y tenes pinta de saber pa donde queda."
-
-    with dissolve
-    viejo "Parece que a vos te falta un golpe de suerte, o algun milagro. Que te ponga de famoso o por lo menos bien parado."
-
-    with fade
-    "En la cueva del malo dentra uno mediocre, pero sale extraordinario.
-    Alla podes probar tu temple, a ver si estas de corajudo lo suficiente."
-
-    with dissolve
-    "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado.  
-    Si estas dispuesto a ser otro por un dote, te canto el camino marcado."
-
     hide viejo_neutro
+    with dissolve
 
-    hide santos_neutro
+    "Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
+    "Al diablo viejo charlatán"
+    
 
     menu:
         "¿Qué hace Santos?"
@@ -110,7 +125,7 @@ label start:
         "Ignorar la historia del viejo y quedarse en la pulpería tomando caña":
             jump payada_madiocre
 
-        "Insistir al viejo para que le cuente el resto de la historia":
+        "Partir hacia la Salamanca":
             stop music
             jump camino_a_salamanca
 
@@ -122,14 +137,14 @@ label payada_madiocre:
     scene escena_pulperia_guitar
     # play music "pruebaSantosVega.mp3" volume 0.2
     with fade
-    "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas sin gloria."
-    "Con el tiempo, se convierte en un cantor común, sin fama ni recuerdo duradero."
+    "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento"
+    "Es un cantor común, sin fama ni gloria."
 
     call payada_manager(musicPlaying=True)
 
     with fade
-    "Luego de ver que sus payadas no eran lo que el queria,
-    Santos decide volver con el viejo para terminar de escuhcar la historia de la Salamanca"
+    "Luego de notar que sus payadas no superan la media del talento en su comunidad,
+    Santos decide hacerle caso al viejo y partir hacia la Salamanca"
 
     stop music
     jump camino_a_salamanca
@@ -143,13 +158,13 @@ label payada_madiocre:
 label camino_a_salamanca: 
     scene None
     if humildad > ambicion:
-        "tiene mas humildad que ambicion"
+        "tiene más humildad que ambición"
     elif humildad < ambicion:
-        "tiene mas ambicion que humildad"
+        "tiene más ambición que humildad"
     else:
-        "estan iguales"
+        "están iguales"
         
-    "aca comienza el segundo escenario"
+    "acá comienza el segundo escenario"
     return
 
 

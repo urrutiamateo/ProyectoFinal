@@ -1,11 +1,12 @@
 define san = Character("Santos Vega")
-define viejo = Character("Viejo")
+define viejo = Character("Don Ernesto")
 define diablo = Character("Mandinga")
 define payador = Character("Payador del pueblo")  ## CAracter agregado
 define narrator = Character(None)
 
-image santos_neutro_ = "images/sprites/santos_neutro.png"
-image santos_neutro = "images/sprites/santos_neutro_s.png"
+image santos_neutro_ = "images/sprites/santos_entero_iz.png"
+image santos_espaldas = "images/sprites/santos_espalda.png"
+image santos_neutro = "images/sprites/santos_medio_cuerpo.png"
 image santos_asombrado = "images/sprites/santos_asombrado_s.png"
 image santos_asustado = "images/sprites/santos_asustado_s.png"
 image viejo_neutro_ = "images/sprites/viejo_neutro.png"
