@@ -23,6 +23,8 @@ label payada_vega:
     $ banio = "Por que no se pega un baño"
     $ tufo = "Que me esta matando el tufo"
     $ pucho = "Y después se me fuma un pucho"
+
+    # Lista donde se arma la payada
     $ payadaVega = []
     # Lista de opciones completa
     $ opciones = []
@@ -68,22 +70,14 @@ label payada_vega:
     
     $ opciones = [estimado]
     while len(payadaVega) < 4:  # Mientras no se hayan completado 5 líneas
+        $ payada_actual = obtener_payada()  # Obtiene la payada actualizada.
+        $ san("[payada_actual]",interact=False) # Muestra la payada actualizada.
         $ eleccion = renpy.display_menu([(opcion, opcion) for opcion in opciones])
         $ actualizar_payada(eleccion)  # Actualiza la payada con la opción seleccionada.
         $ payada_actual = obtener_payada()  # Obtiene la payada actualizada.
         san "[payada_actual]" # Muestra la payada actualizada.
-        # $ actualizar_opciones(eleccion)  # Actualiza las opciones basadas en la elección.
         $ opciones = actualizar_opciones(eleccion)
-        # $ rondas -= 1  # Decrementa el contador de rondas.
-        # if len(payadaVega) >= 4:  # Condición para terminar la payada (por ejemplo, 5 líneas).
-        #     jump payada_payador
         
-
-    # p "No por mucho {b}andar{/b} se llega a {i}Roma{/i}, {w=0.5} \n
-    # Con las mano en los {u}bolsillo{/u}"
-    # play music fin_payada_intensa volume 0.5 fadein 1.0
-    # sV "Sus versos llenan el aire,"
-    # jump payada_payador
     return
 
 label payada_payador:

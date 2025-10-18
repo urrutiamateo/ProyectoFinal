@@ -15,6 +15,8 @@ label start:
 
     "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
     play music misterio volume 0.5 fadein 0.2
+    # play music musica_intro volume 0.5 fadein 0.2
+
 
 
     with fade
