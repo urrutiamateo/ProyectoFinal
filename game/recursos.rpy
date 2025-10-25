@@ -24,6 +24,7 @@ image exteriorRanchoNoche = "images/fondos/exteriorRanchoNoche1.jpg"
 image exteriorPulperia = "images/fondos/ExteriorPulperia.jpg"
 image interiorPulperia_1 = "images/fondos/interiorPulperia_1.jpg"
 image interiorPulperia_2 = "images/fondos/interiorPulperia_2.jpg"
+image viaje = "images/fondos/viaje.jpg"
 
 # Un filtro negro semitransparente
 image fondo_negro = Solid("#00000080")

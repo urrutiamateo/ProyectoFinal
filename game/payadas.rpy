@@ -15,7 +15,7 @@ label payada_manager(musicPlaying=False):
 label payada_vega:
 
     # Lista de frases
-    $ estimado = "Como le va mi estimado?"
+    $ estimado = "Cómo le va mi estimado?"
     $ cansado =  "Lo veo cansado y sucio"
     $ tirarse = "Venga a tirarse un rato"
     $ yuyos = "A la sombra de los yuyos"
@@ -88,10 +88,10 @@ label payada_payador:
         alpha 0.5
         linear 4 alpha 1.0
     with dissolve
-    payador "No por mucho andar {w=0.5} \n
-        Con las mano en los bolsillo {w=0.5} \n
-        Va encontrar uno mas plata {w=0.5}\n
-        Ni tampoco prestamillo"
+    payador  "No por mucho andar {w=0.5} \n
+            Con las manos en los bolsillos {w=0.5} \n
+            Va encontrar uno más plata {w=0.5}\n
+            Ni tampoco prestamillo"
     
     # jump fin_payada
     
@@ -100,5 +100,5 @@ label payada_payador:
 
 label payada_terminar:
     hide show rival_payador
-    narrator "¡Muy bien, Vega! ¡Esa fue una payada excelente!"
+    narrator "¡Muy bien! ¡Esa fue una ronda de payadas excelente!"
     return
