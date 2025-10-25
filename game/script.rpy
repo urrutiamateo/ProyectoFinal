@@ -28,8 +28,8 @@ label start:
     with fade
     "Esa noche, mientras las sombras cubren el campo, Santos siente el peso de su propio deseo: alcanzar la gloria, ser recordado, cantar como nadie lo ha hecho antes."
 
-    show santos_espaldas at left:
-        zoom 0.5
+    show santos_espaldas at left
+        #zoom 0.5
     with dissolve
 
     san "Padre... siempre dijiste que el alma libre es la que más canta."
@@ -46,23 +46,35 @@ label start:
     "Santos cierra los ojos, sin saber que esa frase será la última luz que lo guíe antes de que la oscuridad lo llame por su nombre."
     "Esa misma noche, atraído por el rumor de guitarras y voces lejanas, decide acercarse a la pulpería del pueblo..."
     hide santos_ojos_cerrados
+    with dissolve
     scene exteriorPulperia
     with fade
     "Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
-    "Santos se detiene unos segundos, como si presintiera que al cruzar esa puerta su vida ya no sería la misma."   
-    show santos_entero at left:
-        zoom 0.5
+    
+    show santos_a_caballo at right:
+        xzoom -1
+        zoom 0.55
+
     with dissolve
+    "Santos se detiene unos segundos, como si presintiera que al cruzar esa puerta su vida ya no sería la misma."   
+    #show santos_entero at left:
+        #zoom 0.5
+    #with dissolve
     "Respira hondo, se acomoda la guitarra al hombro y decide entrar."
-    hide santos_entero
+    hide santos_a_caballo
+    with dissolve
+
 
     scene interiorPulperia_2
     with fade
     "El aire está espeso por el humo del tabaco. Gauchos beben, otros juegan a los naipes."
-    "Un viejo de mirada extraña lo observa desde el fondo de una mesa mientras habla de la Salamanca, la cueva donde dicen que el diablo concede dones."
-    show santos_neutro_iz at left:
-        xzoom -1
+    show santos_entra_izquierda at left:
+        linear 5 xpos 120
     with dissolve
+    "Un viejo de mirada extraña lo observa desde el fondo de una mesa mientras habla de la Salamanca, la cueva donde dicen que el diablo concede dones."
+    #show santos_neutro_iz at left:
+        #xzoom -1
+    #with dissolve
     "Santos Vega escucha, tentado por la ambición de ser el mejor cantor."
 
     show viejo_neutro at right:
@@ -85,12 +97,13 @@ label start:
     
     scene interiorPulperia_1
     with fade
-    show santos_entero at center:
+    show santos_entero_sombra at center:
         zoom 0.5
+        linear 6 xpos 820
     with dissolve
     "Santos se acerca a la barra y pide una caña"
     "Él cree que con tragos el viejo le facilitará la ubicación secreta"
-    hide santos_entero
+    hide santos_entero_sombra
     with dissolve
 
     scene interiorPulperia_2
@@ -98,8 +111,11 @@ label start:
     show viejo_neutro at right:
         zoom 0.9
     with dissolve
-    show santos_neutro_iz at left:
-        xzoom -1
+    #show santos_neutro_iz at left:
+        #xzoom -1
+    #with dissolve
+    show santos_entra_izquierda at left:
+        linear 5 xpos 120
     with dissolve
     san "Tome viejo, se lo manda el pulpero"
     san "Y 'pa dónde queda ese lugar?"
