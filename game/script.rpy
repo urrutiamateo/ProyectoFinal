@@ -11,12 +11,13 @@ transform entrar_suave_izquierda:
 
 label start:
 
-    scene exteriorRanchoAtardecer
-
+    scene exteriorRanchoAtardecer with irisout
     "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
-    play music misterio volume 0.5 fadein 0.2
-    # play music musica_intro volume 0.5 fadein 0.2
 
+
+
+    play music musica_intro volume 0.5 fadein 0.2
+    # play music musica_intro volume 0.5 fadein 0.2
     with fade
     "En las llanuras abiertas de la pampa, cuando el sol se esconde detrás del horizonte y el viento lleva consigo ecos de antiguos cantares, vive un jóven payador llamado Santos."
     with dissolve
@@ -50,8 +51,10 @@ label start:
     "Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
     
     show santos_a_caballo at right:
+        alpha 0.7
         xzoom -1
-        zoom 0.55
+        zoom 0.5
+        linear 5 alpha 1.0
 
     with dissolve
     "Santos se detiene unos segundos, como si presintiera que al cruzar esa puerta su vida ya no sería la misma."   
@@ -61,10 +64,13 @@ label start:
     "Respira hondo, salta del caballo, se acomoda la guitarra al hombro y decide entrar."
     hide santos_a_caballo
     with dissolve
+    #stop music fadeout 2.0
 
 
+    play music misterio volume 0.5 fadeout 2.0 fadein 2.0
     scene interiorPulperia_2
     with fade
+    
     "El aire está espeso por el humo del tabaco. Gauchos beben, charlan y otros juegan a los naipes."
     show santos_entra_izquierda at left:
         linear 5 xpos 120
@@ -75,22 +81,24 @@ label start:
     #with dissolve
     "Santos lo escucha, tentado por la ambición de ser el mejor cantor de la pampa."
 
-    show viejo_neutro at right:
-        zoom 0.9
+    #show viejo_neutro at right:
+        #zoom 0.9
+
+    show viejo_en_la_pulperia
     with dissolve
     viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
 
     #show santos_neutro at left
-    with dissolve
+    #with dissolve
     san "Y vos, viejo... ¿Qué sabés de voces y de raíces?"
     san "¿Qué podés saber de Salamancas?"
     viejo "Sé de muchas cosas, muchacho."
     viejo "La ubicación de ese lugar donde el Señor de la Salamanca da dones a los valientes, a los que sueñan en grande... si están dispuestos a aceptar su pacto."
 
 
-    hide viejo_neutro
+    hide viejo_en_la_pulperia 
     with dissolve
-    hide santos_neutro_iz
+    hide santos_entra_izquierda
     with dissolve
     
     scene interiorPulperia_1
@@ -107,8 +115,9 @@ label start:
 
     scene interiorPulperia_2
     with fade
-    show viejo_neutro at right:
-        zoom 0.9
+    #show viejo_neutro at right:
+        #zoom 0.9
+    show viejo_en_la_pulperia 
     with dissolve
     #show santos_neutro_iz at left:
         #xzoom -1
@@ -116,6 +125,7 @@ label start:
     show santos_entra_izquierda at left:
         linear 5 xpos 120
     with dissolve
+
     san "Tome viejo, se lo manda el pulpero"
     san "Y pa' dónde dice que queda ese lugar?"
 
@@ -129,7 +139,7 @@ label start:
     viejo "Pon tu guitarra al hombro, que no hay gloria para el que no la busca."
 
     
-    hide viejo_neutro
+    hide viejo_en_la_pulperia 
     with dissolve
     "Al diablo viejo charlatán !"
     "Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
@@ -148,7 +158,8 @@ label start:
 
 #Finales en la pulpería
 label payada_madiocre:
-    play music payada_intensa volume 0.5 fadein 0.5
+    play music payada_intensa volume 0.5 fadeout 2.0 fadein 2.0
+    #play music payada_intensa volume 0.5 fadein 0.5
     scene interiorPulperia_2
     # play music "pruebaSantosVega.mp3" volume 0.2
     with fade
