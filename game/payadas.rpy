@@ -88,10 +88,7 @@ label payada_payador:
         alpha 0.5
         linear 4 alpha 1.0
     with dissolve
-    payador  "No por mucho andar {w=0.5} \n
-            Con las manos en los bolsillos {w=0.5} \n
-            Va encontrar uno más plata {w=0.5}\n
-            Ni tampoco prestamillo"
+    payador  "No por mucho andar {w=0.5}\nCon las manos en los bolsillos {w=0.5}\nVa encontrar uno más plata {w=0.5}\nNi tampoco prestamillo"
     
     # jump fin_payada
     

@@ -1,7 +1,7 @@
-define san = Character("Santos Vega")
-define viejo = Character("Don Ernesto")
+define san = Character("Santos Vega", color = "#F5D627")
+define viejo = Character("Don Ernesto", color= "#eb1b00")
 define diablo = Character("Mandinga")
-define payador = Character("Payador del pueblo")  ## CAracter agregado
+define payador = Character("Payador del Pueblo", color = "#1b0d78")  ## CAracter agregado
 define narrator = Character(None)
 
 image santos_entero_sombra = "images/sprites/Santos_conSombra.png"
