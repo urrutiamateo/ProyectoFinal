@@ -159,6 +159,8 @@ label payada_madiocre:
     scene interiorPulperia_2
     # play music "pruebaSantosVega.mp3" volume 0.2
     with fade
+    show santos_payando at left
+    with dissolve
     "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento"
     "Es un cantor común, sin fama ni gloria."
 

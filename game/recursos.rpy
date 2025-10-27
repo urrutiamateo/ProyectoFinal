@@ -18,6 +18,7 @@ image viejo_neutro_ = "images/sprites/viejo_neutro.png"
 image viejo_neutro = "images/sprites/viejo_neutro_s.png"
 image viejo_malo = "images/sprites/viejo_malo_s.png"
 image rival_payador = "images/sprites/rival.png"
+image santos_payando = "images/sprites/Santos_guitarra_en_interiorPulperia.png"
 
 image pulperiaGuitarra = "images/fondos/escena_pulperia_guitar.png"
 image exteriorRanchoAtardecer = "images/fondos/exteriorRanchoAtardecer.jpg"
