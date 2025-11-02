@@ -1,87 +1,130 @@
 label payada_manager(musicPlaying=False):
     # inicia musica
 
-    if not musicPlaying:
-        play music payada_intensa volume 0.5 fadein 1.0
-     
+    # if not musicPlaying:
+    #     # play music payada_intensa volume 0.5 fadein 1.0
+    #     play music paya_1_A volume 0.5 fadein 0
+
+
+    play music paya_1_A volume 0.5 fadein 0.1
     call payada_vega
+    queue music paya_1_final volume 0.5 fadein 0 noloop 
+    
+    
     call payada_payador
-    play music fin_payada_intensa volume 0.5 fadein 1.0
+    play music fin_payada_intensa volume 0.5 fadein 1.0 noloop
+    
     call payada_terminar
     return
-
-
-
+ 
 label payada_vega:
-
-    # Lista de frases
-    $ estimado = "Cómo le va mi estimado?"
-    $ cansado =  "Lo veo cansado y sucio"
-    $ tirarse = "Venga a tirarse un rato"
-    $ yuyos = "A la sombra de los yuyos"
-
-    $ banio = "Por que no se pega un baño"
-    $ tufo = "Que me esta matando el tufo"
-    $ pucho = "Y después se me fuma un pucho"
-
-    # Lista donde se arma la payada
-    $ payadaVega = []
-    # Lista de opciones completa
-    $ opciones = []
-    # default rondas = 4
-
-    #funciones python
+    # --- Construcción del árbol de payadas usando objetos FrasePayada ---
     python:
-        # Función para actualizar la payada
-        def actualizar_payada(eleccion):
-            if eleccion not in payadaVega:
-                payadaVega.append(eleccion)
-            return
-        
-        # Función para obtener la payada como una cadena
-        def obtener_payada():
-            payada_texto = ""
-            for linea in payadaVega:
-                payada_texto += linea + "\n"
-            return payada_texto.strip()
+        # Importar solo la clase FrasePayada y construir nodos manualmente (sin ArbolPayadas)
+        from python.payadas.FrasePayada import FrasePayada
 
-        def actualizar_opciones(eleccion) -> list:
-            opciones = []
-            if eleccion == estimado:
-                opciones = [cansado]
-            elif eleccion == cansado:
-                opciones = [tirarse, banio]
-            elif eleccion == tirarse:
-                opciones = [yuyos, pucho]
-            elif eleccion == banio:
-                opciones = [tufo, pucho]
-            elif eleccion == yuyos:
-                #sumamos a la variable humildad
-                global humildad
-                humildad += 5
-            elif eleccion == tufo:
-                #sumamos a la variable ambicion
-                global ambicion
-                ambicion += 5
+        # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
+        estimado = FrasePayada("Cómo le va mi estimado?", ambicion=0, humildad=1, nivel=1)
+        cansado = FrasePayada("Lo veo cansado y sucio", ambicion=1, humildad=0, nivel=2)
+
+        tirarse = FrasePayada("Venga a tirarse un rato", ambicion=0, humildad=1, nivel=3)
+        banio = FrasePayada("Por que no se pega un baño", ambicion=1, humildad=0, nivel=3)
+
+        yuyos = FrasePayada("A la sombra de los yuyos", ambicion=1, humildad=0, nivel=4)
+        pucho1 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1, nivel=4)
+
+        tufo = FrasePayada("Que me está matando el tufo", ambicion=1, humildad=0, nivel=4)
+        pucho2 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1, nivel=4)
+
+        # Enlazar nodos manualmente (sig_izq / sig_der)
+        estimado.sig_izq = cansado
+
+        cansado.sig_izq = tirarse
+        cansado.sig_der = banio
+
+        tirarse.sig_izq = yuyos
+        tirarse.sig_der = pucho1
+
+        banio.sig_izq = tufo
+        banio.sig_der = pucho2
+
+        # Estado local para la ronda de payada
+        payadaVega = []                # lista de FrasePayada elegidas (objetos)
+        opciones_nodos = [estimado]
+        ambicion_total = 0
+        humildad_total = 0
+
+    # Haremos exactamente 4 selecciones (4 niveles)
+    $ rondas = 4
+    $ nivel_actual = 1
+    while nivel_actual <= rondas:
+
+        # Mostrar la payada acumulada (texto)
+        $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
+        if payada_texto == "":
+            $ payada_texto = "..."
+        $ san("[payada_texto]", interact=False)
+
+        # Construir menú con las opciones actuales (pueden ser 1 o 2)
+        python:
+            menu_items = []
+            for n in opciones_nodos:
+                if n is None:
+                    continue
+                menu_items.append( (n.MostrarFrase(), n) )
+            # Si no hay opciones, terminamos
+            if not menu_items:
+                chosen = None
             else:
-                opciones = [estimado, cansado, tirarse, yuyos, pucho, banio, tufo]
-            return opciones
+                chosen = renpy.display_menu(menu_items)
 
-    
-    $ opciones = [estimado]
-    while len(payadaVega) < 4:  # Mientras no se hayan completado 5 líneas
-        $ payada_actual = obtener_payada()  # Obtiene la payada actualizada.
-        $ san("[payada_actual]",interact=False) # Muestra la payada actualizada.
-        $ eleccion = renpy.display_menu([(opcion, opcion) for opcion in opciones])
-        $ actualizar_payada(eleccion)  # Actualiza la payada con la opción seleccionada.
-        $ payada_actual = obtener_payada()  # Obtiene la payada actualizada.
-        san "[payada_actual]" # Muestra la payada actualizada.
-        $ opciones = actualizar_opciones(eleccion)
+        if chosen is None:
+            # No hay más opciones: salimos del bucle estableciendo el nivel final
+            $ nivel_actual = rondas + 1
+
+        # Registrar elección
+        $ payadaVega.append(chosen)
+        $ ambicion_total += chosen.ambicion
+        $ humildad_total += chosen.humildad
+        python:
+            # Ejemplo: almacenar en variables globales accesibles por Ren'Py
+            store.ambicion = getattr(store, 'ambicion', 0) + chosen.ambicion
+            store.humildad = getattr(store, 'humildad', 0) + chosen.humildad
         
+        # Seleccionar musica segun nivel y encolar para transición suave
+        if nivel_actual == 2:
+            queue music paya_1_B volume 0.5 
+        if nivel_actual == 3:
+            queue music paya_1_A volume 0.5 
+        if nivel_actual == 4:
+            queue music paya_1_B volume 0.5 
+            
+
+        # Mostrar la payada actualizada
+        $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
+        san "[payada_texto]"
+
+        # Preparar las opciones del siguiente nivel
+        python:
+            siguientes = []
+            if chosen.sig_izq:
+                siguientes.append(chosen.sig_izq)
+            if chosen.sig_der:
+                siguientes.append(chosen.sig_der)
+            opciones_nodos = siguientes
+
+        $ nivel_actual += 1
+
+    # # Al finalizar, podemos enviar los totales a variables globales si es necesario
+    # python:
+    #     # Ejemplo: almacenar en variables globales accesibles por Ren'Py
+    #     store.ambicion = getattr(store, 'ambicion', 0) + ambicion_total
+    #     store.humildad = getattr(store, 'humildad', 0) + humildad_total
     return
 
 label payada_payador:
     payador "Muy bien, Vega. Ahora es mi turno."
+    play music payada_intensa volume 0.5 fadein 1.0 
     # Aquí puedes añadir la lógica para la payada del Payador.
     show rival_payador at right:
         zoom 0.8

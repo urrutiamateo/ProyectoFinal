@@ -7,8 +7,23 @@ transform entrar_suave_izquierda:
     linear 2.0 xalign 0.0 
 
 
-# El juego comienza aquí.
+screen karma_display():
+    # Position the karma display (e.g., top-right corner)
+    frame:
+        align (0.98, 0.02)  # Adjust alignment as needed
+        padding (10, 10)
+        text "Humildad: [humildad]" size 24 color "#FFFFFF"  # Display the karma value
+    frame:
+        align (0.98, 0.12)  # Adjust alignment as needed
+        padding (10, 10)
+        text "Ambicion: [ambicion]" size 24 color "#FFFFFF"  # Display the karma value
 
+# Add the screen to always be shown
+init python:
+    config.overlay_screens.append("karma_display")
+
+
+# El juego comienza aquí.
 label start:
 
     scene exteriorRanchoAtardecer with irisout
