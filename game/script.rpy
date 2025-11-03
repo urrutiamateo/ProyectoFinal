@@ -7,6 +7,10 @@ transform entrar_suave_izquierda:
     linear 2.0 xalign 0.0 
 
 
+
+
+
+
 screen karma_display():
     # Position the karma display (e.g., top-right corner)
     frame:
@@ -22,16 +26,25 @@ screen karma_display():
 init python:
     config.overlay_screens.append("karma_display")
 
+    
+    def subir_ambicion(cant:int=1):
+        store.ambicion = getattr(store, 'ambicion', 0) + cant
+    def subir_humildad(cant:int=1):
+        store.humildad = getattr(store, 'humildad', 0) + cant
+
+
 
 # El juego comienza aquí.
 label start:
 
+
+
     scene exteriorRanchoAtardecer with irisout
-    "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
+    # "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
+    Titulo ""
 
 
-
-    play music musica_intro volume 0.5 fadein 0.2
+    play music musica_intro volume 0.5 fadeout 0.5 fadein 0.2
     # play music musica_intro volume 0.5 fadein 0.2
     with fade
     "En las llanuras abiertas de la pampa, cuando el sol se esconde detrás del horizonte y el viento lleva consigo ecos de antiguos cantares, vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
@@ -58,10 +71,22 @@ label start:
         zoom 0.5
     with dissolve
     "Santos cierra los ojos, sin saber que esa {b}frase{/b} será la última luz que lo guíe antes de que la oscuridad lo llame por su nombre."
-    "Esa misma noche, atraído por el sonar de guitarras y voces lejanas, decide acercarse a la pulpería del pueblo..."
+
+   
+#  Cambiaria la musica porque termina la introduccion y empieza la accion
+    # play music misterio volume 0.5 fadeout 2.0 fadein 0.5
+
+    
     hide santos_ojos_cerrados
     with dissolve
+    "Esa misma noche, atraído por el sonar de guitarras y voces lejanas, decide acercarse a la pulpería del pueblo..."
+    
+    with dissolve
+
     scene exteriorPulperia
+    # play music misterio volume 0.5 fadeout 2.0 fadein 2.0
+
+
     with fade
     "Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
     
@@ -81,7 +106,7 @@ label start:
     with dissolve
     #stop music fadeout 2.0
 
-    play music misterio volume 0.5 fadeout 2.0 fadein 2.0
+    play music misterio volume 0.5 fadeout 2.0 fadein 1.0
     scene interiorPulperia_2
     with fade
     
@@ -159,17 +184,23 @@ label start:
         "{size=40}¿Qué hace Santos?{/size}"
 
         "Ignorar la historia del viejo y quedarse en la pulpería tomando caña":
+            python:
+                subir_humildad()
             jump payada_madiocre
+            
 
         "Partir hacia la Salamanca":
             stop music
+            python:
+                subir_ambicion()
             jump camino_a_salamanca
+            
 
-        
+
 
 #Finales en la pulpería
 label payada_madiocre:
-    play music payada_intensa volume 0.5 fadeout 2.0 fadein 2.0
+    # play music payada_intensa volume 0.5 fadeout 2.0 fadein 2.0
     #play music payada_intensa volume 0.5 fadein 0.5
     scene interiorPulperia_2
     # play music "pruebaSantosVega.mp3" volume 0.2
@@ -194,6 +225,7 @@ label payada_madiocre:
     #return
 
 
+
 label camino_a_salamanca: 
     scene viaje
     with fade
@@ -205,6 +237,9 @@ label camino_a_salamanca:
         "están iguales"
         
     "camino hacia la Salamanca"
+
+    jump finales_malos_Yani
+
     return
 
 

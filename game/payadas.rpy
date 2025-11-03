@@ -84,8 +84,8 @@ label payada_vega:
 
         # Registrar elección
         $ payadaVega.append(chosen)
-        $ ambicion_total += chosen.ambicion
-        $ humildad_total += chosen.humildad
+        # $ ambicion_total += chosen.ambicion
+        # $ humildad_total += chosen.humildad
         python:
             # Ejemplo: almacenar en variables globales accesibles por Ren'Py
             store.ambicion = getattr(store, 'ambicion', 0) + chosen.ambicion
@@ -134,7 +134,6 @@ label payada_payador:
     payador  "No por mucho andar {w=0.5}\nCon las manos en los bolsillos {w=0.5}\nVa encontrar uno más plata {w=0.5}\nNi tampoco prestamillo"
     
     # jump fin_payada
-    
     return
 
 

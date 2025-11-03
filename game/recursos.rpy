@@ -3,6 +3,9 @@ define viejo = Character("Don Ernesto", color= "#eb1b00")
 define diablo = Character("Mandinga")
 define payador = Character("Payador del Pueblo", color = "#1b0d78")  ## CAracter agregado
 define narrator = Character(None)
+$ titulo_texto = "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
+define Titulo = Character("{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}", window_text_align=0.5)
+
 
 image santos_entero_sombra = "images/sprites/Santos_conSombra.png"
 image santos_neutro_ = "images/sprites/santos_entero_iz.png"
