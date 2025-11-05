@@ -14,13 +14,20 @@ transform entrar_suave_izquierda:
 screen karma_display():
     # Position the karma display (e.g., top-right corner)
     frame:
-        align (0.98, 0.02)  # Adjust alignment as needed
-        padding (10, 10)
-        text "Humildad: [humildad]" size 24 color "#FFFFFF"  # Display the karma value
-    frame:
-        align (0.98, 0.12)  # Adjust alignment as needed
-        padding (10, 10)
-        text "Ambicion: [ambicion]" size 24 color "#FFFFFF"  # Display the karma value
+        #align (0.98, 0.02)  # Adjust alignment as needed
+        align (0.98, 0.05)
+        background Frame("gui/FondoJuego.jpg", 10, 10)
+        padding(10, 10, 20, 10)
+        #padding (10, 10)
+        vbox:
+            spacing 6
+        #text "Humildad: [humildad]" size 24 color "#FFFFFF"  # Display the karma value
+            text "Humildad: [humildad]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")]  # Display the karma value
+            text "Ambición: [ambicion]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")] # Display the karma value
+
+    #frame:
+        ##padding (10, 10)
+        #text "Ambición: [ambicion]" size 24 color "#FFFFFF"  # Display the karma value
 
 # Add the screen to always be shown
 init python:
@@ -40,8 +47,8 @@ label start:
 
 
     scene exteriorRanchoAtardecer with irisout
-    # "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
-    Titulo ""
+    "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
+    
 
 
     play music musica_intro volume 0.5 fadeout 0.5 fadein 0.2
@@ -143,7 +150,7 @@ label start:
     scene interiorPulperia_1
     with fade
     show santos_entero_sombra at center:
-        alpha 0.8
+        alpha 0.6
         zoom 0.5
         linear 8 xpos 820 alpha 1.0
     with dissolve
@@ -161,22 +168,30 @@ label start:
     #show santos_neutro_iz at left:
         #xzoom -1
     #with dissolve
-    show santos_entra_izquierda at left:
-        linear 5 xpos 120
+    show santos_con_cania at left:
+        linear 4 xpos 130
     with dissolve
 
     san "Tome viejo, se lo manda el pulpero"
     san "Y...{w=0.5} pa' dónde dice que queda ese lugar?"
+    hide viejo_en_la_pulperia
+    with dissolve
 
-    viejo    "{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.5}\ny la luna en el cielo no se ve brillar,{w=0.5}\nquien allí vaya, secretos va a hallar.{w=0.5}{/i}"
+    show viejo_hablando
+    with dissolve
+
+    viejo    "{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.7}\ny la luna en el cielo no se ve brillar,{w=0.7}\nquien allí vaya, secretos va a hallar.{w=0.7}{/i}"
 
     viejo "Tienes la {b}palabra secreta{/b}, muchacho."
     viejo "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado"
     viejo "Pon tu guitarra al hombro, que no hay gloria para el que no la busca."
 
-    
-    hide viejo_en_la_pulperia 
+    hide santos_con_cania
     with dissolve
+    hide viejo_hablando 
+    with dissolve
+    show santos_entra_izquierda at left:
+        xpos 120
     san "Al diablo viejo charlatán !"
     "Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
     
@@ -211,7 +226,9 @@ label payada_madiocre:
     "Es un cantor común, sin fama ni gloria."
 
     call payada_manager(musicPlaying=True)
-
+    hide santos_payando
+    hide payador_cantando
+    hide fondo_negro
     with fade
     "Luego de notar que sus payadas no superan la media del talento en su comunidad,
     Santos decide hacerle caso al viejo y {b}partir hacia la Salamanca{/b}"

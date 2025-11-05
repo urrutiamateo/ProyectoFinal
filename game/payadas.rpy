@@ -123,14 +123,24 @@ label payada_vega:
     return
 
 label payada_payador:
-    payador "Muy bien, Vega. Ahora es mi turno."
-    play music payada_intensa volume 0.5 fadein 1.0 
-    # Aquí puedes añadir la lógica para la payada del Payador.
-    show rival_payador at right:
-        zoom 0.8
-        alpha 0.5
-        linear 4 alpha 1.0
+    show rival_payador
+        
     with dissolve
+    payador "Muy bien, Vega. Ahora es mi turno."
+    play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
+    hide rival_payador
+    with dissolve
+    show payador_cantando:
+        yalign 1.0
+        xalign 50
+        zoom 0.9
+    with dissolve
+   
+    #show rival_payador at right:
+        # 0.8
+        #alpha 0.5
+        # 4 alpha 1.0
+    #with dissolve
     payador  "No por mucho andar {w=0.5}\nCon las manos en los bolsillos {w=0.5}\nVa encontrar uno más plata {w=0.5}\nNi tampoco prestamillo"
     
     # jump fin_payada
@@ -138,6 +148,9 @@ label payada_payador:
 
 
 label payada_terminar:
-    hide show rival_payador
-    narrator "¡Muy bien! ¡Esa fue una ronda de payadas excelente!"
+    #hide show rival_payador
+    show fondo_negro
+    with dissolve
+    #narrator "¡Muy bien! ¡Esa fue una ronda de payadas excelente!"
+    narrator "{color=#F5D627}{size=35}{b}¡Muy bien! ¡Esa fue una ronda de payadas excelente!{/b}{/size}{/color}"
     return
