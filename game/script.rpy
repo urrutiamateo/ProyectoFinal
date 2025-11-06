@@ -1,30 +1,24 @@
 ﻿
-default final_estado = ""
-
+#default final_estado = ""
 transform entrar_suave_izquierda:
     yalign 1.0
     xalign -0.5      
     linear 2.0 xalign 0.0 
 
-
-
-
-
-
 screen karma_display():
-    # Position the karma display (e.g., top-right corner)
-    frame:
-        #align (0.98, 0.02)  # Adjust alignment as needed
+    frame:       
         align (0.98, 0.05)
         background Frame("gui/FondoJuego.jpg", 10, 10)
-        padding(10, 10, 20, 10)
-        #padding (10, 10)
+        padding(10, 10, 20, 10)  
         vbox:
             spacing 6
-        #text "Humildad: [humildad]" size 24 color "#FFFFFF"  # Display the karma value
             text "Humildad: [humildad]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")]  # Display the karma value
             text "Ambición: [ambicion]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")] # Display the karma value
-
+    #Position the karma display (e.g., top-right corner)
+    #frame:
+        #align (0.98, 0.02)  # Adjust alignment as needed
+        #padding (10, 10)
+        #text "Ambición: [ambicion]" size 24 color "#FFFFFF"  # Display the karma value
     #frame:
         ##padding (10, 10)
         #text "Ambición: [ambicion]" size 24 color "#FFFFFF"  # Display the karma value
@@ -32,32 +26,22 @@ screen karma_display():
 # Add the screen to always be shown
 init python:
     config.overlay_screens.append("karma_display")
-
-    
     def subir_ambicion(cant:int=1):
         store.ambicion = getattr(store, 'ambicion', 0) + cant
     def subir_humildad(cant:int=1):
         store.humildad = getattr(store, 'humildad', 0) + cant
 
-
-
 # El juego comienza aquí.
 label start:
 
-
-
     scene exteriorRanchoAtardecer with irisout
-    "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
-    
-
-
-    play music musica_intro volume 0.5 fadeout 0.5 fadein 0.2
-    # play music musica_intro volume 0.5 fadein 0.2
+    "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
+    play music musica_intro volume 0.5 fadein 0.2
     with fade
     "En las llanuras abiertas de la pampa, cuando el sol se esconde detrás del horizonte y el viento lleva consigo ecos de antiguos cantares, vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
-    with dissolve
+    # dissolve
     "Dicen que su voz puede calmar al caballo más bravo y que canta con la fuerza del que sueña, aunque le falta camino por andar antes de ganarse {b}un nombre y el brillo en su tierra{/b}."
-    
+    #with dissolve
     scene exteriorRanchoNoche
     with fade
     "Una noche, mientras las sombras cubren el campo, Santos siente el peso de su propio deseo: alcanzar la gloria, ser recordado, cantar como nadie lo ha hecho antes."
@@ -71,6 +55,7 @@ label start:
 
     hide santos_espaldas
     with dissolve
+    play sound brisa
 
     "El viento sopla y parece responderle con un susurro. En su mente, se enciende el recuerdo de una frase que su padrino le había dicho muchos años atrás."
     "{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre{/i}{/b}{/color}" #buscar recurso
@@ -87,14 +72,12 @@ label start:
     hide santos_ojos_cerrados
     with dissolve
     "Esa misma noche, atraído por el sonar de guitarras y voces lejanas, decide acercarse a la pulpería del pueblo..."
+    stop sound fadeout 2.0 
     
-    with dissolve
 
     scene exteriorPulperia
-    # play music misterio volume 0.5 fadeout 2.0 fadein 2.0
-
-
     with fade
+    play sound murmullo volume 0.3 loop 
     "Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
     
     show santos_a_caballo at right:
@@ -111,11 +94,18 @@ label start:
     "Respira hondo, salta del caballo, se acomoda la guitarra al hombro y decide entrar."
     hide santos_a_caballo
     with dissolve
-    #stop music fadeout 2.0
-
+    #pause 0.3
+    #play sound puerta volume 0.3
+    stop sound fadeout 2.0
     play music misterio volume 0.5 fadeout 2.0 fadein 1.0
     scene interiorPulperia_2
     with fade
+    play sound puerta volume 0.3
+    #pause 0.3
+    #play sound murmullo volume 0.4  
+    queue sound murmullo loop volume 0.2
+    
+
     
     "El aire está espeso por el humo del tabaco. Gauchos beben, charlan y otros juegan a los naipes."
     show santos_entra_izquierda at left:
@@ -194,7 +184,7 @@ label start:
         xpos 120
     san "Al diablo viejo charlatán !"
     "Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
-    
+    stop sound fadeout 2.0
     menu:
         "{size=40}¿Qué hace Santos?{/size}"
 
