@@ -12,7 +12,7 @@ screen karma_display():
         padding(10, 10, 20, 10)  
         vbox:
             spacing 6
-            text "Humildad: [humildad]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")]  # Display the karma value
+            text "Humildad: [humildad]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")] # Display the karma value
             text "Ambición: [ambicion]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")] # Display the karma value
     #Position the karma display (e.g., top-right corner)
     #frame:
@@ -35,7 +35,7 @@ init python:
 label start:
 
     scene exteriorRanchoAtardecer with irisout
-    "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
+    "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
     play music musica_intro volume 0.5 fadein 0.2
     with fade
     "En las llanuras abiertas de la pampa, cuando el sol se esconde detrás del horizonte y el viento lleva consigo ecos de antiguos cantares, vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
@@ -50,15 +50,15 @@ label start:
         #zoom 0.5
     with dissolve
 
-    san "{i}Padre... {w=1.0}siempre dijiste que el alma libre es la que más canta.{/i}"
-    san "{i}Pero a veces siento que mi voz no basta.\nQue hay algo allá lejos... {w=1.0}algo que me falta alcanzar para ser el más grande.{/i}"
+    san "{cps=20}{i}Padre... {w=0.5}siempre dijiste que el alma libre es la que más canta.{/i}"
+    san "{cps=20}{i}Pero a veces siento que mi voz no basta.\nQue hay algo allá lejos... {w=0.5}algo que me falta alcanzar para ser el más grande.{/i}"
 
     hide santos_espaldas
     with dissolve
     play sound brisa
 
     "El viento sopla y parece responderle con un susurro. En su mente, se enciende el recuerdo de una frase que su padrino le había dicho muchos años atrás."
-    "{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre{/i}{/b}{/color}" #buscar recurso
+    "{space=60}{cps=20}{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre{/i}{/b}{/color}" #buscar recurso
     show santos_ojos_cerrados at left:
         zoom 0.5
     with dissolve
@@ -105,8 +105,6 @@ label start:
     #play sound murmullo volume 0.4  
     queue sound murmullo loop volume 0.2
     
-
-    
     "El aire está espeso por el humo del tabaco. Gauchos beben, charlan y otros juegan a los naipes."
     show santos_entra_izquierda at left:
         linear 5 xpos 120
@@ -126,7 +124,7 @@ label start:
 
     #show santos_neutro at left
     #with dissolve
-    san "Y vos, viejo... {w=1.0}¿Qué sabés de voces y de raíces?"
+    san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
     san "¿Qué podés saber de Salamancas?"
     viejo "Sé de muchas cosas, muchacho."
     viejo "La ubicación de ese lugar donde el {color=#a10000}Señor de la Salamanca{/color} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {color=#a10000}pacto{/color}."
@@ -170,7 +168,7 @@ label start:
     show viejo_hablando
     with dissolve
 
-    viejo    "{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.7}\ny la luna en el cielo no se ve brillar,{w=0.7}\nquien allí vaya, secretos va a hallar.{w=0.7}{/i}"
+    viejo    "{cps=20}{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.6}\ny la luna en el cielo no se ve brillar,{w=0.6}\nquien allí vaya, secretos va a hallar.{w=0.6}{/i}"
 
     viejo "Tienes la {b}palabra secreta{/b}, muchacho."
     viejo "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado"
@@ -186,7 +184,7 @@ label start:
     "Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
     stop sound fadeout 2.0
     menu:
-        "{size=40}¿Qué hace Santos?{/size}"
+        "{space=350}{size=40}¿Qué hace Santos?{/size}"
 
         "Ignorar la historia del viejo y quedarse en la pulpería tomando caña":
             python:
