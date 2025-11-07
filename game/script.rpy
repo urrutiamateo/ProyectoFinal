@@ -234,18 +234,104 @@ label payada_madiocre:
 label camino_a_salamanca: 
     scene viaje
     with fade
-    if humildad > ambicion:
-        "tiene más humildad que ambición"
-    elif humildad < ambicion:
-        "tiene más ambición que humildad"
-    else:
-        "están iguales"
+    #if humildad > ambicion:
+        #"tiene más humildad que ambición"
+    #elif humildad < ambicion:
+        #"tiene más ambición que humildad"
+    #else:
+        #"están iguales"
+
+
+#ESCENA 1
+
+    "Santos abandona la pulpería en busca de la Salamanca, siguiendo las vagas indicaciones del Viejo."
+
+    "En el campo abierto de la llanura, lo único que puede acompañar a Santos esa noche son seres vivientes que no hablan, pero igual dicen cosas."
+
+
+    "Los insectos, su caballo, sus recuerdos, lo que lleva adentro.."
+
+    "Después de horas de viaje, cruzar el río y el valle. Se ve más cerca la montaña, y en su ladera se vislumbran los males."
+
+    "Santos investiga la falda rocosa, cuando de repente, su caballo se incomoda."
+
+    "Los animales saben cuando algo anda mal."
+
+#ESCENA 2
+
+    san "Tranquilo, tranquilo… De nerviosos está lleno el cementerio.."
+
+    san "Ahora quedate piola acá y cuidame la guitarra."
+
+    san "“Una piedra roja marca el camino”..."
+
+    san "¿Cuál era la palabra?"
+
+    menu:
+        "Cueva":
+            
+            jump dentro_de_la_cueva
+
+        "Sandía":
+            "El destino no quiso que Santos ingrese a la cueva. Quizás aún no esté listo para ponerse a prueba."
+            san "Lo mejor será que vuelva, allá alguna canción me espera para burlar cualquier gaucho."
+            jump payada_madiocre
+
+label dentro_de_la_cueva:
+    san "“CUEVA”!"
+    "La entrada a la cueva de la Salamanca se abre con un resplandor rojizo."
+    san "Que tanto.."
+
+    "Santos ingresa a la cueva, dejando sus dudas atrás, por el momento.."
+
+    #ESCENA 4
+
+
+    "La cueva es sin dudas un lugar inhóspito.."
+    san "Hay olor a pared con humedad, y a tierra vieja.."
+
+    san "Y no me traje nada para cazar bichos.."
+
+        #basilisco
+    basilisco "¡QUIETO AHÍ!"
+    basilisco "Si tu idea es ir más allá de esta penumbra, deberás ser puesto a prueba."
+
+    #narrador
+    "De repente, una cantidad de alimañas de todo tipo se trepan por el cuerpo de Santos, haciéndolo sudar en frío."
+
+    menu:
+        "“Sacudirse las alimañas”":
+            "Santos se sacude algunos bichos, pero no todos, el basilisco justo no lo estaba viendo, se salvó por poco.."
+            
+            
+            #SACARLO DE ACA ES DE PRUEBA
+            jump final_bueno
+        "“Aguantarse quieto”":
+            "Santos no se inmuta ante la prueba, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+
+                #basilisco
+            basilisco "Muy bien.."
+
+            basilisco "Ahora es cuando me sigues, igual que sigues a tu “destino”.."
+            jump trono_mandinga
+
+    label trono_mandinga:
+
+        "La sala del Mandinga se le presenta a Santos, mientras transitaba la cueva."
         
-    "camino hacia la Salamanca"
 
-    jump finales_malos_Yani
 
+
+
+
+
+
+
+
+    #jump finales_malos_Yani
     return
+
+    
 
 
 

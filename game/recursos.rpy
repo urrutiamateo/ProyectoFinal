@@ -3,6 +3,7 @@ define viejo = Character("Don Ernesto", color= "#b81c07")
 define diablo = Character("Mandinga")
 define payador = Character("Payador del Pueblo", color = "#0abe79")  ## CAracter agregado
 define narrator = Character(None)
+define basilisco = Character("Basilisco")
 #$ titulo_texto = "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
 #define Titulo = Character("{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}", window_text_align=0.5)
 
