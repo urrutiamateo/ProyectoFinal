@@ -64,11 +64,9 @@ label start:
     with dissolve
     "Santos cierra los ojos, sin saber que esa {b}frase{/b} será la última luz que lo guíe antes de que la oscuridad lo llame por su nombre."
 
-   
 #  Cambiaria la musica porque termina la introduccion y empieza la accion
     # play music misterio volume 0.5 fadeout 2.0 fadein 0.5
 
-    
     hide santos_ojos_cerrados
     with dissolve
     "Esa misma noche, atraído por el sonar de guitarras y voces lejanas, decide acercarse a la pulpería del pueblo..."
@@ -129,7 +127,6 @@ label start:
     viejo "Sé de muchas cosas, muchacho."
     viejo "La ubicación de ese lugar donde el {color=#a10000}Señor de la Salamanca{/color} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {color=#a10000}pacto{/color}."
 
-
     hide viejo_en_la_pulperia 
     with dissolve
     hide santos_entra_izquierda
@@ -169,7 +166,6 @@ label start:
     with dissolve
 
     viejo    "{cps=20}{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.6}\ny la luna en el cielo no se ve brillar,{w=0.6}\nquien allí vaya, secretos va a hallar.{w=0.6}{/i}"
-
     viejo "Tienes la {b}palabra secreta{/b}, muchacho."
     viejo "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado"
     viejo "Pon tu guitarra al hombro, que no hay gloria para el que no la busca."
@@ -200,14 +196,13 @@ label start:
             
 
 
-
-#Finales en la pulpería
 label payada_madiocre:
     # play music payada_intensa volume 0.5 fadeout 2.0 fadein 2.0
     #play music payada_intensa volume 0.5 fadein 0.5
     scene interiorPulperia_2
-    # play music "pruebaSantosVega.mp3" volume 0.2
     with fade
+    # play music "pruebaSantosVega.mp3" volume 0.2
+   
     show santos_payando at left
     with dissolve
     "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento"
@@ -223,7 +218,6 @@ label payada_madiocre:
 
     stop music
     jump camino_a_salamanca
-
     #menu:
         #"Resolver acertijo para volver al camino principal":
             #jump resolver_acertijo
@@ -234,13 +228,6 @@ label payada_madiocre:
 label camino_a_salamanca: 
     scene viaje
     with fade
-    #if humildad > ambicion:
-        #"tiene más humildad que ambición"
-    #elif humildad < ambicion:
-        #"tiene más ambición que humildad"
-    #else:
-        #"están iguales"
-
 
 #ESCENA 1
 
@@ -303,9 +290,6 @@ label dentro_de_la_cueva:
         "“Sacudirse las alimañas”":
             "Santos se sacude algunos bichos, pero no todos, el basilisco justo no lo estaba viendo, se salvó por poco.."
             
-            
-            #SACARLO DE ACA ES DE PRUEBA
-            jump final_bueno
         "“Aguantarse quieto”":
             "Santos no se inmuta ante la prueba, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
 
@@ -319,12 +303,6 @@ label dentro_de_la_cueva:
 
         "La sala del Mandinga se le presenta a Santos, mientras transitaba la cueva."
         
-
-
-
-
-
-
 
 
 

@@ -151,6 +151,5 @@ label payada_terminar:
     #hide show rival_payador
     show fondo_negro
     with dissolve
-    #narrator "¡Muy bien! ¡Esa fue una ronda de payadas excelente!"
     narrator "{color=#F5D627}{size=35}{b}¡Muy bien! ¡Esa fue una ronda de payadas excelente!{/b}{/size}{/color}"
     return

@@ -1,7 +1,7 @@
 define san = Character("Santos Vega", color = "#d6b707")
 define viejo = Character("Don Ernesto", color= "#b81c07")
 define diablo = Character("Mandinga")
-define payador = Character("Payador del Pueblo", color = "#0abe79")  ## CAracter agregado
+define payador = Character("Payador del Pueblo", color = "#0abe79")  
 define narrator = Character(None)
 define basilisco = Character("Basilisco")
 #$ titulo_texto = "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
@@ -18,6 +18,7 @@ image santos_ojos_cerrados = "images/sprites/Santos_ojos_cerrados_conSombra.png"
 image santos_a_caballo = "images/sprites/sv montado.png"
 image santos_entra_izquierda = "images/sprites/Santos_para_interiorPulperia_2.png"
 image santos_con_cania = "images/sprites/Santos_Cania_en_interiorPulperia.png"
+image santos_payando = "images/sprites/Santos_guitarra_en_interiorPulperia.png"
 
 image viejo_en_la_pulperia = "images/sprites/Viejo_en_interiorPulperia.png"
 image viejo_neutro_ = "images/sprites/viejo_neutro.png"
@@ -25,12 +26,9 @@ image viejo_neutro = "images/sprites/viejo_neutro_s.png"
 image viejo_malo = "images/sprites/viejo_malo_s.png"
 image viejo_hablando = "images/sprites/viejo de la pulperia de pie hablando.png"
 
-
-
-
 image rival_payador = "images/sprites/Payador_2_en_interiorPulperia_2.png"
 image payador_cantando = "images/sprites/Payador_guitarra_en_interiorPulperia_2.png"
-image santos_payando = "images/sprites/Santos_guitarra_en_interiorPulperia.png"
+
 
 image pulperiaGuitarra = "images/fondos/escena_pulperia_guitar.png"
 image exteriorRanchoAtardecer = "images/fondos/exteriorRanchoAtardecer.jpg"
