@@ -1,5 +1,4 @@
 ﻿
-#default final_estado = ""
 transform entrar_suave_izquierda:
     yalign 1.0
     xalign -0.5      
@@ -14,25 +13,24 @@ screen karma_display():
             spacing 6
             text "Humildad: [humildad]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")] # Display the karma value
             text "Ambición: [ambicion]" size 24 color "#FFFFFF" outlines [(2, "#5a2007")] # Display the karma value
-    #Position the karma display (e.g., top-right corner)
-    #frame:
-        #align (0.98, 0.02)  # Adjust alignment as needed
-        #padding (10, 10)
-        #text "Ambición: [ambicion]" size 24 color "#FFFFFF"  # Display the karma value
-    #frame:
-        ##padding (10, 10)
-        #text "Ambición: [ambicion]" size 24 color "#FFFFFF"  # Display the karma value
-
-# Add the screen to always be shown
+    
 init python:
     config.overlay_screens.append("karma_display")
     def subir_ambicion(cant:int=1):
         store.ambicion = getattr(store, 'ambicion', 0) + cant
     def subir_humildad(cant:int=1):
         store.humildad = getattr(store, 'humildad', 0) + cant
+    #CLASE PERSONAJE
+    #from python.personajes.personajes import SantosVega, ViejoPulperia
+    #san = SantosVega(p_san)
+    #viejo = ViejoPulperia(p_viejo)
+
 
 # El juego comienza aquí.
 label start:
+    #CLASE PERSONAJE
+    #$ san.personalizado = p_san
+    #$ viejo.personalizado = p_viejo
 
     scene exteriorRanchoAtardecer with irisout
     "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
@@ -49,9 +47,12 @@ label start:
     show santos_espaldas at left
         #zoom 0.5
     with dissolve
-
     san "{cps=20}{i}Padre... {w=0.5}siempre dijiste que el alma libre es la que más canta.{/i}"
     san "{cps=20}{i}Pero a veces siento que mi voz no basta.\nQue hay algo allá lejos... {w=0.5}algo que me falta alcanzar para ser el más grande.{/i}"
+    
+    #CLASE PERSONAJE
+    #$ san.hablar("{cps=20}{i}Padre... {w=0.5}siempre dijiste que el alma libre es la que más canta.{/i}")
+    #$ san.hablar("{cps=20}{i}Pero a veces siento que mi voz no basta.\nQue hay algo allá lejos... {w=0.5}algo que me falta alcanzar para ser el más grande.{/i}")
 
     hide santos_espaldas
     with dissolve
@@ -114,6 +115,7 @@ label start:
 
     show viejo_en_la_pulperia
     with dissolve
+    viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
     viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
 
     #show santos_neutro at left

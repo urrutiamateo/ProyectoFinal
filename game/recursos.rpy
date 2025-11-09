@@ -1,5 +1,7 @@
 define san = Character("Santos Vega", color = "#d6b707")
+#define p_san = Character("Santos Vega", color = "#d6b707")   #PARA CLASE PERSONAJE
 define viejo = Character("Don Ernesto", color= "#b81c07")
+#define p_viejo = Character("Don Ernesto", color= "#b81c07")     #PARA CLASE PERSONAJE
 define diablo = Character("Mandinga")
 define payador = Character("Payador del Pueblo", color = "#0abe79")  
 define narrator = Character(None)
