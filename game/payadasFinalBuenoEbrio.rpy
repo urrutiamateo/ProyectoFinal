@@ -6,13 +6,14 @@ label payada_final_bueno_ebrio_manager(musicPlaying=False):
     #     play music paya_1_A volume 0.5 fadein 0
 
 
-    play music paya_1_A volume 0.5 fadein 0.1
+    # play music paya_1_A volume 0.5 fadein 0.1
     
     
     
     call payada_final_bueno_payador_ebrio
     queue music fin_payada_intensa volume 0.5 fadein 1.0 noloop
 
+    
     call payada_final_bueno_vega_ebrio
     queue music paya_1_final volume 0.5 fadein 0 noloop 
     
@@ -20,6 +21,7 @@ label payada_final_bueno_ebrio_manager(musicPlaying=False):
     return
  
 label payada_final_bueno_vega_ebrio:
+    play music paya_1_A volume 0.5 fadein 0.1
     hide santos_con_cania
     with dissolve
     show santos_payando at left
@@ -30,39 +32,36 @@ label payada_final_bueno_vega_ebrio:
         from python.payadas.FrasePayada import FrasePayada
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
-        verso1 = FrasePayada("Anduve sí, por lo oscuro,", ambicion=0, humildad=1, nivel=1)
-        verso5 = FrasePayada("y el humo me dio su abrazo,", ambicion=1, humildad=0, nivel=2)
+        verso1 = FrasePayada("Anduve sí, por lo oscuro,", ambicion=0, humildad=1)
+        verso2 = FrasePayada("y el humo me dio su abrazo,", ambicion=1, humildad=0)
 
-        verso2 = FrasePayada("mas si el diablo me invitó al truco,", ambicion=0, humildad=1, nivel=3)
-        verso6 = FrasePayada("yo le gané con un cuatro.", ambicion=1, humildad=0, nivel=3)
+        verso3 = FrasePayada("mas si el diablo me invitó al truco,", ambicion=0, humildad=1)
+        verso4 = FrasePayada("yo le gané con un cuatro.", ambicion=1, humildad=0)
 
-        verso3 = FrasePayada("Cavé, sí, pa’ ver si hallaba,", ambicion=1, humildad=0, nivel=4)
-        verso7 = FrasePayada("algún cobre pa’ mi pena,", ambicion=0, humildad=1, nivel=4)
+        verso5 = FrasePayada("Cavé, sí, pa’ ver si hallaba,", ambicion=1, humildad=0)
+        verso6 = FrasePayada("algún cobre pa’ mi pena,", ambicion=0, humildad=1)
 
-        verso4 = FrasePayada("Pero ahora brindo con vino,", ambicion=1, humildad=0, nivel=4)
-        verso8 = FrasePayada("¡que es mejor trato divino!", ambicion=0, humildad=1, nivel=4)
+        verso7 = FrasePayada("Pero ahora brindo con vino,", ambicion=1, humildad=0)
+        verso8 = FrasePayada("¡que es mejor trato divino!", ambicion=0, humildad=1)
 
         
 
         # Enlazar nodos manualmente (sig_izq / sig_der)
         
         verso1.sig_izq = verso2
-
         verso2.sig_izq = verso3
-        verso2.sig_der = verso4
-
-        verso3.sig_izq = verso5
-        verso3.sig_der = verso6
-
-        verso4.sig_izq = verso7
-        verso4.sig_der = verso8
+        verso3.sig_izq = verso4
+        verso4.sig_izq = verso5
+        verso5.sig_izq = verso6
+        verso6.sig_izq = verso7
+        verso7.sig_izq = verso8
 
        
 
 
         # Estado local para la ronda de payada
         payadaVega = []                # lista de FrasePayada elegidas (objetos)
-        opciones_nodos = [verso1,verso3]
+        opciones_nodos = [verso1,verso5]
         ambicion_total = 0
         humildad_total = 0
 
@@ -96,6 +95,7 @@ label payada_final_bueno_vega_ebrio:
 
         # Registrar elección
         $ payadaVega.append(chosen)
+        
         # $ ambicion_total += chosen.ambicion
         # $ humildad_total += chosen.humildad
         python:
@@ -110,11 +110,22 @@ label payada_final_bueno_vega_ebrio:
             queue music paya_1_A volume 0.5 
         if nivel_actual == 4:
             queue music paya_1_B volume 0.5 
+        if nivel_actual == 5:
+            queue music paya_1_A volume 0.5 
+        if nivel_actual == 6:
+            queue music paya_1_B volume 0.5 
+        if nivel_actual == 7:
+            queue music paya_1_A volume 0.5 
+        if nivel_actual == 8:
+            queue music paya_1_B volume 0.5 
             
 
         # Mostrar la payada actualizada
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
         san "[payada_texto]"
+        # Reinicio la lista de texto para que se pueda leer
+        if nivel_actual == 4:
+            $ payadaVega = []
 
         # Preparar las opciones del siguiente nivel
         python:

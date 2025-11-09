@@ -24,39 +24,36 @@ label payada_final_bueno_vega:
         from python.payadas.FrasePayada import FrasePayada
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
-        verso1 = FrasePayada("No hay canto que valga el oro,", ambicion=0, humildad=1, nivel=1)
-        verso5 = FrasePayada("ni fama que valga un llanto,", ambicion=1, humildad=0, nivel=2)
+        verso1 = FrasePayada("No hay canto que valga el oro,", ambicion=0, humildad=1)
+        verso2 = FrasePayada("ni fama que valga un llanto,", ambicion=1, humildad=0)
 
-        verso2 = FrasePayada("prefiero el cielo del pobre", ambicion=0, humildad=1, nivel=3)
-        verso6 = FrasePayada("si en paz mi alma levanto.", ambicion=1, humildad=0, nivel=3)
+        verso3 = FrasePayada("prefiero el cielo del pobre", ambicion=0, humildad=1)
+        verso4 = FrasePayada("si en paz mi alma levanto.", ambicion=1, humildad=0)
 
-        verso3 = FrasePayada("No fue miedo ni ambición,", ambicion=1, humildad=0, nivel=4)
-        verso7 = FrasePayada("fue el consejo del que amparo:", ambicion=0, humildad=1, nivel=4)
+        verso5 = FrasePayada("No fue miedo ni ambición,", ambicion=1, humildad=0)
+        verso6 = FrasePayada("fue el consejo del que amparo:", ambicion=0, humildad=1)
 
-        verso4 = FrasePayada("“No hay canto más fuerte, hermano,", ambicion=1, humildad=0, nivel=4)
-        verso8 = FrasePayada("que el que nace del alma libre.”", ambicion=0, humildad=1, nivel=4)
+        verso7 = FrasePayada("“No hay canto más fuerte, hermano,", ambicion=1, humildad=0)
+        verso8 = FrasePayada("que el que nace del alma libre.”", ambicion=0, humildad=1)
 
         
 
         # Enlazar nodos manualmente (sig_izq / sig_der)
         
         verso1.sig_izq = verso2
-
         verso2.sig_izq = verso3
-        verso2.sig_der = verso4
+        verso3.sig_izq = verso4
+        verso4.sig_izq = verso5
 
-        verso3.sig_izq = verso5
-        verso3.sig_der = verso6
+        verso5.sig_izq = verso6
+        verso6.sig_izq = verso7
+        verso7.sig_izq = verso8
 
-        verso4.sig_izq = verso7
-        verso4.sig_der = verso8
+        # Opciones iniciales
+        opciones_nodos = [verso1,verso5]
 
-       
-
-
-        # Estado local para la ronda de payada
-        payadaVega = []                # lista de FrasePayada elegidas (objetos)
-        opciones_nodos = [verso1,verso3]
+        # Lista de frases elejidas
+        payadaVega = []    
         ambicion_total = 0
         humildad_total = 0
 
@@ -88,8 +85,11 @@ label payada_final_bueno_vega:
             # No hay más opciones: salimos del bucle estableciendo el nivel final
             $ nivel_actual = rondas + 1
 
+        
         # Registrar elección
         $ payadaVega.append(chosen)
+        # reinicio la lista de texto para que se pueda leer
+        
         # $ ambicion_total += chosen.ambicion
         # $ humildad_total += chosen.humildad
         python:
@@ -104,11 +104,24 @@ label payada_final_bueno_vega:
             queue music paya_1_A volume 0.5 
         if nivel_actual == 4:
             queue music paya_1_B volume 0.5 
+        if nivel_actual == 5:
+            queue music paya_1_A volume 0.5 
+        if nivel_actual == 6:
+            queue music paya_1_B volume 0.5 
+        if nivel_actual == 7:
+            queue music paya_1_A volume 0.5 
+        if nivel_actual == 8:
+            queue music paya_1_B volume 0.5 
             
 
         # Mostrar la payada actualizada
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
         san "[payada_texto]"
+        # Limpiar en caso de que hayan pasado 4
+        if nivel_actual == 4:
+            $ payadaVega = []
+
+
 
         # Preparar las opciones del siguiente nivel
         python:

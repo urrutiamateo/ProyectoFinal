@@ -24,17 +24,17 @@ label payada_vega:
         from python.payadas.FrasePayada import FrasePayada
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
-        estimado = FrasePayada("Cómo le va mi estimado?", ambicion=0, humildad=1, nivel=1)
-        cansado = FrasePayada("Lo veo cansado y sucio", ambicion=1, humildad=0, nivel=2)
+        estimado = FrasePayada("Cómo le va mi estimado?", ambicion=0, humildad=1)
+        cansado = FrasePayada("Lo veo cansado y sucio", ambicion=1, humildad=0)
 
-        tirarse = FrasePayada("Venga a tirarse un rato", ambicion=0, humildad=1, nivel=3)
-        banio = FrasePayada("Por que no se pega un baño", ambicion=1, humildad=0, nivel=3)
+        tirarse = FrasePayada("Venga a tirarse un rato", ambicion=0, humildad=1)
+        banio = FrasePayada("Por que no se pega un baño", ambicion=1, humildad=0)
 
-        yuyos = FrasePayada("A la sombra de los yuyos", ambicion=1, humildad=0, nivel=4)
-        pucho1 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1, nivel=4)
+        yuyos = FrasePayada("A la sombra de los yuyos", ambicion=1, humildad=0)
+        pucho1 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1)
 
-        tufo = FrasePayada("Que me está matando el tufo", ambicion=1, humildad=0, nivel=4)
-        pucho2 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1, nivel=4)
+        tufo = FrasePayada("Que me está matando el tufo", ambicion=1, humildad=0)
+        pucho2 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1)
 
         # Enlazar nodos manualmente (sig_izq / sig_der)
         estimado.sig_izq = cansado
@@ -103,6 +103,9 @@ label payada_vega:
         # Mostrar la payada actualizada
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
         san "[payada_texto]"
+        # Reinicio la lista de texto para que se pueda leer
+        if nivel_actual == 4:
+            $ payadaVega = []
 
         # Preparar las opciones del siguiente nivel
         python:

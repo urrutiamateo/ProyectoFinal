@@ -16,11 +16,10 @@ class FrasePayada:
     sig_izq: Optional['FrasePayada']
     sig_der: Optional['FrasePayada']
 
-    def __init__(self, frase: str, ambicion: int = 0, humildad: int = 0, nivel: int = 1):
+    def __init__(self, frase: str, ambicion: int = 0, humildad: int = 0):
         self.frase = frase
         self.ambicion = ambicion
         self.humildad = humildad
-        self.nivel = nivel
         self.sig_izq = None
         self.sig_der = None
 
@@ -28,6 +27,6 @@ class FrasePayada:
         return self.frase
 
     def __repr__(self) -> str:
-        return f"FrasePayada(frase={self.frase!r}, nivel={self.nivel}, ambicion={self.ambicion}, humildad={self.humildad})"
+        return f"FrasePayada(frase={self.frase!r}, ambicion={self.ambicion}, humildad={self.humildad})"
     
 
