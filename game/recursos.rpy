@@ -6,6 +6,9 @@ define diablo = Character("Mandinga")
 define payador = Character("Payador del Pueblo", color = "#0abe79")  
 define narrator = Character(None)
 define basilisco = Character("Basilisco")
+define juan = Character("Juan Sin Ropa", color= "#b81c07")
+define voz_sueño1 = Character(None)
+define voz_sueño2 = Character(None)
 #$ titulo_texto = "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
 #define Titulo = Character("{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}", window_text_align=0.5)
 
@@ -58,6 +61,12 @@ image contratoFirmado = "images/fondos/PlanoContratoFirmado.jpg"
 image trono_mandinga = "images/fondos/Trono_Sr_m_v2.jpg"
 image trono_mandinga_2 = "images/fondos/Trono_Sr_m_v3.jpg"
 
+# sprites ombu
+image juan_hablando = "images/sprites/JuanSinRopa_hablando.png"
+image juan_guitarra = "images/sprites/JuanSinRopa_guitarra.png"
+image santos_durmiendo_ombu = "images/sprites/Santos_dormido_ombu.png"
+
+image ombu = "images/fondos/ombu_conSombraSantosDurmiendo.png"
 
 # Un filtro negro semitransparente
 image fondo_negro = Solid("#00000083")
