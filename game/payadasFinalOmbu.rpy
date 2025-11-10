@@ -77,85 +77,77 @@ label payada_vega_ombu:
 
 
     # Haremos exactamente 10 selecciones (10 niveles)
+    # --- Configuración de rondas ---
+    # --- Configuración de rondas ---
     $ rondas = 10
     $ nivel_actual = 1
+
     while nivel_actual <= rondas:
 
-        # Mostrar la payada acumulada (texto)
-        $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
-        if payada_texto == "":
-            $ payada_texto = "..."
-        $ san("[payada_texto]", interact=False)
-
-        # Construir menú con las opciones actuales (pueden ser 1 o 2)
+        # --- Construir menú con las opciones actuales (pueden ser 1 o 2) ---
         python:
             menu_items = []
             for n in opciones_nodos:
                 if n is None:
                     continue
-                menu_items.append( (n.MostrarFrase(), n) )
-            # Si no hay opciones, terminamos
+                menu_items.append((n.MostrarFrase(), n))
+
             if not menu_items:
                 chosen = None
             else:
                 chosen = renpy.display_menu(menu_items)
 
         if chosen is None:
-            # No hay más opciones: salimos del bucle estableciendo el nivel final
             $ nivel_actual = rondas + 1
+        else:
+            # --- Registrar la elección ---
+            $ payadaVega.append(chosen)
 
-        
-        # Registrar elección
-        $ payadaVega.append(chosen)
-        # reinicio la lista de texto para que se pueda leer
-        
-        # $ ambicion_total += chosen.ambicion
-        # $ humildad_total += chosen.humildad
-        python:
-            # Ejemplo: almacenar en variables globales accesibles por Ren'Py
-            store.ambicion = getattr(store, 'ambicion', 0) + chosen.ambicion
-            store.humildad = getattr(store, 'humildad', 0) + chosen.humildad
-        
-        # Seleccionar musica segun nivel y encolar para transición suave
-        if nivel_actual == 2:
-            queue music paya_1_B volume 0.5 
-        if nivel_actual == 3:
-            queue music paya_1_A volume 0.5 
-        if nivel_actual == 4:
-            queue music paya_1_B volume 0.5 
-        if nivel_actual == 5:
-            queue music paya_1_A volume 0.5 
-        if nivel_actual == 6:
-            queue music paya_1_B volume 0.5 
-        if nivel_actual == 7:
-            queue music paya_1_A volume 0.5 
-        if nivel_actual == 8:
-            queue music paya_1_B volume 0.5
-        if nivel_actual == 9:
-            queue music paya_1_A volume 0.5 
-        if nivel_actual == 10:
-            queue music paya_1_B volume 0.5
-        
+            # --- Determinar el bloque actual de 4 versos ---
+            python:
+                # Bloque de 4 (1–4, 5–8, 9–12, etc.)
+                bloque_inicio = ((nivel_actual - 1) // 4) * 4
+                bloque_fin = bloque_inicio + 4
+                versos_a_mostrar = payadaVega[bloque_inicio:bloque_fin]
+                payada_texto = "\n".join([f.MostrarFrase() for f in versos_a_mostrar])
 
-        # Mostrar la payada actualizada
-        $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
-        san "[payada_texto]"
-        # Limpiar en caso de que hayan pasado 4
-        if nivel_actual == 4:
-            $ payadaVega = []
+            san "[payada_texto]"
 
+            # --- Actualizar los valores de ambición y humildad ---
+            python:
+                store.ambicion = getattr(store, 'ambicion', 0) + chosen.ambicion
+                store.humildad = getattr(store, 'humildad', 0) + chosen.humildad
 
+            # --- Seleccionar música según el nivel ---
+            if nivel_actual == 2:
+                queue music paya_1_B volume 0.5
+            elif nivel_actual == 3:
+                queue music paya_1_A volume 0.5
+            elif nivel_actual == 4:
+                queue music paya_1_B volume 0.5
+            elif nivel_actual == 5:
+                queue music paya_1_A volume 0.5
+            elif nivel_actual == 6:
+                queue music paya_1_B volume 0.5
+            elif nivel_actual == 7:
+                queue music paya_1_A volume 0.5
+            elif nivel_actual == 8:
+                queue music paya_1_B volume 0.5
+            elif nivel_actual == 9:
+                queue music paya_1_A volume 0.5
+            elif nivel_actual == 10:
+                queue music paya_1_B volume 0.5
 
-        # Preparar las opciones del siguiente nivel
-        python:
-            siguientes = []
-            if chosen.sig_izq:
-                siguientes.append(chosen.sig_izq)
-            if chosen.sig_der:
-                siguientes.append(chosen.sig_der)
-            opciones_nodos = siguientes
+            # --- Preparar las opciones del siguiente nivel ---
+            python:
+                siguientes = []
+                if chosen.sig_izq:
+                    siguientes.append(chosen.sig_izq)
+                if chosen.sig_der:
+                    siguientes.append(chosen.sig_der)
+                opciones_nodos = siguientes
 
-        $ nivel_actual += 1
+            $ nivel_actual += 1
 
     # # Al finalizar, podemos enviar los totales a variables globales si es necesario
     # python:

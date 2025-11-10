@@ -41,7 +41,8 @@ label final_malo_ombu:
         
 label preguntarle:
     hide juan_hablando
-    show santos_neutro at left
+    show santos_neutro at left with fade:
+        zoom 0.75
     san "¿Quién se atreve a cortar mi sueño?"
     
     show juan_hablando at right
@@ -61,7 +62,8 @@ label ombu_final:
 
     narrator "SANTOS VEGA Se levanta con su guitarra y empieza a cantar."
 
-    show santos_payando at left
+    show santos_payando at left with fade:
+        zoom 0.75
 
     call payada_ombu(musicPlaying=True)
 
@@ -86,4 +88,6 @@ label ombu_final:
     narrator "Dicen que aún se oye su voz en la llanura… no por gloria, sino por pena. Porque quien canta con el diablo nunca calla en paz."
 
     scene black
-    "{size=80}FIN{/size}"
+    show text "{size=80}FIN{/size}" at truecenter
+    pause 3
+    return
