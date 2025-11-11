@@ -24,38 +24,57 @@ label payada_final_bueno_vega:
         from python.payadas.FrasePayada import FrasePayada
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
-        verso1 = FrasePayada("No hay canto que valga el oro,", ambicion=0, humildad=1)
-        verso2 = FrasePayada("ni fama que valga un llanto,", ambicion=1, humildad=0)
-
-        verso3 = FrasePayada("prefiero el cielo del pobre", ambicion=0, humildad=1)
-        verso4 = FrasePayada("si en paz mi alma levanto.", ambicion=1, humildad=0)
-
-        verso5 = FrasePayada("No fue miedo ni ambición,", ambicion=1, humildad=0)
-        verso6 = FrasePayada("fue el consejo del que amparo:", ambicion=0, humildad=1)
-
-        verso7 = FrasePayada("“No hay canto más fuerte, hermano,", ambicion=1, humildad=0)
-        verso8 = FrasePayada("que el que nace del alma libre.”", ambicion=0, humildad=1)
-
+        verso1 = FrasePayada("No fue miedo ni ambición,")
         
+        verso2 = FrasePayada("fue el consejo del que amparo:")
+        verso3 = FrasePayada("fue el alma la que mando,")
+        
+        verso4 = FrasePayada("no hay canto más fuerte, hermano,")
+        verso5 = FrasePayada("no hay rumbo mas puro y claro")
+        
+        verso6 = FrasePayada("el diablo quiso mi canto,")
+        verso7 = FrasePayada("el diablo cruzo mi paso,")
+
+        verso8 = FrasePayada("que el que nace del alma libre.")
+        verso9 = FrasePayada("que el que canta sin reparo.")
+
+        verso10 = FrasePayada("pero el diablo paga caro.")
+        verso11 = FrasePayada("que aquel que sigue su corazón.")
+
+        verso12 = FrasePayada("y mi canto lo espantó.")
+        verso13 = FrasePayada("y el corazón me habló.")
+
+        verso14 = FrasePayada("y mi alma lo negó.")
+        verso15 = FrasePayada("y mi voz lo condenó.")
 
         # Enlazar nodos manualmente (sig_izq / sig_der)
         
         verso1.sig_izq = verso2
-        verso2.sig_izq = verso3
-        verso3.sig_izq = verso4
-        verso4.sig_izq = verso5
+        verso1.sig_der = verso3
 
-        verso5.sig_izq = verso6
-        verso6.sig_izq = verso7
-        verso7.sig_izq = verso8
+        verso2.sig_izq = verso4
+        verso2.sig_der = verso5
+
+        verso3.sig_izq = verso6
+        verso3.sig_der = verso7
+
+        verso4.sig_izq = verso8
+        verso4.sig_der = verso9
+
+        verso5.sig_izq = verso10
+        verso5.sig_der = verso11
+
+        verso6.sig_izq = verso12
+        verso6.sig_der = verso13
+
+        verso7.sig_izq = verso14
+        verso7.sig_izq = verso15
 
         # Opciones iniciales
-        opciones_nodos = [verso1,verso5]
+        opciones_nodos = [verso1]
 
         # Lista de frases elejidas
-        payadaVega = []    
-        ambicion_total = 0
-        humildad_total = 0
+        payadaVega = []
 
     # Haremos exactamente 4 selecciones (4 niveles)
     $ rondas = 4
@@ -89,13 +108,6 @@ label payada_final_bueno_vega:
         # Registrar elección
         $ payadaVega.append(chosen)
         # reinicio la lista de texto para que se pueda leer
-        
-        # $ ambicion_total += chosen.ambicion
-        # $ humildad_total += chosen.humildad
-        python:
-            # Ejemplo: almacenar en variables globales accesibles por Ren'Py
-            store.ambicion = getattr(store, 'ambicion', 0) + chosen.ambicion
-            store.humildad = getattr(store, 'humildad', 0) + chosen.humildad
         
         # Seleccionar musica segun nivel y encolar para transición suave
         if nivel_actual == 2:
@@ -133,14 +145,6 @@ label payada_final_bueno_vega:
             opciones_nodos = siguientes
 
         $ nivel_actual += 1
-
-
-
-    # # Al finalizar, podemos enviar los totales a variables globales si es necesario
-    # python:
-    #     # Ejemplo: almacenar en variables globales accesibles por Ren'Py
-    #     store.ambicion = getattr(store, 'ambicion', 0) + ambicion_total
-    #     store.humildad = getattr(store, 'humildad', 0) + humildad_total
     return
 
 label payada_final_bueno_payador:

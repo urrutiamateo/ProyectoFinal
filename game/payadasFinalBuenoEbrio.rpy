@@ -32,38 +32,57 @@ label payada_final_bueno_vega_ebrio:
         from python.payadas.FrasePayada import FrasePayada
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
-        verso1 = FrasePayada("Anduve sí, por lo oscuro,", ambicion=0, humildad=1)
-        verso2 = FrasePayada("y el humo me dio su abrazo,", ambicion=1, humildad=0)
+        verso1 = FrasePayada("Anduve sí, por lo oscuro,")
 
-        verso3 = FrasePayada("mas si el diablo me invitó al truco,", ambicion=0, humildad=1)
-        verso4 = FrasePayada("yo le gané con un cuatro.", ambicion=1, humildad=0)
+        verso2 = FrasePayada("y el humo me dio su abrazo,")
+        verso3 = FrasePayada("y la sombra fue mi lazo,")
 
-        verso5 = FrasePayada("Cavé, sí, pa’ ver si hallaba,", ambicion=1, humildad=0)
-        verso6 = FrasePayada("algún cobre pa’ mi pena,", ambicion=0, humildad=1)
-
-        verso7 = FrasePayada("Pero ahora brindo con vino,", ambicion=1, humildad=0)
-        verso8 = FrasePayada("¡que es mejor trato divino!", ambicion=0, humildad=1)
-
+        verso4 = FrasePayada("mas si el diablo me invitó al truco,")
+        verso5 = FrasePayada("el diablo me hablo despacio,")
         
+        verso6 = FrasePayada("el vino me dio su manto,")
+        verso7 = FrasePayada("la tentación buscó mi rumbo,")
+
+        verso8 = FrasePayada("yo le gané con un cuatro.")
+        verso9 = FrasePayada("le cante y pedió su paso.")
+
+        verso10 = FrasePayada("y al mal no le di mi brazo.")
+        verso11 = FrasePayada("y escapé de su regazo.")
+        
+        verso12 = FrasePayada("y brindé por su fracaso.")
+        verso13 = FrasePayada("y salí buscando el vaso.")
+        
+        verso14 = FrasePayada("pero la esquivé sin fracaso.")
+        verso15 = FrasePayada("y no caí en su abrazo.")
 
         # Enlazar nodos manualmente (sig_izq / sig_der)
         
         verso1.sig_izq = verso2
-        verso2.sig_izq = verso3
-        verso3.sig_izq = verso4
-        verso4.sig_izq = verso5
-        verso5.sig_izq = verso6
-        verso6.sig_izq = verso7
-        verso7.sig_izq = verso8
+        verso1.sig_der = verso3
 
-       
+        verso2.sig_izq = verso4
+        verso2.sig_der = verso5
 
+        verso3.sig_izq = verso6
+        verso3.sig_der = verso7
 
-        # Estado local para la ronda de payada
-        payadaVega = []                # lista de FrasePayada elegidas (objetos)
-        opciones_nodos = [verso1,verso5]
-        ambicion_total = 0
-        humildad_total = 0
+        verso4.sig_izq = verso8
+        verso4.sig_der = verso9
+
+        verso5.sig_izq = verso8
+        verso5.sig_der = verso9
+
+        verso6.sig_izq = verso12
+        verso6.sig_der = verso13
+
+        verso7.sig_izq= verso14
+        verso7.sig_der= verso15
+
+        # Opciones iniciales
+        opciones_nodos = [verso1]
+
+        # Lista de frases elejidas
+        payadaVega = []
 
     # Haremos exactamente 4 selecciones (4 niveles)
     $ rondas = 4
@@ -95,13 +114,7 @@ label payada_final_bueno_vega_ebrio:
 
         # Registrar elección
         $ payadaVega.append(chosen)
-        
-        # $ ambicion_total += chosen.ambicion
-        # $ humildad_total += chosen.humildad
-        python:
-            # Ejemplo: almacenar en variables globales accesibles por Ren'Py
-            store.ambicion = getattr(store, 'ambicion', 0) + chosen.ambicion
-            store.humildad = getattr(store, 'humildad', 0) + chosen.humildad
+
         
         # Seleccionar musica segun nivel y encolar para transición suave
         if nivel_actual == 2:
@@ -137,14 +150,6 @@ label payada_final_bueno_vega_ebrio:
             opciones_nodos = siguientes
 
         $ nivel_actual += 1
-
-
-
-    # # Al finalizar, podemos enviar los totales a variables globales si es necesario
-    # python:
-    #     # Ejemplo: almacenar en variables globales accesibles por Ren'Py
-    #     store.ambicion = getattr(store, 'ambicion', 0) + ambicion_total
-    #     store.humildad = getattr(store, 'humildad', 0) + humildad_total
     return
 
 label payada_final_bueno_payador_ebrio:

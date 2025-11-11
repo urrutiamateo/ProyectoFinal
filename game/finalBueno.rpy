@@ -14,7 +14,7 @@ label final_bueno:
     
     "“No hay canto más fuerte que el que nace del alma libre”."
 
-    "Fue así que comprendió que no hay oro, fama o diablo que pueda comprar su libertad. "
+    "Fue así que comprendió que no hay oro, fama o diablo que pueda comprar su libertad."
 
     "Y es entonces que su canto volvió a nacer más fuerte y más libre."
 

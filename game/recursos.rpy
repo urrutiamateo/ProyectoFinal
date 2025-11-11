@@ -71,6 +71,9 @@ image ombu = "images/fondos/ombu_conSombraSantosDurmiendo.png"
 # Un filtro negro semitransparente
 image fondo_negro = Solid("#00000083")
 image pantalla_negra = Solid ("#000000ff")
+image pantalla_roja = Solid ("#b50000")
+image pantalla_gris = Solid ("#b5b5b5ff")
+
 define slowfade = Fade(2.0, 0.0, 2.0)
 
 define fin_payada_intensa = "audio/finpayadaintensa.mp3"
