@@ -2,7 +2,7 @@ transform scroll_credits:
     ypos 1080  # empieza justo debajo de la pantalla
     linear 50.0 ypos -5500  # termina arriba
 
-label creditos_narrativa:
+label creditos_produccion:
 
     scene black
     play music "feliz.mp3"
@@ -45,11 +45,11 @@ screen creditscreen:
                 size 35
                 xalign 0.5
             # GUION
-            text "Guión y Co-Guión:":
+            text "Guión:":
                 size 40
                 bold True
                 xalign 0.5
-            text "Gisela Coronel\nMariela Gregnoli\nYanina Tiribelli\nMarcos Vallasciani ":     
+            text "Mariela Gregnoli\nYanina Tiribelli\nMateo Urrutia ":     
                 size 35
                 xalign 0.5
             # GAME DESIGNER
@@ -65,7 +65,7 @@ screen creditscreen:
                 size 40
                 bold True
                 xalign 0.5
-            text "Marcos Vallasciani":            
+            text "Marcos Vallasciani\nMaximiliano Ftulis":            
                 size 35
                 xalign 0.5
             text "Producción:":         
@@ -80,14 +80,7 @@ screen creditscreen:
                 size 40
                 bold True
                 xalign 0.5
-            text "Mariela Gregnoli\nMarcos Vallasciani":          
-                size 35
-                xalign 0.5
-            text "Tester:":        
-                size 40
-                bold True
-                xalign 0.5
-            text "Gisela Coronel":          
+            text "Mariela Gregnoli\nMateo Urrutia":          
                 size 35
                 xalign 0.5
 
@@ -96,7 +89,7 @@ screen creditscreen:
                 size 40
                 bold True
                 xalign 0.5
-            text "- Al compañero músico Maximiliano Ftulis\n- A la inspiración y al mate de medianoche\n":   
+            text "- Al compañero Marcos Vallasciani\n- A la inspiración y al mate de medianoche\n":   
                 size 35
                 xalign 0.5
             text "Dedicatoria:":

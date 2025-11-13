@@ -142,4 +142,4 @@ label final_bueno:
         scene pantalla_negra
         with fade
         "FIN"
-        jump creditos
+        jump creditos_produccion
