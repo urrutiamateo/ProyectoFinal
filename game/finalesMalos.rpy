@@ -115,4 +115,5 @@ label ombu_final:
     scene black
     show text "{size=80}FIN{/size}" at truecenter
     pause 3
+    jump creditos_finales
     return

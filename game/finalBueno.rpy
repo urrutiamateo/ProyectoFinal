@@ -131,11 +131,15 @@ label final_bueno:
         "Y dicen que aquella noche,entre vino y carcajadas,Santos Vega volvió a ser cantor libre en alma y en payadas."
         "El pago lo vio distinto, más sereno, más humano. Ya no buscaba laureles, solo la calidez del paisano."
         "Porque el diablo puede ofrecer oro, fama o poder, pero el alma que no se vende, vale más que cualquier talento."
+        stop music
+        stop sound
         jump creditos_finales
 
     #ESCENA FINAL CREDITOS ##############################################################################
     label creditos_finales:
+        stop music
+        stop sound
         scene pantalla_negra
         with fade
         "FIN"
-        "acá van los créditos..."
+        jump creditos
