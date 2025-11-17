@@ -37,7 +37,8 @@ label final_malo_ombu:
     with fade
 
     narrator "Toda promesa tiene un precio. Y en sus sueños, Santos comenzó a pagarlo. Las voces no venían de afuera… sino de adentro. La pampa escuchó su canto, pero también su condena…"
-
+    hide overlay_pesadilla onlayer dreamlayer
+    
     show pantalla_roja:
         alpha 0.0
         linear 1 alpha 1  # sube opacidad a 0.7 en 1.5 segundos
