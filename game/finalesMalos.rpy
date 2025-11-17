@@ -15,7 +15,10 @@ label final_malo_ombu:
     
     pause 1.5
     
-    scene trono_mandinga with irisout
+    scene trono_mandinga 
+    show overlay_pesadilla onlayer dreamlayer
+    with irisout
+    pause 0.1
     
     hide pantalla_gris
 
@@ -29,7 +32,9 @@ label final_malo_ombu:
 
     voz_sueño2 "{color=#F5D627}{i}¿Adónde hay que firmar?{/i}{/color}"
 
-    scene contratoFirmado with fade
+    scene contratoFirmado 
+    
+    with fade
 
     narrator "Toda promesa tiene un precio. Y en sus sueños, Santos comenzó a pagarlo. Las voces no venían de afuera… sino de adentro. La pampa escuchó su canto, pero también su condena…"
 
@@ -44,6 +49,7 @@ label final_malo_ombu:
     hide pantalla_roja
 
     show santos_durmiendo_ombu
+    with fade
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
 
     "Una tarde Santos estaba descansando a la sombra de un Ombú, cuando de repente aparece un desconocido gaucho y se para delante de Santos."
@@ -88,7 +94,7 @@ label ombu_final:
     show santos_payando at left with fade:
         zoom 0.75
 
-    call payada_ombu(musicPlaying=True)
+    call payada_ombu(musicPlaying=True) from _call_payada_ombu
 
     show santos_ojos_cerrados at left:
         zoom 0.5

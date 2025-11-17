@@ -2,10 +2,10 @@ define san = Character("Santos Vega", color = "#d6b707")
 #define p_san = Character("Santos Vega", color = "#d6b707")   #PARA CLASE PERSONAJE
 define viejo = Character("Don Ernesto", color= "#b81c07")
 #define p_viejo = Character("Don Ernesto", color= "#b81c07")     #PARA CLASE PERSONAJE
-define diablo = Character("Mandinga")
+define diablo = Character("Mandinga", color= "#b81c07")
 define payador = Character("Payador del Pueblo", color = "#0abe79")  
 define narrator = Character(None)
-define basilisco = Character("Basilisco")
+define basilisco = Character("Basilisco", color= "#ff7300")
 define juan = Character("Juan Sin Ropa", color= "#b81c07")
 define voz_sueño1 = Character(None)
 define voz_sueño2 = Character(None)
@@ -27,6 +27,7 @@ image santos_con_cania = "images/sprites/Santos_Cania_en_interiorPulperia.png"
 image santos_payando = "images/sprites/Santos_guitarra_en_interiorPulperia.png"
 image santos_en_viaje = "images/sprites/Santos_en_viaje.png"
 image santos_ext_cueva = "images/sprites/Santos_en_extCueva.png"
+image santos_int_cueva = "images/sprites/Santos_en_Trono.png"
 
 # Sprites de salamanca
 image caballo_cueva = "images/sprites/caballo_en_extCueva.png"
@@ -60,6 +61,7 @@ image contrato = "images/fondos/PlanoContrato.jpg"
 image contratoFirmado = "images/fondos/PlanoContratoFirmado.jpg"
 image trono_mandinga = "images/fondos/Trono_Sr_m_v2.jpg"
 image trono_mandinga_2 = "images/fondos/Trono_Sr_m_v3.jpg"
+image overlay_pesadilla = "images/fondos/ensuenio.png"
 
 # sprites ombu
 image juan_hablando = "images/sprites/JuanSinRopa_hablando.png"

@@ -32,6 +32,7 @@ label start:
     #$ san.personalizado = p_san
     #$ viejo.personalizado = p_viejo
 
+    stop music fadeout 0.5
     scene exteriorRanchoAtardecer with irisout
     "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
     play music musica_intro volume 0.5 fadein 0.2
@@ -206,7 +207,7 @@ label payada_madiocre:
     "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento"
     "Es un cantor común, sin fama ni gloria."
 
-    call payada_manager(musicPlaying=True)
+    call payada_manager(musicPlaying=True) from _call_payada_manager
     hide santos_payando
     hide payador_cantando
     #hide fondo_negro
@@ -262,6 +263,8 @@ label exterior_de_la_cueva:
 
     san "“Una piedra roja marca el camino”..."
 
+label palabra_clave:
+
     san "¿Cuál era la palabra?"
 
     menu:
@@ -270,9 +273,11 @@ label exterior_de_la_cueva:
             jump dentro_de_la_cueva
 
         "Sandía":
-            "El destino no quiso que Santos ingrese a la cueva. Quizás aún no esté listo para ponerse a prueba."
-            san "Lo mejor será que vuelva, allá alguna canción me espera para burlar cualquier gaucho."
-            jump payada_madiocre
+            "Vamos, ejercita un poco la memoria, Santos."
+            jump palabra_clave
+
+            #dejamos payada mediocre comentado por si despues queremos hacer esa parte
+            #jump payada_madiocre
 
 label dentro_de_la_cueva:
     # SE ABRE LA CUEVA ##############################################################################
@@ -283,7 +288,7 @@ label dentro_de_la_cueva:
     with dissolve
     
     # se abre la cueva
-    san "“CUEVA”!"
+    san "¡CUEVA!"
     "La entrada a la cueva de la Salamanca se abre con un resplandor rojizo."
     san "Que tanto..."
 
@@ -297,7 +302,7 @@ label dentro_de_la_cueva:
     #ESCENA 4 INTERIOR CUEVA ###########################################################################
     scene intCueva with fade
     pause 0.5
-    show santos_ext_cueva at right
+    show santos_int_cueva at right
 
 
     "La cueva es sin dudas un lugar inhóspito..."
@@ -320,7 +325,7 @@ label dentro_de_la_cueva:
             
         "“Aguantarse quieto ”":
             "Santos no se inmuta ante la prueba, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
-            jump aparece_basilisco
+            jump sale_serpiente
 
     label serpiente_enojada:
         pause 0.5
@@ -368,8 +373,8 @@ label dentro_de_la_cueva:
 
     menu:
         "“Salir corriendo”":
-            "Santos no resiste el terror que le provoca esta monstruosa cueva y sale corriendo..."
-            jump exterior_de_la_cueva
+            "Santos quiere salir sorriendo, no resiste el terror que le provoca esta monstruosa cueva, pero ya no hay vuelta atrás..."
+            jump aparece_basilisco
             
         "“Cerrar los ojos”":
             "Santos cierra los ojos aguantando el temor que le provoca el basilisco, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
@@ -378,11 +383,11 @@ label dentro_de_la_cueva:
     label desaparece_basilisco:
         # DESAPARECE BASILISCO ##############################################################################
         scene pantalla_negra with fade
-        play sound sound_heart volume 0.5 loop
+        play sound sound_heart volume 1 loop
         pause 2.5
         hide basilisco
         scene intCueva 
-        show santos_ext_cueva at right
+        show santos_int_cueva at right
         with fade
         #narrador
         "La valentía es una virtud que pocos poseen. Santos demuestra tenerla y se aventura hacia lo más profundo de la demoníaca cueva."
@@ -391,11 +396,11 @@ label dentro_de_la_cueva:
         san "Ahora tengo que elegir qué camino seguir.."
         menu:
             "Cueva a la izquierda”":
-                jump cueva_equivocada1
+                jump cueva_equivocada2
             "“Cueva del centro":
                 jump trono_mandinga
             "“Cueva a la derecha”":
-                jump aparece_basilisco#cueva_equivocada2
+                jump cueva_equivocada1
 
     label cueva_equivocada1:
         
@@ -411,10 +416,12 @@ label dentro_de_la_cueva:
 
         san "Mejor por ahí no... me da mala espina."
         menu:
-            "Cueva del centro":
-                jump trono_mandinga
-            "Cueva a la derecha":
+            "Cueva a la izquierda”":
                 jump cueva_equivocada2
+            "“Cueva del centro":
+                jump trono_mandinga
+            "“Cueva a la derecha”":
+                jump cueva_equivocada1
 
     label cueva_equivocada2:
         
@@ -431,9 +438,11 @@ label dentro_de_la_cueva:
         san "Que julepe! mejor por ahi no voy."
         menu:
             "Cueva a la izquierda”":
-                jump cueva_equivocada1
+                jump cueva_equivocada2
             "“Cueva del centro":
                 jump trono_mandinga
+            "“Cueva a la derecha”":
+                jump cueva_equivocada1
 
 
     label trono_mandinga:
@@ -443,7 +452,7 @@ label dentro_de_la_cueva:
         show mandinga at center:
             zoom 0.8    
             xalign 0.4   
-        show santos_ext_cueva at right
+        show santos_int_cueva at right
         with fade
         
         diablo "Has demostrado ser digno, Santos Vega."
@@ -464,10 +473,10 @@ label dentro_de_la_cueva:
         show mandinga at center:
             zoom 0.8    
             xalign 0.4   
-        show santos_ext_cueva at right
+        show santos_int_cueva at right
         with dissolve
         #play sound "risas_brujos.wav" volume 0.5
-        "Un coro de brujos aparece entre las sombras. Sus risas retumban en la cueva, mezcladas con ecos y tambores lejanos."
+        "Un coro de brujos aparece entre las sombras. Sus risas retumban en la cueva, mezcladas con ecos y sonidos lejanos."
 
         diablo "Ellos serán testigos del pacto. ¡Elige, Santos Vega!"
         

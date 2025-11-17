@@ -13,7 +13,7 @@
 ##
 ## El _() que rodea la cadena de texto la señala como traducible.
 
-define config.name = _("{size=40}{color=#000000}Santos y el viejo de la pulpería{/size}{/color}")
+define config.name = _("{size=40}{color=#000000}.{/size}{/color}")
 
 
 ## Determina si el título dado más arriba se muestra en el menú principal.
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## Nombre breve del juego para ejecutables y directorios en la distribución.
 ## Debe contener solo carácteres ASCII, sin espacios, comas o puntos y coma.
 
-define build.name = "prototipoNovelaVisual"
+define build.name = "santos_y_el_viejo_de_la_pulperia"
 
 
 ## Sonidos y música ############################################################
@@ -62,7 +62,7 @@ define config.has_voice = True
 ## en el menú principal. Este archivo seguirá sonando en el juego hasta que sea
 ## detenido o se reproduzca otro archivo.
 
-# define config.main_menu_music = "main-menu-theme.ogg"
+define config.main_menu_music = "feliz.mp3"
 
 
 ## Transiciones ################################################################
@@ -212,3 +212,6 @@ init python:
 ## separados por una barra.
 
 # define build.itch_project = "renpytom/test-project"
+
+define config.layers = [ "master", "overlay", "screens", "transient", "top", "dreamlayer" ]
+

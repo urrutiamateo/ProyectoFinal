@@ -10,14 +10,14 @@ label payada_final_bueno_ebrio_manager(musicPlaying=False):
     
     
     
-    call payada_final_bueno_payador_ebrio
+    call payada_final_bueno_payador_ebrio from _call_payada_final_bueno_payador_ebrio
     queue music fin_payada_intensa volume 0.5 fadein 1.0 noloop
 
     
-    call payada_final_bueno_vega_ebrio
+    call payada_final_bueno_vega_ebrio from _call_payada_final_bueno_vega_ebrio
     queue music paya_1_final volume 0.5 fadein 0 noloop 
     
-    call payada_final_bueno_terminar_ebrio
+    call payada_final_bueno_terminar_ebrio from _call_payada_final_bueno_terminar_ebrio
     return
  
 label payada_final_bueno_vega_ebrio:

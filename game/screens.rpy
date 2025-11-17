@@ -311,6 +311,8 @@ screen navigation():
 
         textbutton _("Opciones") action ShowMenu("preferences")
 
+        textbutton _("Créditos") action ShowMenu("creditos")
+
         if _in_replay:
 
             textbutton _("Finaliza repetición") action EndReplay(confirm=True)
@@ -385,6 +387,12 @@ screen main_menu():
             idle "gui/Opciones_idle.png"
             hover "gui/Opciones_hover.png"
             action ShowMenu("preferences")
+        
+        imagebutton:
+            idle "gui/Creditos_idle.png"
+            hover "gui/Creditos_hover.png"
+            action ShowMenu("creditos")
+
 
         imagebutton:
             idle "gui/Acercade_idle.png"
@@ -573,6 +581,46 @@ style return_button:
     xpos gui.navigation_xpos
     yalign 1.0
     yoffset -45
+
+
+
+## Pantalla 'creditos' ########################################################
+##
+## Esta pantalla da información sobre los créditos del juego 
+##
+## Copiando el estilo de acerca de 
+## #############################################################################
+screen creditos():
+    tag menu
+    
+    #add "gui/game_menu.png"  # opcional, o tu fondo personalizado
+    use game_menu(_("Créditos"), scroll="viewport"):
+
+        frame:
+            style_prefix "about"  # reutiliza el estilo del menú actual
+            padding (40,40)
+            xalign 0.5
+            yalign 0.3
+            xsize 1100
+
+            has vbox
+            spacing 20
+
+            #text "Créditos" size 60 xalign 0.5
+
+
+            text "Game Desing: Mariela Gregnoli / Rosalía Juárez"
+            text "Producción: Yanina Tiribelli"
+            text "Guión: Mariela Gregnoli / Yanina Tiribelli / Mateo Urrutia"
+            text "Arte: Rosalía Juárez / Yanina Tiribelli "
+            text "Programación: Mariela Gregnoli / Mateo Urrutia / Yanina Tiribelli"
+            text "Música: Maximiliano Ftulis / Marcos Vallasciani"
+            text " "
+            text "Inspirado en los cuentos “La Salamanca” y “Santos Vega”, "
+            text "del libro Mitos y leyendas de la Argentina de Iris Rivera."
+            text " "
+
+            #textbutton "Volver" action Return() xalign 0.5
 
 
 ## Pantalla 'acerca de' ########################################################

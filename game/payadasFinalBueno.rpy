@@ -7,14 +7,14 @@ label payada_final_bueno_manager(musicPlaying=False):
 
 
     play music paya_1_A volume 0.5 fadein 0.1
-    call payada_final_bueno_vega
+    call payada_final_bueno_vega from _call_payada_final_bueno_vega
     queue music paya_1_final volume 0.5 fadein 0 noloop 
     
     
-    call payada_final_bueno_payador
+    call payada_final_bueno_payador from _call_payada_final_bueno_payador
     queue music fin_payada_intensa volume 0.5 fadein 1.0 noloop
     
-    call payada_final_bueno_terminar
+    call payada_final_bueno_terminar from _call_payada_final_bueno_terminar
     return
  
 label payada_final_bueno_vega:

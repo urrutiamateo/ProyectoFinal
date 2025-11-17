@@ -7,14 +7,14 @@ label payada_manager(musicPlaying=False):
 
 
     play music paya_1_A volume 0.5 fadein 0.1
-    call payada_vega
+    call payada_vega from _call_payada_vega
     queue music paya_1_final volume 0.5 fadein 0 noloop 
     
     
-    call payada_payador
+    call payada_payador from _call_payada_payador
     play music fin_payada_intensa volume 0.5 fadein 1.0 noloop
     
-    call payada_terminar
+    call payada_terminar from _call_payada_terminar
     return
  
 label payada_vega:

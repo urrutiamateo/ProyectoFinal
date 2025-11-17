@@ -6,11 +6,11 @@ label payada_ombu(musicPlaying=False):
     #     play music paya_1_A volume 0.5 fadein 0
 
     play music paya_1_A volume 0.5 fadein 0.1
-    call payada_vega_ombu
+    call payada_vega_ombu from _call_payada_vega_ombu
     queue music paya_1_final volume 0.5 fadein 0 noloop
     hide santos_payando
 
-    call payada_JuanSinRopa
+    call payada_JuanSinRopa from _call_payada_JuanSinRopa
     play music fin_payada_intensa volume 0.5 fadein 1.0 noloop
 
     return

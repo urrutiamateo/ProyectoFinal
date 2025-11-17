@@ -88,7 +88,7 @@ label final_bueno:
     "Santos acepta con orgullo el duelo, sereno pero con voz firme, no vacila..."
     "y canta con su alma en la voz renacida en aquellas tinieblas, ahora más fuerte, más libre y fiel a sus raíces."
 
-    call payada_final_bueno_manager(musicPlaying=True)
+    call payada_final_bueno_manager(musicPlaying=True) from _call_payada_final_bueno_manager
     
     "Santos siente orgullo, rodeado de aplausos y risas. Su canto no busca vencer, sino unir. Ha encontrado su verdadera victoria."
     #hide santos_payando
@@ -114,7 +114,7 @@ label final_bueno:
         "Finalmente es momento de una divertida payada."
         
         
-        call payada_final_bueno_ebrio_manager(musicPlaying=False)
+        call payada_final_bueno_ebrio_manager(musicPlaying=False) from _call_payada_final_bueno_ebrio_manager
        
         "Santos siente orgullo, rodeado de aplausos y risas. Su canto no busca vencer, sino unir. Ha encontrado su verdadera victoria."
         #hide santos_payando
@@ -136,7 +136,7 @@ label final_bueno:
         jump creditos_finales
 
     #ESCENA FINAL CREDITOS ##############################################################################
-    label creditos_finales:
+    #label creditos_finales:
         stop music
         stop sound
         scene pantalla_negra
