@@ -133,7 +133,7 @@ label final_bueno:
         "Porque el diablo puede ofrecer oro, fama o poder, pero el alma que no se vende, vale más que cualquier talento."
         stop music
         stop sound
-        jump creditos_finales
+        jump creditos_produccion
 
     #ESCENA FINAL CREDITOS ##############################################################################
     #label creditos_finales:

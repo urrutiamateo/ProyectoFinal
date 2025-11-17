@@ -45,12 +45,13 @@ label final_malo_ombu:
 
     pause 1
     
-    scene ombu with irisout
-
-    hide pantalla_roja
-
+    
+    scene ombu 
     show santos_durmiendo_ombu
-    with fade
+    hide pantalla_roja
+    with irisout
+    #with fade
+
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
 
     "Una tarde Santos estaba descansando a la sombra de un Ombú, cuando de repente aparece un desconocido gaucho y se para delante de Santos."
