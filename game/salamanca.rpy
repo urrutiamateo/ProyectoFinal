@@ -30,7 +30,7 @@ label palabra_clave:
             jump dentro_de_la_cueva
 
         "Sandía":
-            "Vamos, ejercita un poco la memoria, Santos."
+            "Vamos, ejercitá un poco la memoria, Santos."
             $ subir_humildad()
             # Bloque de código Python para hacer el logging
             $ print(f"DEBUG: La HUMILDAD actual es: {humildad}")
@@ -152,7 +152,7 @@ label dentro_de_la_cueva:
 
     menu:
         "“Salir corriendo”":
-            "Santos quiere salir sorriendo, no resiste el terror que le provoca esta monstruosa cueva, pero ya no hay vuelta atrás..."
+            "Santos quiere salir corriendo, no resiste el terror que le provoca esta monstruosa cueva, pero ya no hay vuelta atrás..."
 
             python:
                 subir_humildad()
@@ -169,15 +169,16 @@ label dentro_de_la_cueva:
 
     label desaparece_basilisco:
         # DESAPARECE BASILISCO ##############################################################################
-        scene pantalla_negra with fade
+        #scene pantalla_negra with fade
         #play sound sound_heart volume 1 loop
         stop music fadeout 1.0
         play sound latidos_scare volume 1
         pause 30
         hide basilisco
         scene intCueva 
-        show santos_int_cueva at right
         with fade
+        show santos_int_cueva at right
+        with dissolve
         #narrador
         stop sound
         #pause 0.5
@@ -248,7 +249,7 @@ label dentro_de_la_cueva:
         hide murcielagos
         with dissolve
         "Un grupo de murciélagos salen volando y asustan a Santos."
-        san "Que julepe! mejor por ahi no voy."
+        san "Que julepe! mejor por ahí no voy."
         menu:
             "“Cueva a la izquierda”":
                 python:

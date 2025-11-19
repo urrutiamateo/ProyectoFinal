@@ -35,7 +35,7 @@ label start:
     stop music fadeout 0.5
     scene exteriorRanchoAtardecer with irisout
     "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
-    play music musica_intro volume 0.5 fadein 0.2
+    play music musica_intro fadein 0.2
     with fade
     "En las llanuras abiertas de la pampa, cuando el sol se esconde detrás del horizonte y el viento lleva consigo ecos de antiguos cantares, vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
     # dissolve
@@ -77,7 +77,7 @@ label start:
 
     scene exteriorPulperia
     with fade
-    play sound murmullo volume 0.3 loop 
+    play sound murmullo volume 0.2 loop 
     "Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
     
     show santos_ext_pulperia at right
@@ -90,16 +90,17 @@ label start:
     "Respira hondo, salta del caballo, se acomoda la guitarra al hombro y decide entrar."
     hide santos_ext_pulperia
     with dissolve
+    stop music fadeout 0.5
     #pause 0.3
     #play sound puerta volume 0.3
     stop sound fadeout 2.0
-    play music misterio volume 0.5 fadeout 2.0 fadein 1.0
+    play music misterio fadeout 2.0 fadein 1.0
     scene interiorPulperia_2
     with fade
     play sound puerta volume 0.3
     #pause 0.3
     #play sound murmullo volume 0.4  
-    queue sound murmullo loop volume 0.2
+    queue sound murmullo volume 0.2 loop
     
     "El aire está espeso por el humo del tabaco. Gauchos beben, charlan y otros juegan a los naipes."
     show santos_entra_izquierda at left:

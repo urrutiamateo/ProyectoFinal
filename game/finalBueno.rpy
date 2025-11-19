@@ -125,8 +125,8 @@ label final_bueno:
         "Santos siente orgullo, rodeado de aplausos y risas. Su canto no busca vencer, sino unir. Ha encontrado su verdadera victoria."
         #hide santos_payando
         #hide payador_cantando
-        scene pantalla_negra 
-        with slowfade
+        #scene pantalla_negra 
+        #with slowfade
         
     
     #ESCENA FINAL RANCHO ##############################################################################
@@ -139,13 +139,19 @@ label final_bueno:
         "Porque el diablo puede ofrecer oro, fama o poder, pero el alma que no se vende, vale más que cualquier talento."
         stop music
         stop sound
+        scene black
+        show text "{size=80}FIN{/size}" at truecenter
+        with slowfade
+        pause 3
         jump creditos_produccion
+    #return
+        #jump creditos_produccion
 
     #ESCENA FINAL CREDITOS ##############################################################################
     #label creditos_finales:
-        stop music
-        stop sound
-        scene pantalla_negra
-        with fade
-        "FIN"
-        jump creditos_produccion
+        #stop music
+        #stop sound
+        #scene pantalla_negra
+        #with fade
+        #"FIN"
+        #jump creditos_produccion
