@@ -51,23 +51,27 @@ label final_bueno:
         linear 5 xpos 120
     with dissolve
 
-    "Los gauchos beben, ríen, otros juegan a los naipes. Una guitarra pasa de mano en mano. De pronto se produce un silencio cuando lo ven entrar a Santos"
+    "Los gauchos beben, ríen, otros juegan a los naipes. Una guitarra pasa de mano en mano. De pronto se produce un silencio cuando lo ven entrar a Santos."
     "Los más curiosos le preguntan cómo fue su sombría travesía hacia la Salamanca. Otros lo acusan, sin saber, de ser socio del diablo."
     show rival_payador at right:
         ypos 1.1
     with dissolve
     payador "¡Miren quién volvió de la Salamanca! Santos, dicen que el Mandinga te ofreció fama y gloria, ¡contanos!"
 
-    san "Así fue, pero aprendí una gran lección, la libertad no tiene precio y preferí venir a cantar entre amigos!"
+    san "Así fue, pero aprendí una gran lección... ¡la libertad no tiene precio y preferí venir a cantar entre amigos!"
 
-    payador "¡Dale, entonces mostranos lo que aprendiste, Santos! A ver si tu voz ahora suena diferente, ¡veamos quién es mejor payador!"
+    payador "¡Dale, entonces mostranos lo que aprendiste, Santos! A ver si tu voz ahora suena diferente. ¡Veamos quién es mejor payador!"
 
     menu:
         "Aceptar el duelo al payador.":
+            python:
+                subir_ambicion()
             "Santos acepta el duelo, ahora demostrará que se puede ser fiel a su propio talento y lograr reconocimiento también..."
             stop sound fadeout 1.5
             jump payada_final_bueno
         "Embriagarse primero y luego aceptar el duelo.":
+            python:
+                subir_humildad()
             "Santos después de un estresante viaje a la mismísima cueva del diablo, decide embriagarse primero..."
             stop sound fadeout 1.5
             jump escena_final_bueno_ebrio

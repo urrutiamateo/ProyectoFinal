@@ -77,9 +77,13 @@ label final_malo_ombu:
     menu:
         "{space=350}{size=40}¿Qué hará Santos?{/size}"
         "Mirar al gaucho y preguntarle su nombre":
+            python:
+                subir_ambicion()
             hide santos_durmiendo_ombu with dissolve
             jump preguntarle
         "Ignorar al gaucho y seguir acostado sobre el ombú":
+            python:
+                subir_humildad()
             jump ignorar
         
 label preguntarle:
@@ -118,7 +122,7 @@ label ombu_final:
     show santos_ojos_cerrados at left:
         zoom 0.5
 
-    san "Estoy vencido."
+    san "Lo acepto, estoy vencido."
 
     hide juan_guitarra with dissolve
 

@@ -122,7 +122,7 @@ label start:
     #show santos_neutro at left
     #with dissolve
     san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
-    san "¿Qué podés saber de Salamancas?"
+    san "¿Qué podés saber de la Salamanca?"
     viejo "Sé de muchas cosas, muchacho."
     viejo "La ubicación de ese lugar donde el {color=#a10000}Señor de la Salamanca{/color} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {color=#a10000}pacto{/color}."
 
@@ -138,8 +138,8 @@ label start:
         zoom 0.5
         linear 8 xpos 820 alpha 1.0
     with dissolve
-    "Santos se acerca a la barra y pide una caña"
-    "Él cree que con tragos el viejo le facilitará la {b}ubicación{/b} secreta"
+    "Santos se acerca a la barra y pide una caña."
+    "Él cree que con tragos el viejo le facilitará la {b}ubicación{/b} secreta."
     hide santos_entero_sombra
     with dissolve
 
@@ -157,7 +157,7 @@ label start:
     with dissolve
 
     san "Tome viejo, se lo manda el pulpero"
-    san "Y...{w=0.5} pa' dónde dice que queda ese lugar?"
+    san "Y...{w=0.5} ¿pa' dónde dice que queda ese lugar?"
     hide viejo_en_la_pulperia
     with dissolve
 
@@ -175,7 +175,7 @@ label start:
     with dissolve
     show santos_entra_izquierda at left:
         xpos 120
-    san "Al diablo viejo charlatán !"
+    san "¡Al diablo, viejo charlatán!"
     "Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
     stop sound fadeout 2.0
     menu:
@@ -204,7 +204,7 @@ label payada_madiocre:
    
     show santos_payando at left
     with dissolve
-    "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento"
+    "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento."
     "Es un cantor común, sin fama ni gloria."
 
     call payada_manager(musicPlaying=True) from _call_payada_manager
@@ -237,7 +237,7 @@ label camino_a_salamanca:
     "En el campo abierto de la llanura, lo único que puede acompañar a Santos esa noche son seres vivientes que no hablan, pero igual dicen cosas."
 
     
-    "Los insectos, su caballo, sus recuerdos, lo que lleva adentro.."
+    "Los insectos, su caballo, sus recuerdos, lo que lleva adentro..."
 
     "Después de horas de viaje, cruzar el río y el valle. Se ve más cerca la montaña, y en su ladera se vislumbran los males."
 

@@ -11,7 +11,7 @@ label exterior_de_la_cueva:
     play sound sonido_caballo volume 0.5
     pause 2
 
-    san "Tranquilo, tranquilo… De nerviosos está lleno el cementerio.."
+    san "Tranquilo, tranquilo… De nerviosos está lleno el cementerio..."
 
     san "Ahora quedate piola acá y cuidame la guitarra."
 
@@ -23,11 +23,16 @@ label palabra_clave:
 
     menu:
         "Cueva":
+            python:
+                subir_ambicion()
             
             jump dentro_de_la_cueva
 
         "Sandía":
             "Vamos, ejercita un poco la memoria, Santos."
+            python:
+                subir_humildad()
+
             jump palabra_clave
 
             #dejamos payada mediocre comentado por si despues queremos hacer esa parte
@@ -47,7 +52,7 @@ label dentro_de_la_cueva:
     "La entrada a la cueva de la Salamanca se abre con un resplandor rojizo."
     san "Que tanto..."
 
-    "Santos ingresa a la cueva, dejando sus dudas atrás, por el momento.."
+    "Santos ingresa a la cueva, dejando sus dudas atrás, por el momento..."
 
     hide santos_ext_cueva 
     #hide caballo_cueva 
@@ -75,11 +80,20 @@ label dentro_de_la_cueva:
     menu:
         "“Sacudirse las alimañas”":
             "Santos se sacude algunos bichos..."
+
+            python:
+                subir_humildad()
+
             jump serpiente_enojada
         
             
         "“Aguantarse quieto ”":
+
             "Santos no se inmuta ante la prueba, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+
+            python:
+                subir_ambicion()
+
             jump sale_serpiente
 
     label serpiente_enojada:
@@ -102,11 +116,19 @@ label dentro_de_la_cueva:
     menu:
         "“Sacudirse las alimañas”":
             "Santos se sacude algunos bichos ..."
+
+            python:
+                subir_humildad()
+
             jump serpiente_enojada
         
             
         "“Aguantarse quieto”":
             "Santos no se inmuta ante la prueba, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+            
+            python:
+                subir_ambicion()
+
             jump sale_serpiente
 
     #aparece basilisco
@@ -129,10 +151,18 @@ label dentro_de_la_cueva:
     menu:
         "“Salir corriendo”":
             "Santos quiere salir sorriendo, no resiste el terror que le provoca esta monstruosa cueva, pero ya no hay vuelta atrás..."
+
+            python:
+                subir_humildad()
+
             jump aparece_basilisco
             
         "“Cerrar los ojos”":
             "Santos cierra los ojos aguantando el temor que le provoca el basilisco, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+
+            python:
+                subir_ambicion()
+
             jump desaparece_basilisco
 
     label desaparece_basilisco:
@@ -158,10 +188,21 @@ label dentro_de_la_cueva:
         san "Ahora tengo que elegir qué camino seguir.."
         menu:
             "“Cueva a la izquierda”":
+                python:
+                    subir_ambicion()
+
                 jump cueva_equivocada2
             "“Cueva del centro”":
+
+                python:
+                    subir_ambicion()
+
                 jump trono_mandinga
             "“Cueva a la derecha”":
+
+                python:
+                    subir_ambicion()
+
                 jump cueva_equivocada1
 
     label cueva_equivocada1:
@@ -179,10 +220,18 @@ label dentro_de_la_cueva:
         san "Mejor por ahí no... me da mala espina."
         menu:
             "“Cueva a la izquierda”":
+                python:
+                    subir_ambicion()
+
                 jump cueva_equivocada2
             "“Cueva del centro”":
+                python:
+                    subir_ambicion()
+
                 jump trono_mandinga
             "“Cueva a la derecha”":
+                python:
+                    subir_ambicion()
                 jump cueva_equivocada1
 
     label cueva_equivocada2:
@@ -200,10 +249,19 @@ label dentro_de_la_cueva:
         san "Que julepe! mejor por ahi no voy."
         menu:
             "“Cueva a la izquierda”":
+                python:
+                    subir_ambicion()
+
                 jump cueva_equivocada2
             "“Cueva del centro”":
+                python:
+                    subir_ambicion()
+
                 jump trono_mandinga
             "“Cueva a la derecha”":
+                python:
+                    subir_ambicion()
+
                 jump cueva_equivocada1
 
 
@@ -249,22 +307,27 @@ label dentro_de_la_cueva:
 
         diablo "Solo una gota de tu sangre, y el don eterno del canto será tuyo. No te arrepentirás"
 
-        san "El don del canto eterno... que todos conozcan mi nombre... que tentador!."
+        san "El don del canto eterno... que todos conozcan mi nombre... ¡que tentador!"
 
         "En la mente de Santos resuena aquella frase de padrino... "
         "No hay canto más fuerte que el que nace del alma libre..."
 
         menu:
             "Firmar el contrato":
+                python:
+                    subir_ambicion()
+
                 play sound carcajadasFinSalamanca volume 1
                 "Santos firma sin dudarlo, lo que le ofrece el mandinga es todo lo que deseó siempre."
                 scene contratoFirmado with dissolve
-               
                 diablo "Desde hoy, tu voz no conocerá silencio... Ni en tus sueños encontrarás silencio..."
                 pause 10
                 jump final_malo_ombu
 
             "Negarse a firmar":
+                python:
+                    subir_humildad()
+
                 "Santos decide no firmar. El recuerdo de su padrino fue más fuerte que su ambición. Los brujos gritan, el fuego se apaga, y el Mandinga le grita con desprecio."
                 scene trono_mandinga_2 with fade
                 show mandinga at center:
@@ -273,7 +336,7 @@ label dentro_de_la_cueva:
                 play sound carcajadasFinSalamanca volume 1
                 pause 10
 
-                diablo "Nadie rechaza a Mandinga sin pagar el precio..."
+                diablo "Nadie rechaza al Mandinga sin pagar el precio..."
                 pause 10
                 "Santos corre lo más rápido que puede, saliendo de la cueva antes de que el Mandinga y sus brujos puedan alcanzarlo."
                 
