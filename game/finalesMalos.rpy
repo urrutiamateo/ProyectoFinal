@@ -9,9 +9,9 @@ label final_malo_ombu:
 
     stop sound fadeout 2.0
 
-    show pantalla_gris:
-        alpha 0.0
-        linear 1.0 alpha 0.7  # sube opacidad a 0.5 en 1 segundo
+    #show pantalla_gris:
+    #    alpha 0.0
+    #    linear 1.0 alpha 0.7  # sube opacidad a 0.5 en 1 segundo
     
     pause 1.5
     
@@ -20,9 +20,10 @@ label final_malo_ombu:
     with irisout
     pause 0.1
     
-    hide pantalla_gris
+    #hide pantalla_gris
 
     play music musica_mandinga volume 0.5 fadeout 2.0 fadein 1.0
+    play sound latidos_completo volume 0.5
 
     voz_sueño1 "{color=#f5272e}{i}¿Qué desea el que me busca?{/i}{/color}"
 
@@ -33,26 +34,39 @@ label final_malo_ombu:
     voz_sueño2 "{color=#F5D627}{i}¿Adónde hay que firmar?{/i}{/color}"
 
     scene contratoFirmado 
-    
     with fade
 
     narrator "Toda promesa tiene un precio. Y en sus sueños, Santos comenzó a pagarlo. Las voces no venían de afuera… sino de adentro. La pampa escuchó su canto, pero también su condena…"
     hide overlay_pesadilla onlayer dreamlayer
+    with dissolve
     
-    show pantalla_roja:
-        alpha 0.0
-        linear 1 alpha 1  # sube opacidad a 0.7 en 1.5 segundos
+    ##CHORREA SANGRE EN LA PANTALLA
+    show sangre at truecenter
+    play sound suspiro_scare volume 0.5
+    #with dissolve
+    pause 0.25
+    #hide sangre
+    #with dissolve
+
+    show pantalla_roja onlayer dreamlayer
+    with fade 
+        #alpha 0.0
+        #linear 1 alpha 1  # sube opacidad a 0.7 en 1.5 segundos
 
     pause 1
+    stop sound fadeout 1
+    
     
     
     scene ombu 
+    hide pantalla_roja onlayer dreamlayer
     show santos_durmiendo_ombu
     hide pantalla_roja
     with irisout
     #with fade
 
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
+    play sound campo_dia volume 0.2 fadein 1.0 loop
 
     "Una tarde Santos estaba descansando a la sombra de un Ombú, cuando de repente aparece un desconocido gaucho y se para delante de Santos."
 
@@ -90,7 +104,10 @@ label ignorar:
     jump ombu_final
 
 label ombu_final:
-
+    scene ombu2 
+    show juan_hablando at right:
+        zoom 1.25
+    with dissolve
     narrator "SANTOS VEGA Se levanta con su guitarra y empieza a cantar."
 
     show santos_payando at left with fade:
@@ -105,7 +122,7 @@ label ombu_final:
 
     hide juan_guitarra with dissolve
 
-    show serpienteA at right
+    show serpiente_ombu at right
     
     play sound serpiente volume 0.3
 
@@ -115,13 +132,14 @@ label ombu_final:
 
     narrator "El gaucho Santos Vega siempre será recordado como el gran cantor que recorrió las pampas y donde fue regalo las mejores payas."
 
-    hide serpienteA with dissolve
+    hide serpiente_ombu with dissolve
     
     narrator "Pero pocos saben que su canto también fue su condena."
     narrator "Dicen que aún se oye su voz en la llanura… no por gloria, sino por pena. Porque quien canta con el diablo nunca calla en paz."
 
     scene black
     show text "{size=80}FIN{/size}" at truecenter
+    with slowfade
     pause 3
     jump creditos_produccion
     return

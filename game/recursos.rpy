@@ -67,8 +67,10 @@ image overlay_pesadilla = "images/fondos/ensuenio.png"
 image juan_hablando = "images/sprites/JuanSinRopa_hablando.png"
 image juan_guitarra = "images/sprites/JuanSinRopa_guitarra.png"
 image santos_durmiendo_ombu = "images/sprites/Santos_dormido_ombu.png"
+image serpiente_ombu = "images/sprites/serpiente_ombu.png"
 
 image ombu = "images/fondos/ombu_conSombraSantosDurmiendo.png"
+image ombu2 = "images/fondos/ombu.png"
 
 # Un filtro negro semitransparente
 image fondo_negro = Solid("#00000083")
@@ -98,6 +100,15 @@ define sound_heart = "audio/Sonidos/heartbeats-imperfections.wav"
 define serpiente = "audio/Sonidos/serpiente.wav"
 define risa_devil= "audio/Sonidos/flail-demon-laugh.wav"
 define aplausos = "audio/Sonidos/aplausos__shagger.wav"
+define sonido_caballo = "audio/sonidos_nuevos/relincho.wav"
+define sonido_rocaCueva = "audio/sonidos_nuevos/rocaCueva2.wav"
+define latidos_scare = "audio/sonidos_nuevos/latidos_scare3.wav"
+define latidos_completo = "audio/sonidos_nuevos/latidos_scare.mp3"
+define carcajadasFinSalamanca = "audio/sonidos_nuevos/carcajadasDiabolicasFinSalamanca.wav"
+define suspiro_scare = "audio/sonidos_nuevos/suspiro_ghost-sigh3.wav"
+define campo_noche = "audio/sonidos_nuevos/campoNoche.wav"
+define campo_dia = "audio/sonidos_nuevos/amanecerCampo.wav"
+
 
 #animacion murcielagos
 image murcielagos = Animation(
@@ -154,5 +165,40 @@ image murcielagos = Animation(
     "images/frames/murcielagos_0051.png", 0.033,
     "images/frames/murcielagos_0052.png", 0.033,
     "images/frames/murcielagos_0053.png", 0.033,
+    repeat=False
+)
+
+image sangre = Animation(
+    "images/sangre/sangre0001.png", 0.033,
+    "images/sangre/sangre0002.png", 0.033,
+    "images/sangre/sangre0003.png", 0.033,
+    "images/sangre/sangre0004.png", 0.033,
+    "images/sangre/sangre0005.png", 0.033,
+    "images/sangre/sangre0006.png", 0.033,
+    "images/sangre/sangre0007.png", 0.033,
+    "images/sangre/sangre0008.png", 0.033,
+    "images/sangre/sangre0009.png", 0.033,
+    "images/sangre/sangre0010.png", 0.033,
+    "images/sangre/sangre0011.png", 0.033,
+    "images/sangre/sangre0012.png", 0.033,
+    "images/sangre/sangre0013.png", 0.033,
+    "images/sangre/sangre0014.png", 0.033,
+    "images/sangre/sangre0015.png", 0.033,
+    "images/sangre/sangre0016.png", 0.033,
+    "images/sangre/sangre0017.png", 0.033,
+    "images/sangre/sangre0018.png", 0.033,
+    "images/sangre/sangre0019.png", 0.033,
+    "images/sangre/sangre0020.png", 0.033,
+    "images/sangre/sangre0021.png", 0.033,
+    "images/sangre/sangre0022.png", 0.033,
+    "images/sangre/sangre0023.png", 0.033,
+    "images/sangre/sangre0024.png", 0.033,
+    "images/sangre/sangre0024.png", 0.033,
+    "images/sangre/sangre0024.png", 0.033,
+    "images/sangre/sangre0024.png", 0.033,
+    "images/sangre/sangre0024.png", 0.033,
+    "images/sangre/sangre0024.png", 0.033,
+    "images/sangre/sangre0024.png", 0.033,
+    "images/sangre/sangre0024.png", 0.033,
     repeat=False
 )

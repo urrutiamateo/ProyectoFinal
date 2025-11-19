@@ -2,7 +2,7 @@ label final_bueno:
     #ESCENA 1 VIAJE DE REGRESO ##############################################################################
     pause 0.5
     scene viaje with fade
-    play sound brisa volume 0.3 fadein 1.0 loop
+    play sound campo_noche volume 0.5 fadein 1.0 loop
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
     show santos_en_viaje at center
 
@@ -94,11 +94,13 @@ label final_bueno:
     #hide santos_payando
     #hide payador_cantando
     #hide fondo_negro
-    with dissolve
+    #with dissolve
+    pause 2
     scene pantalla_negra
-    with fade
+    with slowfade
+    
 
-    stop music
+    #stop music
     jump escena_final_rancho
 
     #ESCENA 3B PAYADA GRACIOSA FINAL BUENO ##############################################################################
