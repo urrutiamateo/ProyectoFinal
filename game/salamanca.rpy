@@ -23,15 +23,17 @@ label palabra_clave:
 
     menu:
         "Cueva":
-            python:
-                subir_ambicion()
+            $ subir_ambicion()
+            # Bloque de código Python para hacer el logging
+            $ print(f"DEBUG: La AMBICION actual es: {ambicion}")
             
             jump dentro_de_la_cueva
 
         "Sandía":
             "Vamos, ejercita un poco la memoria, Santos."
-            python:
-                subir_humildad()
+            $ subir_humildad()
+            # Bloque de código Python para hacer el logging
+            $ print(f"DEBUG: La HUMILDAD actual es: {humildad}")
 
             jump palabra_clave
 
