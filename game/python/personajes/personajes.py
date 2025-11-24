@@ -6,12 +6,13 @@ except ImportError:
 
 class Personaje:
     
-    def __init__(self, nombre: str, formato_texto: str, ambicion:int, humildad:int, personalizado=None):
+    def __init__(self, nombre: str, personalizado=None):
         self._nombre = nombre
-        self._formato_texto = formato_texto
-        self._ambicion = ambicion
-        self._humildad = humildad
         self._personalizado = personalizado   #instancia de Character
+        #self._formato_texto = formato_texto
+        #self._ambicion = ambicion
+        #self._humildad = humildad
+        
         
 #encapsulamiento  
 #decorador de Python permite definir getters y setters de una manera más elegante, sin necesidad de llamar funciones con paréntesis.
@@ -43,14 +44,17 @@ class SantosVega(Personaje):
     
     #Representa al protagonista Santos Vega.
     #hereda de Personaje e implementa su propio estilo de diálogo.
-    def __init__(self, personalizado=None):
+    def __init__(self, personalizado=None, ambicion=0, humildad=0):
         super().__init__("Santos Vega", personalizado)
+        self._ambicion = ambicion   #polimorfismo en la subclase SantosVega
+        self.humildad = humildad
 
-    def hablar(self, texto: str):
+
+    def hablar(self, texto: str, interact=True):
         if renpy and self._personalizado:
             self._personalizado(f"{texto}")
         elif renpy:
-            renpy.exports.say(self.nombre, f"{texto}")
+            renpy.exports.say(self.nombre, f"{texto}",  interact=interact)  #polimorfismo en el método hablar de ésta subclase
         else:
             print(f"[{self.nombre}] {texto}")
 

@@ -63,7 +63,7 @@ label payada_vega:
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
         if payada_texto == "":
             $ payada_texto = "..."
-        $ san("[payada_texto]", interact=False)
+        $ san.hablar("[payada_texto]", interact=False)
 
         # Construir menú con las opciones actuales (pueden ser 1 o 2)
         python:
@@ -102,7 +102,7 @@ label payada_vega:
 
         # Mostrar la payada actualizada
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
-        san "[payada_texto]"
+        $ san.hablar("[payada_texto]", interact=False)
         # Reinicio la lista de texto para que se pueda leer
         if nivel_actual == 4:
             $ payadaVega = []

@@ -21,16 +21,16 @@ init python:
     def subir_humildad(cant:int=1):
         store.humildad = getattr(store, 'humildad', 0) + cant
     #CLASE PERSONAJE
-    #from python.personajes.personajes import SantosVega, ViejoPulperia
-    #san = SantosVega(p_san)
-    #viejo = ViejoPulperia(p_viejo)
+    from python.personajes.personajes import SantosVega, ViejoPulperia
+    san = SantosVega(p_san)
+    viejo = ViejoPulperia(p_viejo)
 
 
 # El juego comienza aquí.
 label start:
     #CLASE PERSONAJE
-    #$ san.personalizado = p_san
-    #$ viejo.personalizado = p_viejo
+    $ san.personalizado = p_san
+    $ viejo.personalizado = p_viejo
 
     stop music fadeout 0.5
     scene exteriorRanchoAtardecer with irisout
@@ -48,12 +48,12 @@ label start:
     show santos_espaldas at left
         #zoom 0.5
     with dissolve
-    san "{cps=20}{i}Padre... {w=0.5}siempre dijiste que el alma libre es la que más canta.{/i}"
-    san "{cps=20}{i}Pero a veces siento que mi voz no basta.\nQue hay algo allá lejos... {w=0.5}algo que me falta alcanzar para ser el más grande.{/i}"
+    #san "{cps=20}{i}Padre... {w=0.5}siempre dijiste que el alma libre es la que más canta.{/i}"
+    #san "{cps=20}{i}Pero a veces siento que mi voz no basta.\nQue hay algo allá lejos... {w=0.5}algo que me falta alcanzar para ser el más grande.{/i}"
     
     #CLASE PERSONAJE
-    #$ san.hablar("{cps=20}{i}Padre... {w=0.5}siempre dijiste que el alma libre es la que más canta.{/i}")
-    #$ san.hablar("{cps=20}{i}Pero a veces siento que mi voz no basta.\nQue hay algo allá lejos... {w=0.5}algo que me falta alcanzar para ser el más grande.{/i}")
+    $ san.hablar("{cps=20}{i}Padre... {w=0.5}siempre dijiste que el alma libre es la que más canta.{/i}")
+    $ san.hablar("{cps=20}{i}Pero a veces siento que mi voz no basta.\nQue hay algo allá lejos... {w=0.5}algo que me falta alcanzar para ser el más grande.{/i}")
 
     hide santos_espaldas
     with dissolve
@@ -117,15 +117,16 @@ label start:
 
     show viejo_en_la_pulperia
     with dissolve
-    viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
-    viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
+    #viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
+    $ viejo.hablar("Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz.")
 
     #show santos_neutro at left
     #with dissolve
-    san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
-    san "¿Qué podés saber de la Salamanca?"
-    viejo "Sé de muchas cosas, muchacho."
-    viejo "La ubicación de ese lugar donde el {color=#a10000}Señor de la Salamanca{/color} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {color=#a10000}pacto{/color}."
+    #san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
+    $ san.hablar("Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?")
+    $ san.hablar("¿Qué podés saber de la Salamanca?")
+    $ viejo.hablar("Sé de muchas cosas, muchacho.")
+    $ viejo.hablar("La ubicación de ese lugar donde el {color=#a10000}Señor de la Salamanca{/color} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {color=#a10000}pacto{/color}.")
 
     hide viejo_en_la_pulperia 
     with dissolve
@@ -157,18 +158,18 @@ label start:
         linear 4 xpos 130
     with dissolve
 
-    san "Tome viejo, se lo manda el pulpero"
-    san "Y...{w=0.5} ¿pa' dónde dice que queda ese lugar?"
+    $ san.hablar("Tome viejo, se lo manda el pulpero")
+    $ san.hablar("Y...{w=0.5} ¿pa' dónde dice que queda ese lugar?")
     hide viejo_en_la_pulperia
     with dissolve
 
     show viejo_hablando
     with dissolve
 
-    viejo    "{cps=20}{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.6}\ny la luna en el cielo no se ve brillar,{w=0.6}\nquien allí vaya, secretos va a hallar.{w=0.6}{/i}"
-    viejo "Tienes la {b}palabra secreta{/b}, muchacho."
-    viejo "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado"
-    viejo "Pon tu guitarra al hombro, que no hay gloria para el que no la busca."
+    $ viejo.hablar("{cps=20}{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.6}\ny la luna en el cielo no se ve brillar,{w=0.6}\nquien allí vaya, secretos va a hallar.{w=0.6}{/i}")
+    $ viejo.hablar("Tienes la {b}palabra secreta{/b}, muchacho.")
+    $ viejo.hablar("Pero hay que pensarlo con cuidado, se deja mucho por lo ganado")
+    $ viejo.hablar("Pon tu guitarra al hombro, que no hay gloria para el que no la busca.")
 
     hide santos_con_cania
     with dissolve
@@ -176,7 +177,7 @@ label start:
     with dissolve
     show santos_entra_izquierda at left:
         xpos 120
-    san "¡Al diablo, viejo charlatán!"
+    $ san.hablar("¡Al diablo, viejo charlatán!")
     "Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
     stop sound fadeout 2.0
     menu:
