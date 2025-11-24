@@ -6,8 +6,11 @@ except ImportError:
 
 class Personaje:
     
-    def __init__(self, nombre: str, personalizado=None ):
+    def __init__(self, nombre: str, formato_texto: str, ambicion:int, humildad:int, personalizado=None):
         self._nombre = nombre
+        self._formato_texto = formato_texto
+        self._ambicion = ambicion
+        self._humildad = humildad
         self._personalizado = personalizado   #instancia de Character
         
 #encapsulamiento  
@@ -16,6 +19,7 @@ class Personaje:
     def nombre(self):
         return self._nombre
     
+
     @property
     def personalizado(self):
         return self._personalizado
