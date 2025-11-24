@@ -1,20 +1,19 @@
-"""Nodo que representa una frase dentro del árbol de payadas.
+"""Nodo que representa una frase de payadas para usar en Payadas.
 
 Esta clase sirve como nodo manual: tiene referencias a la opción izquierda y
-derecha (`sig_izq`, `sig_der`) y un nivel opcional para facilitar búsquedas
-por nivel desde `ArbolPayadas`.
+derecha (`sig_izq`, `sig_der`).
 """
 
-from typing import Optional
-
+# from typing import Optional
+from .FrasePayada import FrasePayada
 
 class FrasePayada:
     frase: str
     humildad: int
     ambicion: int
     nivel: int
-    sig_izq: Optional['FrasePayada']
-    sig_der: Optional['FrasePayada']
+    sig_izq: FrasePayada = []
+    sig_der: FrasePayada = []
 
     def __init__(self, frase: str, ambicion: int = 0, humildad: int = 0):
         self.frase = frase
