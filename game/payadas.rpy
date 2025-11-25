@@ -6,9 +6,9 @@ label payada_manager(musicPlaying=False):
     #     play music paya_1_A volume 0.5 fadein 0
 
 
-    play music paya_1_A volume 0.5 fadein 0.1
+    play music paya_1_A_v2 volume 0.5 fadein 0.1
     call payada_vega from _call_payada_vega
-    queue music paya_1_final volume 0.5 fadein 0 noloop 
+    play music paya_1_final volume 0.5 fadein 0 noloop 
     
     
     call payada_payador from _call_payada_payador
@@ -21,7 +21,7 @@ label payada_vega:
     # --- Construcción del árbol de payadas usando objetos FrasePayada ---
     python:
         # Importar solo la clase FrasePayada y construir nodos manualmente (sin ArbolPayadas)
-        from python.payadas.FrasePayada import FrasePayada
+        from python.Clases.FrasePayada import FrasePayada
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
         estimado = FrasePayada("Cómo le va mi estimado?", ambicion=0, humildad=1)
@@ -63,7 +63,7 @@ label payada_vega:
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
         if payada_texto == "":
             $ payada_texto = "..."
-        $ san.hablar("[payada_texto]", interact=False)
+        $ san.hablar("[payada_texto]", interacti=False)
 
         # Construir menú con las opciones actuales (pueden ser 1 o 2)
         python:
@@ -93,16 +93,16 @@ label payada_vega:
         
         # Seleccionar musica segun nivel y encolar para transición suave
         if nivel_actual == 2:
-            queue music paya_1_B volume 0.5 
+            queue music paya_1_B_v2 volume 0.5 
         if nivel_actual == 3:
-            queue music paya_1_A volume 0.5 
+            queue music paya_1_A_v2 volume 0.5 
         if nivel_actual == 4:
-            queue music paya_1_B volume 0.5 
+            queue music paya_1_B_v2 volume 0.5 
             
 
         # Mostrar la payada actualizada
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
-        $ san.hablar("[payada_texto]", interact=False)
+        $ san.hablar("[payada_texto]", interacti=False)
         # Reinicio la lista de texto para que se pueda leer
         if nivel_actual == 4:
             $ payadaVega = []

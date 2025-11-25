@@ -21,13 +21,16 @@ init python:
     def subir_humildad(cant:int=1):
         store.humildad = getattr(store, 'humildad', 0) + cant
     #CLASE PERSONAJE
-    from python.personajes.personajes import SantosVega, ViejoPulperia
+    from python.Clases.personajes import SantosVega, ViejoPulperia
     san = SantosVega(p_san)
     viejo = ViejoPulperia(p_viejo)
 
 
 # El juego comienza aquí.
 label start:
+
+
+
     #CLASE PERSONAJE
     $ san.personalizado = p_san
     $ viejo.personalizado = p_viejo

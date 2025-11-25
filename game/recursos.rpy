@@ -1,4 +1,4 @@
-define san = Character("Santos Vega", color = "#d6b707")
+# define san = Character("Santos Vega", color = "#d6b707")
 define p_san = Character("Santos Vega", color = "#d6b707")   #PARA CLASE PERSONAJE
 define viejo = Character("Don Ernesto", color= "#b81c07")
 define p_viejo = Character("Don Ernesto", color= "#b81c07")     #PARA CLASE PERSONAJE
@@ -80,6 +80,7 @@ image pantalla_gris = Solid ("#b5b5b5ff")
 
 define slowfade = Fade(2.0, 0.0, 2.0)
 
+# MUSICA
 define fin_payada_intensa = "audio/finpayadaintensa.mp3"
 define payada_intensa = "audio/payadaintensa.mp3"
 define payada_feliz = "audio/payadaalegre.mp3"
@@ -89,9 +90,13 @@ define musica_mandinga = "audio/Nuevos/Cueva_Mandinga.mp3"
 
 define paya_1_A = "audio/Nuevos/Primer_Paya/Paya_Frase_1.ogg"
 define paya_1_B = "audio/Nuevos/Primer_Paya/Paya_Frase_2.ogg"
+define paya_1_A_v2 = "audio/Nuevos/Primer_Paya/Paya_Frase_1_v2.ogg"
+define paya_1_B_v2 = "audio/Nuevos/Primer_Paya/Paya_Frase_2_v2.ogg"
 define paya_1_final = "audio/Nuevos/Primer_Paya/Paya_FinalCorte.ogg"
 define paya_1_enganche = "audio/Nuevos/Primer_Paya/Paya_FinalConEnganche.mp3"
 define paya_1_AyB = "audio/Nuevos/Primer_Paya/Paya_completa_loop.mp3"
+
+# SFX
 define brisa = "audio/Sonidos/brisa.mp3"
 define puerta = "audio/Sonidos/puerta.mp3"
 define sound_bat = "audio/Sonidos/murcielagos_flapping-sound.wav"
