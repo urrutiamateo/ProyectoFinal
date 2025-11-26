@@ -1,4 +1,4 @@
-# Santos Vega y el Viejo de la Pulpería
+# Santos y el Viejo de la Pulpería
 
 ![Banner del juego](https://drive.google.com/uc?export=view&id=1CV-EZsIZmNGAwTLG4SN4ZitU_FRYZjqT)
 
