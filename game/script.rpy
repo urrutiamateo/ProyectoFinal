@@ -33,17 +33,18 @@ label start:
     #$ viejo.personalizado = p_viejo
 
     stop music fadeout 0.5
+    play music musica_intro fadein 0.2
     scene exteriorRanchoAtardecer with irisout
     "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
     play music musica_intro fadein 0.2
     with fade
-    "En las llanuras abiertas de la pampa, cuando el sol se esconde detrás del horizonte y el viento lleva consigo ecos de antiguos cantares, vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
+    "En las llanuras abiertas de la pampa vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
     # dissolve
-    "Dicen que su voz puede calmar al caballo más bravo y que canta con la fuerza del que sueña, aunque le falta camino por andar antes de ganarse {b}un nombre y el brillo en su tierra{/b}."
+    "Dicen que su voz puede calmar al caballo más bravo y que canta con la fuerza del que sueña, aunque le falta camino por andar antes de {b}ganarse un nombre y el brillo en su tierra{/b}."
     #with dissolve
     scene exteriorRanchoNoche
     with fade
-    "Una noche, mientras las sombras cubren el campo, Santos siente el peso de su propio deseo: alcanzar la gloria, ser recordado, cantar como nadie lo ha hecho antes."
+    "Santos siente el peso de su propio deseo: alcanzar la gloria y cantar como nadie lo ha hecho antes."
 
     show santos_espaldas at left
         #zoom 0.5
@@ -59,58 +60,64 @@ label start:
     with dissolve
     play sound brisa
 
-    "El viento sopla y parece responderle con un susurro. En su mente, se enciende el recuerdo de una frase que su padrino le había dicho muchos años atrás."
-    "{space=60}{cps=20}{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre{/i}{/b}{/color}" #buscar recurso
+    "El viento parece responderle con un susurro. En su mente, se enciende el recuerdo de una frase que le había dicho su padre."
     show santos_ojos_cerrados at left:
         zoom 0.5
     with dissolve
-    "Santos cierra los ojos, sin saber que esa {b}frase{/b} será la última luz que lo guíe antes de que la oscuridad lo llame por su nombre."
+    "{space=60}{cps=20}{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre{/i}{/b}{/color}" #buscar recurso
+    
+    #"Santos cierra los ojos, sin saber que esa {b}frase{/b} será la última luz que lo guíe antes de que la oscuridad lo llame por su nombre."
 
 #  Cambiaria la musica porque termina la introduccion y empieza la accion
     # play music misterio volume 0.5 fadeout 2.0 fadein 0.5
 
     hide santos_ojos_cerrados
     with dissolve
-    "Esa misma noche, atraído por el sonar de guitarras y voces lejanas, decide acercarse a la pulpería del pueblo..."
+    #"Esa misma noche, atraído por el sonar de guitarras y voces lejanas, decide acercarse a la pulpería del pueblo..."
+    
     stop sound fadeout 2.0 
     
 
     scene exteriorPulperia
     with fade
     play sound murmullo volume 0.2 loop 
-    "Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
-    
+    #"Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
+    "Esa misma noche el murmullo de la pulpería lo invita a acercarse."
     show santos_ext_pulperia at right
 
     with dissolve
-    "Santos se detiene unos segundos, como si presintiera que al cruzar esa puerta {b}su vida ya no sería la misma{/b}."   
+    #"Santos se detiene unos segundos, como si presintiera que al cruzar esa puerta {b}su vida ya no sería la misma{/b}."   
     #show santos_entero at left:
         #zoom 0.5
     #with dissolve
-    "Respira hondo, salta del caballo, se acomoda la guitarra al hombro y decide entrar."
+    #"Santos salta del caballo, se acomoda la guitarra al hombro y decide entrar."
+    san "Si quiero que mi voz llegue a toda la pampa, tengo que empezar por algún lado..."
     hide santos_ext_pulperia
     with dissolve
     stop music fadeout 0.5
     #pause 0.3
     #play sound puerta volume 0.3
-    stop sound fadeout 2.0
+    stop sound fadeout 1.0
     play music misterio fadeout 2.0 fadein 1.0
     scene interiorPulperia_2
     with fade
     play sound puerta volume 0.3
-    #pause 0.3
-    #play sound murmullo volume 0.4  
     queue sound murmullo volume 0.2 loop
-    
-    "El aire está espeso por el humo del tabaco. Gauchos beben, charlan y otros juegan a los naipes."
+    #pause 0.3 
     show santos_entra_izquierda at left:
         linear 5 xpos 120
     with dissolve
+    #pause 0.3
+    #play sound murmullo volume 0.4  
+    
+    
+    san "Pucha que está espeso. Especial para una ronda de caña y cartas.\nA ver si esta noche pinta la buena racha."
+    
     "Un {b}viejo{/b} de mirada extraña lo observa desde el fondo de una mesa mientras habla de la Salamanca, {b}{color=#a10000}la cueva donde dicen que el diablo concede dones{/color}{/b}."
     #show santos_neutro_iz at left:
         #xzoom -1
     #with dissolve
-    "Santos lo escucha, {b}tentado por la ambición de ser el mejor cantor de la pampa{/b}."
+    #"Santos lo escucha, {b}tentado por la ambición de ser el mejor cantor de la pampa{/b}."
 
     #show viejo_neutro at right:
         #zoom 0.9
@@ -118,14 +125,14 @@ label start:
     show viejo_en_la_pulperia
     with dissolve
     viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
-    viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
+    #viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
 
     #show santos_neutro at left
     #with dissolve
     san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
     san "¿Qué podés saber de la Salamanca?"
     viejo "Sé de muchas cosas, muchacho."
-    viejo "La ubicación de ese lugar donde el {color=#a10000}Señor de la Salamanca{/color} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {color=#a10000}pacto{/color}."
+    viejo "La ubicación de ese lugar donde el {b}{color=#a10000}Señor de la Salamanca{/color}{/b} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {b}{color=#a10000}pacto{/color}{/b}."
 
     hide viejo_en_la_pulperia 
     with dissolve
@@ -135,12 +142,18 @@ label start:
     scene interiorPulperia_1
     with fade
     show santos_entero_sombra at center:
-        alpha 0.6
+        #alpha 0.6
         zoom 0.5
-        linear 8 xpos 820 alpha 1.0
+        linear 6 xpos 820 #alpha 1.0
     with dissolve
-    "Santos se acerca a la barra y pide una caña."
-    "Él cree que con tragos el viejo le facilitará la {b}ubicación{/b} secreta."
+    san "Andá a saber cuánto hace que ese viejo anda dando vueltas por acá."
+    san "Si le llevo un trago capaz que afloja la lengua.\nEstos viejos saben más de lo que dicen. Y cuando hablan, nunca es de gusto."
+    
+
+    
+
+    #"Santos se acerca a la barra y pide una caña."
+#"Él cree que con tragos el viejo le facilitará la {b}ubicación{/b} secreta."
     hide santos_entero_sombra
     with dissolve
 
@@ -158,14 +171,14 @@ label start:
     with dissolve
 
     san "Tome viejo, se lo manda el pulpero"
-    san "Y...{w=0.5} ¿pa' dónde dice que queda ese lugar?"
+    san "Y...{w=0.5} ¿Pa' dónde dice que queda ese lugar?"
     hide viejo_en_la_pulperia
     with dissolve
 
     show viejo_hablando
     with dissolve
 
-    viejo    "{cps=20}{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.6}\ny la luna en el cielo no se ve brillar,{w=0.6}\nquien allí vaya, secretos va a hallar.{w=0.6}{/i}"
+    viejo "{cps=20}{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.6}\ny la luna en el cielo no se ve brillar,{w=0.6}\nquien allí vaya, secretos va a hallar.{w=0.6}{/i}"
     viejo "Tienes la {b}palabra secreta{/b}, muchacho."
     viejo "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado"
     viejo "Pon tu guitarra al hombro, que no hay gloria para el que no la busca."
@@ -177,12 +190,12 @@ label start:
     show santos_entra_izquierda at left:
         xpos 120
     san "¡Al diablo, viejo charlatán!"
-    "Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
+    #"Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
     stop sound fadeout 2.0
     menu:
         "{space=350}{size=40}¿Qué hace Santos?{/size}"
 
-        "Ignorar la historia del viejo y quedarse en la pulpería tomando caña":
+        "Ignorar la historia del viejo y quedarse en la pulpería":
             python:
                 subir_humildad()
             jump payada_madiocre
@@ -206,7 +219,7 @@ label payada_madiocre:
     show santos_payando at left
     with dissolve
     "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento."
-    "Es un cantor común, sin fama ni gloria."
+    #"Es un cantor común, sin fama ni gloria."
 
     call payada_manager(musicPlaying=True) from _call_payada_manager
     hide santos_payando
