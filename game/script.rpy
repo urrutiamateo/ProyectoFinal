@@ -33,10 +33,10 @@ label start:
     #$ viejo.personalizado = p_viejo
 
     stop music fadeout 0.5
-    play music musica_intro fadein 0.2
+    play music musica_intro fadein 0.2 volume 0.7
     scene exteriorRanchoAtardecer with irisout
     "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
-    play music musica_intro fadein 0.2
+    # play music musica_intro fadein 0.2
     with fade
     "En las llanuras abiertas de la pampa vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
     # dissolve
@@ -58,7 +58,7 @@ label start:
 
     hide santos_espaldas
     with dissolve
-    play sound brisa
+    play sound brisa fadein 1
 
     "El viento parece responderle con un susurro. En su mente, se enciende el recuerdo de una frase que le había dicho su padre."
     show santos_ojos_cerrados at left:
@@ -80,7 +80,7 @@ label start:
 
     scene exteriorPulperia
     with fade
-    play sound murmullo volume 0.2 loop 
+    play sound murmullo volume 0.2 loop fadein 2
     #"Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
     "Esa misma noche el murmullo de la pulpería lo invita a acercarse."
     show santos_ext_pulperia at right
@@ -94,11 +94,11 @@ label start:
     san "Si quiero que mi voz llegue a toda la pampa, tengo que empezar por algún lado..."
     hide santos_ext_pulperia
     with dissolve
-    stop music fadeout 0.5
+    stop music fadeout 1.0
     #pause 0.3
     #play sound puerta volume 0.3
     stop sound fadeout 1.0
-    play music misterio fadeout 2.0 fadein 1.0
+    play music misterio fadeout 2.0 fadein 2.0
     scene interiorPulperia_2
     with fade
     play sound puerta volume 0.3
@@ -180,7 +180,7 @@ label start:
 
     viejo "{cps=20}{i}La Salamanca está allá,{w=0.5}\ndonde la tierra ruge sin cesar,{w=0.6}\ny la luna en el cielo no se ve brillar,{w=0.6}\nquien allí vaya, secretos va a hallar.{w=0.6}{/i}"
     viejo "Tienes la {b}palabra secreta{/b}, muchacho."
-    viejo "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado"
+    viejo "Pero hay que pensarlo con cuidado, se deja mucho por lo ganado."
     viejo "Pon tu guitarra al hombro, que no hay gloria para el que no la busca."
 
     hide santos_con_cania
@@ -191,18 +191,19 @@ label start:
         xpos 120
     san "¡Al diablo, viejo charlatán!"
     #"Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
-    stop sound fadeout 2.0
+    # stop sound fadeout 5.0
     menu:
         "{space=350}{size=40}¿Qué hace Santos?{/size}"
 
         "Ignorar la historia del viejo y quedarse en la pulpería":
+            
             python:
                 subir_humildad()
             jump payada_madiocre
             
 
         "Partir hacia la Salamanca":
-            stop music
+            stop music fadeout 2.0
             python:
                 subir_ambicion()
             jump camino_a_salamanca
@@ -216,9 +217,23 @@ label payada_madiocre:
     with fade
     # play music "pruebaSantosVega.mp3" volume 0.2
    
-    show santos_payando at left
+    show santos_entra_izquierda at left
     with dissolve
-    "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento."
+
+    san "Gaucho, ¿se presta para una guitarreada?"
+
+    show rival_payador at right:
+        zoom 1.2
+        align (0.6, -0.5)
+    with dissolve
+    payador "Para eso venimos, compadre."
+
+    stop music fadeout 2.0
+    hide santos_entra_izquierda
+    hide rival_payador 
+    with fade
+
+    # "Santos decide ignorar la leyenda. Se queda en la pulpería, improvisando payadas con los temas que pintan en el momento."
     #"Es un cantor común, sin fama ni gloria."
 
     call payada_manager(musicPlaying=True) from _call_payada_manager
@@ -226,10 +241,11 @@ label payada_madiocre:
     hide payador_cantando
     #hide fondo_negro
     with fade
-    "Luego de notar que sus payadas no superan la media del talento en su comunidad,
-    Santos decide hacerle caso al viejo y {b}partir hacia la Salamanca{/b}"
+    # "Luego de notar que sus payadas no superan la media del talento en su comunidad,
+    # Santos decide hacerle caso al viejo y {b}partir hacia la Salamanca{/b}"
 
-    stop music
+    stop music fadeout 2.0
+
     jump camino_a_salamanca
     #menu:
         #"Resolver acertijo para volver al camino principal":
@@ -240,7 +256,7 @@ label payada_madiocre:
 
 label camino_a_salamanca: 
 #ESCENA 1 VIAJE A LA SALAMANCA ##############################################################################
-    pause 0.5
+    # pause 0.5
     scene viaje with fade
     show santos_en_viaje at center
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0

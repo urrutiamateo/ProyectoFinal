@@ -5,8 +5,10 @@ label payada_manager(musicPlaying=False):
     #     # play music payada_intensa volume 0.5 fadein 1.0
     #     play music paya_1_A volume 0.5 fadein 0
 
+    show santos_payando at left
+    with dissolve
 
-    play music paya_1_A volume 0.5 fadein 0.1
+    play music paya_1_A volume 0.5 fadein 1
     call payada_vega from _call_payada_vega
     queue music paya_1_final volume 0.5 fadein 0 noloop 
     
@@ -33,7 +35,7 @@ label payada_vega:
         yuyos = FrasePayada("A la sombra de los yuyos", ambicion=1, humildad=0)
         pucho1 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1)
 
-        tufo = FrasePayada("Que me está matando el tufo", ambicion=1, humildad=0)
+        tufo = FrasePayada("Que me está matando el tufo", ambicion=2, humildad=0)
         pucho2 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1)
 
         # Enlazar nodos manualmente (sig_izq / sig_der)
@@ -51,12 +53,14 @@ label payada_vega:
         # Estado local para la ronda de payada
         payadaVega = []                # lista de FrasePayada elegidas (objetos)
         opciones_nodos = [estimado]
-        ambicion_total = 0
-        humildad_total = 0
+        # ambicion_total = 0
+        # humildad_total = 0
 
     # Haremos exactamente 4 selecciones (4 niveles)
     $ rondas = 4
     $ nivel_actual = 1
+    $ ambicion_resultante =0
+    $ humildad_resultante =0
     while nivel_actual <= rondas:
 
         # Mostrar la payada acumulada (texto)
@@ -84,13 +88,16 @@ label payada_vega:
 
         # Registrar elección
         $ payadaVega.append(chosen)
-        # $ ambicion_total += chosen.ambicion
-        # $ humildad_total += chosen.humildad
+        $ ambicion_resultante += chosen.ambicion
+        $ humildad_resultante += chosen.humildad
+
         python:
             # Ejemplo: almacenar en variables globales accesibles por Ren'Py
             store.ambicion = getattr(store, 'ambicion', 0) + chosen.ambicion
             store.humildad = getattr(store, 'humildad', 0) + chosen.humildad
+            
         
+
         # Seleccionar musica segun nivel y encolar para transición suave
         if nivel_actual == 2:
             queue music paya_1_B volume 0.5 
@@ -126,25 +133,39 @@ label payada_vega:
     return
 
 label payada_payador:
-    show rival_payador
-        
-    with dissolve
-    payador "Muy bien, Vega. Ahora es mi turno."
-    play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
-    hide rival_payador
-    with dissolve
+    #show rival_payador
     show payador_cantando:
         yalign 1.0
         xalign 50
         zoom 0.9
     with dissolve
+        
+    #with dissolve
+    payador "Aro, aro, aro..."
+    play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
+    # hide rival_payador
+    # with dissolve
+    # show payador_cantando:
+    #     yalign 1.0
+    #     xalign 50
+    #     zoom 0.9
+    # with dissolve
    
     #show rival_payador at right:
         # 0.8
         #alpha 0.5
         # 4 alpha 1.0
     #with dissolve
-    payador  "{cps=17}No por mucho andar {w=0.5}\nCon las manos en los bolsillos {w=0.5}\nVa encontrar uno más plata {w=0.5}\nNi tampoco prestamillo"
+    # Respuesta buena
+    if humildad_resultante > ambicion_resultante: 
+        payador "{cps=17}Buena payada compadre,\nle voy a tomar consejo,\nle aseguro que si tata 'dios quiere,\nde yapa también ceno conejo."
+
+    if ambicion_resultante > humildad_resultante:
+        payador "{cps=17}Con afanes de macho y lanudo,\nno está en condiciones de dar consejo.\nMejor practique un rato largo,\nsi su intención es llegar más lejos."
+
+    if ambicion_resultante == humildad_resultante:
+        payador "{cps=17}Sabe lo que dice compadre, vengo cansao.\n'Corriendo la liebre' pa' no perderla de vista,\npor suerte tengo la caña, y una suegra que me extraña."
+    # payador  "{cps=17}No por mucho andar {w=0.5}\nCon las manos en los bolsillos {w=0.5}\nVa encontrar uno más plata {w=0.5}\nNi tampoco prestamillo"
     
     # jump fin_payada
     return
@@ -153,6 +174,6 @@ label payada_payador:
 label payada_terminar:
     #hide show rival_payador
     show fondo_negro
-    with dissolve
-    narrator "{color=#F5D627}{size=35}{b}¡Muy bien! ¡Esa fue una ronda de payadas excelente!{/b}{/size}{/color}"
+    # with dissolve
+    narrator "{color=#F5D627}{size=35}{b}Aro, aro, aro.... Igual no es motivo para 'peliarse', el que se anima a los versos, también a la derrota. {/b}{/size}{/color}"
     return
