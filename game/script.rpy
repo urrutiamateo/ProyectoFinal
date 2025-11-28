@@ -91,6 +91,7 @@ label start:
         #zoom 0.5
     #with dissolve
     #"Santos salta del caballo, se acomoda la guitarra al hombro y decide entrar."
+    play sound sonido_caballo volume 0.3
     san "Si quiero que mi voz llegue a toda la pampa, tengo que empezar por algún lado..."
     hide santos_ext_pulperia
     with dissolve
@@ -191,7 +192,7 @@ label start:
         xpos 120
     san "¡Al diablo, viejo charlatán!"
     #"Santos se queda mirando con desconfianza. Pero las palabras del viejo suenan como un desafío que le quema por dentro."
-    # stop sound fadeout 5.0
+    stop sound fadeout 5.0
     menu:
         "{space=350}{size=40}¿Qué hace Santos?{/size}"
 
@@ -220,11 +221,11 @@ label payada_madiocre:
     show santos_entra_izquierda at left
     with dissolve
 
-    san "Gaucho, ¿se presta para una guitarreada?"
+    san "Gaucho... ¿Se presta para una guitarreada?"
 
     show rival_payador at right:
         zoom 1.2
-        align (0.6, -0.5)
+        align (0.6, -0.3)
     with dissolve
     payador "Para eso venimos, compadre."
 
