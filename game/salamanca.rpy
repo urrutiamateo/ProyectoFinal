@@ -52,7 +52,7 @@ label dentro_de_la_cueva:
     # se abre la cueva
     san "¡CUEVA!"
     "La entrada a la cueva de la Salamanca se abre con un resplandor rojizo."
-    san "Que tanto..."
+    san "Qué tanto..."
 
     "Santos ingresa a la cueva, dejando sus dudas atrás, por el momento..."
 
