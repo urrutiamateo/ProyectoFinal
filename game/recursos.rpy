@@ -104,7 +104,12 @@ define paya_2_Final = "audio/Nuevos/PayadaEpica/final.ogg"
 define paya_2_Completa = "audio/Nuevos/PayadaEpica/completa.ogg"
 
 
+define alimanias_1 ="audio/SFX marcos/Alimanias1.ogg"
+define alimanias_2 ="audio/SFX marcos/Alimanias2.ogg"
+define sfx_asustado = "audio/SFX marcos/SantosAsustado.ogg"
 
+define arpa_1 = "audio/SFX marcos/Arpa_1.ogg"
+define arpa_2 = "audio/SFX marcos/Arpa_2.ogg"
 
 define brisa = "audio/Sonidos/brisa.mp3"
 define puerta = "audio/Sonidos/puerta.mp3"

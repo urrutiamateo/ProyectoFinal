@@ -169,10 +169,10 @@ label payada_payador:
     if humildad_resultante > ambicion_resultante: 
         payador "{cps=17}Buena payada compadre,\nle voy a tomar consejo,\nle aseguro que si tata 'dios quiere,\nde yapa también ceno conejo."
 
-    if ambicion_resultante > humildad_resultante:
+    elif ambicion_resultante > humildad_resultante:
         payador "{cps=17}Con afanes de macho y lanudo,\nno está en condiciones de dar consejo.\nMejor practique un rato largo,\nsi su intención es llegar más lejos."
 
-    if ambicion_resultante == humildad_resultante:
+    elif ambicion_resultante == humildad_resultante:
         payador "{cps=17}Sabe lo que dice compadre, vengo cansao.\n'Corriendo la liebre' pa' no perderla de vista,\npor suerte tengo la caña, y una suegra que me extraña."
     # payador  "{cps=17}No por mucho andar {w=0.5}\nCon las manos en los bolsillos {w=0.5}\nVa encontrar uno más plata {w=0.5}\nNi tampoco prestamillo"
     

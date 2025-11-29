@@ -30,7 +30,7 @@ label palabra_clave:
             jump dentro_de_la_cueva
 
         "Sandía":
-            "Vamos, ejercitá un poco la memoria, Santos."
+            "Vamos, hace un poco de memoria, Santos."
             $ subir_humildad()
             # Bloque de código Python para hacer el logging
             $ print(f"DEBUG: La HUMILDAD actual es: {humildad}")
@@ -54,7 +54,7 @@ label dentro_de_la_cueva:
     "La entrada a la cueva de la Salamanca se abre con un resplandor rojizo."
     san "Qué tanto..."
 
-    "Santos ingresa a la cueva, dejando sus dudas atrás, por el momento..."
+    #"Santos ingresa a la cueva, dejando sus dudas atrás, por el momento..."
 
     hide santos_ext_cueva 
     #hide caballo_cueva 
@@ -67,17 +67,24 @@ label dentro_de_la_cueva:
     show santos_int_cueva at right
 
 
-    "La cueva es sin dudas un lugar inhóspito..."
-    san "Hay olor a pared con humedad, y a tierra vieja..."
+    "'Como quien no quiere la cosa', Santos se va metiendo en la cueva..."
 
-    san "Y no me traje nada para cazar bichos..."
+    san "¡Pah..! Que olorcito a humedad y a tierra vieja... "
+
+    san "Si se me llega a cruzar algún lagarto fiero, no traje nada para pegarle..."
+
 
     #narrador
-    "De repente, una cantidad de alimañas de todo tipo se trepan por el cuerpo de Santos, haciéndolo sudar en frío."
+    # "De repente, una cantidad de alimañas de todo tipo se trepan por el cuerpo de Santos, haciéndolo sudar en frío."
 
     show serpienteA at center: 
         xzoom -1
     with dissolve
+
+    play sound sfx_asustado
+    san "¡Que lo parió!"
+    
+
 
     menu:
         "“Sacudirse las alimañas”":
@@ -91,11 +98,16 @@ label dentro_de_la_cueva:
             
         "“Aguantarse quieto ”":
 
-            "Santos no se inmuta ante la prueba, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+            play sound alimanias_2
 
+            "Santos sabe lo que quiere, 
+            y aguanta cualquier cosa por la recompensa que le prometieron.
+            La serpiente se retira. 
+            Pero el silencio dura poco. 
+            Algo más grande se arrastra en la oscuridad."
+            
             python:
                 subir_ambicion()
-
             jump sale_serpiente
 
     label serpiente_enojada:
@@ -112,8 +124,9 @@ label dentro_de_la_cueva:
         show serpienteA at center: 
             xzoom -1
         with dissolve
-    #santos
-    san "Al parecer eso las pone más agresivas."
+        #santos
+        "Lo mejor ante las bestias, es permanecer inmóvil, y dejarlas que sigan por donde vinieron."
+        san "¡Que lo parió! ¡No me quieren dejar tranquilo!"
 
     menu:
         "“Sacudirse las alimañas”":
@@ -121,16 +134,19 @@ label dentro_de_la_cueva:
 
             python:
                 subir_humildad()
-
             jump serpiente_enojada
         
             
         "“Aguantarse quieto”":
-            "Santos no se inmuta ante la prueba, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+            play sound alimanias_2
+            "Santos sabe lo que quiere, 
+            y aguanta cualquier cosa por la recompensa que le prometieron.
+            La serpiente se retira. 
+            Pero el silencio dura poco. 
+            Algo más grande se arrastra en la oscuridad."
             
             python:
                 subir_ambicion()
-
             jump sale_serpiente
 
     #aparece basilisco
@@ -147,12 +163,14 @@ label dentro_de_la_cueva:
     label aparece_basilisco:
     show basilisco at center 
     with dissolve
+    play sound alimanias_1
     basilisco "¡QUIETO AHÍ!"
     basilisco "Si tu idea es ir más allá de esta penumbra, deberás superar esta prueba."
-
+    
     menu:
-        "“Salir corriendo”":
-            "Santos quiere salir corriendo, no resiste el terror que le provoca esta monstruosa cueva, pero ya no hay vuelta atrás..."
+        
+        "“Huir del basilisco”":
+            #"Santos quiere salir corriendo, no resiste el terror que le provoca esta monstruosa cueva, pero ya no hay vuelta atrás..."
 
             python:
                 subir_humildad()
@@ -160,8 +178,9 @@ label dentro_de_la_cueva:
             jump aparece_basilisco
             
         "“Cerrar los ojos”":
-            "Santos cierra los ojos aguantando el temor que le provoca el basilisco, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
-
+            #"Santos cierra los ojos aguantando el temor que le provoca el basilisco, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+            
+            
             python:
                 subir_ambicion()
 
@@ -171,24 +190,34 @@ label dentro_de_la_cueva:
         # DESAPARECE BASILISCO ##############################################################################
         #scene pantalla_negra with fade
         #play sound sound_heart volume 1 loop
+        
         stop music fadeout 1.0
         play sound latidos_scare volume 1
-        pause 30
+        
+        
+        #Aca se esconde el basilisco
         hide basilisco
-        scene intCueva 
-        with fade
-        show santos_int_cueva at right
-        with dissolve
+        define fades = Fade(1,8,1)
+        with fades
+        # scene intCueva 
+        # with fade(1,1,1)
+        # pause 30
+
+        # show santos_int_cueva at right
+        # with dissolve
         #narrador
-        stop sound
+        # stop audio 
+        stop sound fadeout 1.5
+
         #pause 0.5
         play sound suspiro_scare volume 0.5
-        pause 12
+        pause 5
         play music misterio volume 0.5 fadeout 2.0 fadein 1.0
         "La valentía es una virtud que pocos poseen. Santos demuestra tenerla y se aventura hacia lo más profundo de la demoníaca cueva."
         san "Muy bien, parece que eso funcionó..."
 
         san "Ahora tengo que elegir qué camino seguir.."
+        play sound arpa_1 volume 1 fadeout 5.0
         menu:
             "“Cueva a la izquierda”":
                 python:
