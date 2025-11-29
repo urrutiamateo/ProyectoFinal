@@ -79,6 +79,11 @@ label payada_final_bueno_vega:
     # Haremos exactamente 4 selecciones (4 niveles)
     $ rondas = 4
     $ nivel_actual = 1
+    $ ambicion_resultante =0
+    $ humildad_resultante =0
+    
+    play music paya_1_A volume 0.5 fadein 1
+
     while nivel_actual <= rondas:
 
         # Mostrar la payada acumulada (texto)
@@ -104,35 +109,38 @@ label payada_final_bueno_vega:
             # No hay más opciones: salimos del bucle estableciendo el nivel final
             $ nivel_actual = rondas + 1
 
-        
         # Registrar elección
         $ payadaVega.append(chosen)
-        # reinicio la lista de texto para que se pueda leer
+        $ ambicion_resultante += chosen.ambicion
+        $ humildad_resultante += chosen.humildad
+
+        python:
+            # Ejemplo: almacenar en variables globales accesibles por Ren'Py
+            store.ambicion = getattr(store, 'ambicion', 0) + chosen.ambicion
+            store.humildad = getattr(store, 'humildad', 0) + chosen.humildad
+            
         
+
         # Seleccionar musica segun nivel y encolar para transición suave
         if nivel_actual == 2:
-            queue music paya_1_B volume 0.5 
+            # stop music 
+            play music paya_1_B volume 0.5 
         if nivel_actual == 3:
-            queue music paya_1_A volume 0.5 
+            # stop music 
+            play music paya_1_A volume 0.5 
         if nivel_actual == 4:
-            queue music paya_1_B volume 0.5 
-        if nivel_actual == 5:
-            queue music paya_1_A volume 0.5 
-        if nivel_actual == 6:
-            queue music paya_1_B volume 0.5 
-        if nivel_actual == 7:
-            queue music paya_1_A volume 0.5 
-        if nivel_actual == 8:
-            queue music paya_1_B volume 0.5 
+            # stop music 
+            play music paya_1_B volume 0.5  
             
 
         # Mostrar la payada actualizada
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
-        san "[payada_texto]"
-        # Limpiar en caso de que hayan pasado 4
-        if nivel_actual == 4:
-            $ payadaVega = []
+        $ san("[payada_texto]", interact=False)
 
+        # Reinicio la lista de texto para que se pueda leer
+        if nivel_actual == 4:
+            $ san("[payada_texto]")
+            $ payadaVega = []
 
 
         # Preparar las opciones del siguiente nivel
@@ -145,6 +153,12 @@ label payada_final_bueno_vega:
             opciones_nodos = siguientes
 
         $ nivel_actual += 1
+
+    # # Al finalizar, podemos enviar los totales a variables globales si es necesario
+    # python:
+    #     # Ejemplo: almacenar en variables globales accesibles por Ren'Py
+    #     store.ambicion = getattr(store, 'ambicion', 0) + ambicion_total
+    #     store.humildad = getattr(store, 'humildad', 0) + humildad_total
     return
 
 label payada_final_bueno_payador:

@@ -8,13 +8,13 @@ label payada_manager(musicPlaying=False):
     show santos_payando at left
     with dissolve
 
-    play music paya_1_A volume 0.5 fadein 1
+    play music paya_1_A volume 0.5 fadein 0.1 fadeout 0.1
     call payada_vega from _call_payada_vega
-    queue music paya_1_final volume 0.5 fadein 0 noloop 
+    play music paya_1_final volume 0.5 fadein 0 noloop 
     
     
     call payada_payador from _call_payada_payador
-    play music fin_payada_intensa volume 0.5 fadein 1.0 noloop
+    play music fin_payada_intensa volume 0.5 fadein 0.5 noloop
     
     call payada_terminar from _call_payada_terminar
     return
@@ -61,6 +61,9 @@ label payada_vega:
     $ nivel_actual = 1
     $ ambicion_resultante =0
     $ humildad_resultante =0
+    
+    play music paya_1_A volume 0.5 fadein 1
+
     while nivel_actual <= rondas:
 
         # Mostrar la payada acumulada (texto)
@@ -100,19 +103,25 @@ label payada_vega:
 
         # Seleccionar musica segun nivel y encolar para transición suave
         if nivel_actual == 2:
-            queue music paya_1_B volume 0.5 
+            # stop music 
+            play music paya_1_B volume 0.5 
         if nivel_actual == 3:
-            queue music paya_1_A volume 0.5 
+            # stop music 
+            play music paya_1_A volume 0.5 
         if nivel_actual == 4:
-            queue music paya_1_B volume 0.5 
+            # stop music 
+            play music paya_1_B volume 0.5  
             
 
         # Mostrar la payada actualizada
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
-        san "[payada_texto]"
+        $ san("[payada_texto]", interact=False)
+
         # Reinicio la lista de texto para que se pueda leer
         if nivel_actual == 4:
+            $ san("[payada_texto]")
             $ payadaVega = []
+
 
         # Preparar las opciones del siguiente nivel
         python:

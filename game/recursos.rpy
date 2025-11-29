@@ -87,11 +87,25 @@ define misterio = "audio/misterio.mp3"
 define musica_intro = "audio/Nuevos/Santos Vega_Musica_Intro.mp3"
 define musica_mandinga = "audio/Nuevos/Cueva_Mandinga.mp3"
 
-define paya_1_A = "audio/Nuevos/Primer_Paya/Paya_Frase_1.ogg"
-define paya_1_B = "audio/Nuevos/Primer_Paya/Paya_Frase_2.ogg"
-define paya_1_final = "audio/Nuevos/Primer_Paya/Paya_FinalCorte.ogg"
+# define paya_1_A = "audio/Nuevos/Primer_Paya/Paya_Frase_1.ogg"
+# define paya_1_B = "audio/Nuevos/Primer_Paya/Paya_Frase_2.ogg"
+# define paya_1_final = "audio/Nuevos/Primer_Paya/Paya_FinalCorte.ogg"
 define paya_1_enganche = "audio/Nuevos/Primer_Paya/Paya_FinalConEnganche.mp3"
 define paya_1_AyB = "audio/Nuevos/Primer_Paya/Paya_completa_loop.mp3"
+
+define paya_1_A = "audio/Nuevos/PayadaCorta/Frase1.ogg"
+define paya_1_B = "audio/Nuevos/PayadaCorta/Frase2.ogg"
+define paya_1_final = "audio/Nuevos/PayadaCorta/FraseFinal.ogg"
+
+define paya_2_intro = "audio/Nuevos/PayadaEpica/intro.ogg"
+define paya_2_A = "audio/Nuevos/PayadaEpica/Frase1.ogg"
+define paya_2_B = "audio/Nuevos/PayadaEpica/Frase2.ogg"
+define paya_2_Final = "audio/Nuevos/PayadaEpica/final.ogg"
+define paya_2_Completa = "audio/Nuevos/PayadaEpica/completa.ogg"
+
+
+
+
 define brisa = "audio/Sonidos/brisa.mp3"
 define puerta = "audio/Sonidos/puerta.mp3"
 define sound_bat = "audio/Sonidos/murcielagos_flapping-sound.wav"
