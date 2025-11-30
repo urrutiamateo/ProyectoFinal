@@ -201,7 +201,6 @@ label start:
         "{space=350}{size=40}¿Qué hace Santos?{/size}"
 
         "Ignorar la historia del viejo y quedarse en la pulpería":
-            
             python:
                 subir_humildad()
             jump payada_madiocre

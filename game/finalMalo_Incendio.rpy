@@ -1,11 +1,14 @@
 # Acá hacer el final del incendio
 label final_malo_incendio:
     # "este es el final del incendio"
-
-
+    
             
-
+    stop music fadeout 1
+    stop sound fadeout 1
     scene interiorPulperia_2
+    hide pantalla_roja
+    with dissolve
+
     play music misterio fadeout 2.0 fadein 2.0
     play sound murmullo volume 0.2 loop
     queue sound puerta volume 0.8
@@ -111,7 +114,7 @@ label final_malo_incendio:
     san "Al fin se dan cuenta. 
     Si no fuera por este gaucho, la pulpería se viene abajo..."
 
-    san "*Dirigiéndose a los Payadores* Aprendan un poco ustedes..."
+    san "Deberían aprender estos payadores..."
 
     viejo "Permítame una pregunta..."
 

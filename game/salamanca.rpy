@@ -354,15 +354,17 @@ label dentro_de_la_cueva:
                 diablo "Desde hoy, tu voz no conocerá el silencio... Ni en tus sueños encontrarás la paz."
                 pause 10
                 
-                # LÓGICA DE DECISIÓN DE FINALES
-                # si la Humildad es mayor o igual a la Ambición, va al final del ombú.
-                if humildad >= ambicion:
-                    jump final_malo_ombu_2
+                jump viaje_post_firmar
+                
+                # # LÓGICA DE DECISIÓN DE FINALES
+                # # si la Humildad es mayor o igual a la Ambición, va al final del ombú.
+                # if humildad >= ambicion:
+                #     jump final_malo_ombu_2
     
-                # si la Ambición es mayor que la humildad, va al final del incendio.
-                else:
-                    jump final_malo_incendio
-                #jump final_malo_ombu
+                # # si la Ambición es mayor que la humildad, va al final del incendio.
+                # else:
+                #     jump final_malo_incendio
+                # #jump final_malo_ombu
 
             "Negarse a firmar":
                 python:

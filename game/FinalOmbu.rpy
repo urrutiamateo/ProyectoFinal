@@ -1,9 +1,13 @@
 label final_malo_ombu_2:
-    stop sound
-    stop music
+    
+    stop sound fadeout 1
+    stop music fadeout 1
     # Parte 1
-    scene ombu 
+    scene ombu
     show santos_durmiendo_ombu
+
+    hide pantalla_roja 
+    with dissolve
 
     play audio campo_dia volume 0.2 fadein 1.0 loop
     play audio sfx_afligido volume 0.9

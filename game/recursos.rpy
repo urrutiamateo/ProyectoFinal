@@ -119,7 +119,7 @@ define paya_2_intro = "audio/Nuevos/PayadaEpica/intro.ogg"
 define paya_2_A = "audio/Nuevos/PayadaEpica/Frase1.ogg"
 define paya_2_B = "audio/Nuevos/PayadaEpica/Frase2.ogg"
 define paya_2_Final = "audio/Nuevos/PayadaEpica/final.ogg"
-define paya_2_Completa = "audio/Nuevos/PayadaEpica/completa.ogg"
+define paya_2_Completa = "audio/Nuevos/PayadaEpica/completa_2.ogg"
 
 
 define alimanias_1 ="audio/SFX marcos/Alimanias1.ogg"
@@ -152,6 +152,9 @@ define sfx_risa_mandinga = "/audio/SFX marcos/Risa_Mandinga.ogg"
 define sfx_puertas_cerrando ="/audio/SFX marcos/SFX_PUERTAS_CERRANDOSE.ogg"
 define sfx_fuego_crepitar = "/audio/SFX marcos/sfx_fuego_crepitar.ogg"
 define sfx_fuego_exterior = "/audio/SFX marcos/sfx_fuego_exterior.ogg"
+
+define sfx_humildad = "/audio/SFX marcos/SFX_HaciaFinalBueno.ogg"
+define sfx_ambicion = "/audio/SFX marcos/SFX_HaciaFinalMalo.ogg"
 
 define brisa = "audio/Sonidos/brisa.mp3"
 define puerta = "audio/Sonidos/puerta.mp3"
