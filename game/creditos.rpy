@@ -57,7 +57,7 @@ screen creditscreen:
                 size 40
                 bold True
                 xalign 0.5
-            text "Mariela Gregnoli\nRosa Juarez\nYanina Tiribelli":               
+            text "Mariela Gregnoli\nRosa Juarez\nYanina Tiribelli\nMarcos Vallasciani":               
                 size 35
                 xalign 0.5
             # MUSICA
