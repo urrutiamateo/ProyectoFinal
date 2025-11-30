@@ -14,7 +14,7 @@ define voz_sueño2 = Character(None)
 #$ titulo_texto = "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
 #define Titulo = Character("{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}", window_text_align=0.5)
 
-
+# SANTOS
 image santos_entero_sombra = "images/sprites/Santos_conSombra.png"
 image santos_neutro_ = "images/sprites/santos_entero_iz.png"
 image santos_espaldas = "images/sprites/Santos_espaldas_conSombra.png"
@@ -47,6 +47,7 @@ image serpienteA = "images/sprites/Serpiente2_intCueva_a.png"
 image serpienteB = "images/sprites/Serpiente2_intCueva_b.png"
 image mandinga = "images/sprites/mandinga.png"
 
+# VIEJO
 image viejo_en_la_pulperia = "images/sprites/Viejo_en_interiorPulperia.png"
 image viejo_neutro_ = "images/sprites/viejo_neutro.png"
 image viejo_neutro = "images/sprites/viejo_neutro_s.png"
@@ -54,13 +55,13 @@ image viejo_neutro = "images/sprites/viejo_neutro_s.png"
 image viejo_hablando = "images/sprites/viejo de la pulperia de pie hablando.png"
 image viejo_diabolico ="/images/sprites/de ultimo momento/viejoDiabolico.png"
 
-
+# PAYADOR
 image rival_payador = "images/sprites/Payador_2_en_interiorPulperia_2.png"
 image payador_cantando = "images/sprites/Payador_guitarra_en_interiorPulperia_2.png"
 image payador_enojado="images/sprites/de ultimo momento/payador cara de enojado-Photoroom.png"
 image payador_sentado = "/images/sprites/de ultimo momento/payador con un baso.png"
 
-
+# ESCENAS
 image pulperiaGuitarra = "images/fondos/escena_pulperia_guitar.png"
 image exteriorRanchoAtardecer = "images/fondos/exteriorRanchoAtardecer.jpg"
 image exteriorRanchoNoche = "images/fondos/exteriorRanchoNoche1.jpg"
@@ -76,6 +77,8 @@ image contratoFirmado = "images/fondos/PlanoContratoFirmado.jpg"
 image trono_mandinga = "images/fondos/Trono_Sr_m_v2.jpg"
 image trono_mandinga_2 = "images/fondos/Trono_Sr_m_v3.jpg"
 image overlay_pesadilla = "images/fondos/ensuenio.png"
+image pulperia_incendio = "/images/sprites/de ultimo momento/ExteriorPulperiaIncendio.jpg"
+
 
 # sprites ombu
 image juan_hablando = "images/sprites/JuanSinRopa_hablando.png"
@@ -141,8 +144,13 @@ define sfx_pisadas_pasto ="/audio/SFX marcos/Pisadas_Pasto.ogg"
 define sfx_murmuro_enojado = "/audio/SFX marcos/Murmuro_Enojado_1.ogg"
 define sfx_murmuro_viejo = "/audio/SFX marcos/sfxMurmuro_viejo.ogg"
 define sfx_sorbo = "/audio/SFX marcos/sfx_sorbo.ogg"
+define sfx_murmuro_diabolico = "/audio/SFX marcos/Murmuro_Diabolico.ogg"
+define sfx_murmuro_diabolico_2 = "/audio/SFX marcos/Murmuro_Diabolico_2.ogg"
 
 define sfx_risa_mandinga = "/audio/SFX marcos/Risa_Mandinga.ogg"
+define sfx_puertas_cerrando ="/audio/SFX marcos/SFX_PUERTAS_CERRANDOSE.ogg"
+define sfx_fuego_crepitar = "/audio/SFX marcos/sfx_fuego_crepitar.ogg"
+define sfx_fuego_exterior = "/audio/SFX marcos/sfx_fuego_exterior.ogg"
 
 define brisa = "audio/Sonidos/brisa.mp3"
 define puerta = "audio/Sonidos/puerta.mp3"
@@ -175,6 +183,9 @@ transform salto_tiembla:
     linear 0.08 xoffset 15
     linear 0.08 xoffset 0
     repeat 2
+
+image fuego = "/images/sprites/de ultimo momento/FUEGO.png"
+
 
 #animacion murcielagos
 image murcielagos = Animation(
