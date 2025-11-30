@@ -154,7 +154,7 @@ label final_bueno:
         show text "{size=80}FIN: Final Bueno.{/size}" at truecenter
         with slowfade
         pause 3
-        jump creditos_produccion
+        jump creditos_narrativa
     #return
         #jump creditos_produccion
 

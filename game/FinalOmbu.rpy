@@ -166,5 +166,5 @@ label final_malo_ombu_2:
     show text "{size=80}FIN: Final Ombú{/size}" at truecenter
     with slowfade
     pause 3
-    jump creditos_produccion
+    jump creditos_narrativa
     return
