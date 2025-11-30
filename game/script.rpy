@@ -80,10 +80,18 @@ label start:
 
     scene exteriorPulperia
     with fade
-    play sound murmullo volume 0.2 loop fadein 2
+    
     #"Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
     "Esa misma noche el murmullo de la pulpería lo invita a acercarse."
-    show santos_ext_pulperia at right
+    play sound caballo_galope volume 0.3 fadein 1.0 
+    play music misterio volume 0.5 fadein 1.0
+    pause 4
+    show santos_ext_pulperia at right:
+        xpos 2300        # FUERA de cámara a la derecha
+        linear 4 xpos 1920  # posición final dentro a la derecha
+        
+    with dissolve
+    stop sound fadeout 2.0
 
     with dissolve
     #"Santos se detiene unos segundos, como si presintiera que al cruzar esa puerta {b}su vida ya no sería la misma{/b}."   
@@ -262,12 +270,18 @@ label camino_a_salamanca:
 #ESCENA 1 VIAJE A LA SALAMANCA ##############################################################################
     # pause 0.5
     scene viaje with fade
-    show santos_en_viaje at center
+    play sound caballo_galope volume 1 fadein 1.0 
+    show santos_en_viaje at center:
+        xalign -0.9      # empieza fuera de cámara a la derecha
+        zoom 1.1        # empieza más grande (zoom-in)
+        linear 6 xalign 0.5 zoom 1.0    # va al centro y vuelve al tamaño normal
+
+    #stop sound fadeout 1.0
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
-    play sound brisa volume 0.3 loop 
+    
 
     "Atrás quedaron las risas y las luces de la pulpería. Adelante, solo la Pampa infinita y el eco del acertijo."
-
+    play sound brisa volume 0.3 loop 
     "Santos emprende un viaje hacia las tinieblas, acompañado por la sombra de su propia ambición."
 
     jump exterior_de_la_cueva
