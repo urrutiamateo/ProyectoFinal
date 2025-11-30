@@ -37,7 +37,7 @@ label start:
     scene exteriorRanchoAtardecer with irisout
     "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
     # play music musica_intro fadein 0.2
-    with fade
+    #with fade
     "En las llanuras abiertas de la pampa vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
     # dissolve
     "Dicen que su voz puede calmar al caballo más bravo y que canta con la fuerza del que sueña, aunque le falta camino por andar antes de {b}ganarse un nombre y el brillo en su tierra{/b}."
@@ -100,6 +100,7 @@ label start:
     #play sound puerta volume 0.3
     stop sound fadeout 1.0
     play music misterio fadeout 2.0 fadein 2.0
+
     scene interiorPulperia_2
     with fade
     play sound puerta volume 0.3
@@ -174,7 +175,7 @@ label start:
     san "Tome viejo, se lo manda el pulpero"
     san "Y...{w=0.5} ¿Pa' dónde dice que queda ese lugar?"
     hide viejo_en_la_pulperia
-    with dissolve
+    #with dissolve
 
     show viejo_hablando
     with dissolve
@@ -263,18 +264,9 @@ label camino_a_salamanca:
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
     play sound brisa volume 0.3
 
-    "Santos abandona la pulpería en busca de la Salamanca, siguiendo las vagas indicaciones del Viejo."
+    "Atrás quedaron las risas y las luces de la pulpería. Adelante, solo la Pampa infinita y el eco del acertijo."
 
-    "En el campo abierto de la llanura, lo único que puede acompañar a Santos esa noche son seres vivientes que no hablan, pero igual dicen cosas."
-
-    
-    "Los insectos, su caballo, sus recuerdos, lo que lleva adentro..."
-
-    "Después de horas de viaje, cruzar el río y el valle. Se ve más cerca la montaña, y en su ladera se vislumbran los males."
-
-    "Santos investiga la falda rocosa, cuando de repente, su caballo se incomoda."
-
-    "Los animales saben cuando algo anda mal."
+    "Santos emprende un viaje hacia las tinieblas, acompañado por la sombra de su propia ambición."
 
     jump exterior_de_la_cueva
     
