@@ -1,22 +1,14 @@
 label final_bueno:
     #ESCENA 1 VIAJE DE REGRESO ##############################################################################
-    pause 0.5
-    scene viaje with fade
-    play sound campo_noche volume 0.5 fadein 1.0 loop
-    play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
-    show santos_en_viaje at center
+    #pause 0.5
+    #scene viaje with fade
+    #play sound campo_noche volume 0.5 fadein 1.0 loop
+    #play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
+    #show santos_en_viaje at center
 
-    "Dicen que esa noche el canto de Santos se perdió en la llanura, como si el viento pampeano al soplar se lo hubiera robado."
-
-    "El Mandinga quedó atrás, entre las sombras, bajo la tierra. Santos cabalga con el corazón cansado, pero limpio." 
     
-    "Observando el infinito cielo estrellado recuerda la frase de su viejo padrino:" 
+
     
-    "“No hay canto más fuerte que el que nace del alma libre”."
-
-    "Fue así que comprendió que no hay oro, fama o diablo que pueda comprar su libertad."
-
-    "Y es entonces que su canto volvió a nacer más fuerte y más libre."
 
     #ESCENA 2 EXTERIOR PULPERIA ##############################################################################
 
@@ -28,10 +20,11 @@ label final_bueno:
     show santos_ext_pulperia at right
     with dissolve
 
-    "Santos se detiene pensativo, su vida ya no sería la misma. Ahora cantará con el alma libre, honrando la memoria de su padrino."
+    "Las noches de Santos podrían haber estado llenas de reconocimiento y fama. Pero en cambio se convirtieron en momentos de tranquilidad y diversión."
 
     san "Tanto estuve buscando ser el mejor cantor, que casi me olvido por qué canto." 
-    san "El canto no es pa´ la fama, es pa´compartir la pena, el vino y la risa entre amigos. El cantor fiel a su alma nunca pierde en esta gran payada que es la vida."
+    san "El canto no es pa' la fama, es pa' compartir la pena, el vino y la risa entre amigos. "
+    san "El cantor fiel a su alma, nunca pierde en esta gran payada que es la vida."
 
     hide santos_ext_pulperia
     with dissolve
@@ -51,28 +44,33 @@ label final_bueno:
         linear 5 xpos 120
     with dissolve
 
-    "Los gauchos beben, ríen, otros juegan a los naipes. Una guitarra pasa de mano en mano. De pronto se produce un silencio cuando lo ven entrar a Santos."
-    "Los más curiosos le preguntan cómo fue su sombría travesía hacia la Salamanca. Otros lo acusan, sin saber, de ser socio del diablo."
+    "La pulpería es un nido de risas y humo... hasta que la figura de Santos cruza el umbral."
+    stop music fadeout 1.5
+    stop sound fadeout 1.5
+
     show rival_payador at right:
         ypos 1.1
     with dissolve
-    payador "¡Miren quién volvió de la Salamanca! Santos, dicen que el Mandinga te ofreció fama y gloria, ¡contanos!"
+    payador "¡Mírenlo! Dicen que el Mandinga te ofreció “la gloria”, Santos. "
+    payador "¿Es verdad o volviste con la cola entre las patas?"
 
-    san "Así fue, pero aprendí una gran lección... ¡la libertad no tiene precio y preferí venir a cantar entre amigos!"
-
-    payador "¡Dale, entonces mostranos lo que aprendiste, Santos! A ver si tu voz ahora suena diferente. ¡Veamos quién es mejor payador!"
+    play music misterio volume 0.5 fadein 1.0
+    san "No hay criollo que no tenga como faro, los recuerdos de su padrino. Esos lo llevan a la gloria a uno."
+    
+   
+    payador "¡Andá! ¡Mirá qué poeta el Santos! A ver si todavía podés acompañar esos versos con la guitarra."
 
     menu:
         "Aceptar el duelo al payador.":
             python:
                 subir_ambicion()
-            "Santos acepta el duelo, ahora demostrará que se puede ser fiel a su propio talento y lograr reconocimiento también..."
+            san "¡Vamos, pasame la guitarra amigo! ¿Qué esperás?"
             stop sound fadeout 1.5
             jump payada_final_bueno
         "Embriagarse primero y luego aceptar el duelo.":
             python:
                 subir_humildad()
-            "Santos después de un estresante viaje a la mismísima cueva del diablo, decide embriagarse primero..."
+            san "La guitarra no se va a ir a ningún lado, primero voy a curarme el garguero del calor que hacía allá..."
             stop sound fadeout 1.5
             jump escena_final_bueno_ebrio
    
@@ -115,14 +113,14 @@ label final_bueno:
         with dissolve
         show santos_con_cania at left
         with dissolve
-        "Santos esa noche decidió olvidarse de ser el mejor payador, se dedica a beber un buen rato y a charlar con amigos."
-        "Santos extrañaba ese bullicio de la pulpería, las risas, acompañados de música y canto."
-        "Finalmente es momento de una divertida payada."
+        "Esa noche Santos dejó de lado la gloria y volvió a lo que siempre fue suyo: la risa entre amigos, el vino y la guitarra. "
+        "En ese bullicio que tanto extrañaba, entendió que ningún diablo vale más que un buen rato en la pulpería."
+        #payador "Finalmente es momento de una divertida payada."
         
         
         call payada_final_bueno_ebrio_manager(musicPlaying=False) from _call_payada_final_bueno_ebrio_manager
        
-        "Santos siente orgullo, rodeado de aplausos y risas. Su canto no busca vencer, sino unir. Ha encontrado su verdadera victoria."
+        #"Santos siente orgullo, rodeado de aplausos y risas. Su canto no busca vencer, sino unir. Ha encontrado su verdadera victoria."
         #hide santos_payando
         #hide payador_cantando
         #scene pantalla_negra 
@@ -134,13 +132,13 @@ label final_bueno:
         scene exteriorRanchoNoche with fade
         play sound brisa volume 0.3 fadein 1.0 loop
         play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
-        "Y dicen que aquella noche,entre vino y carcajadas,Santos Vega volvió a ser cantor libre en alma y en payadas."
-        "El pago lo vio distinto, más sereno, más humano. Ya no buscaba laureles, solo la calidez del paisano."
-        "Porque el diablo puede ofrecer oro, fama o poder, pero el alma que no se vende, vale más que cualquier talento."
+        "Esa noche, entre risas y guitarra, Santos volvió a ser dueño de su propia sombra."
+        "El pago lo vio renacer: sereno, humilde, fiel a su alma."
+        "Porque el diablo podrá ofrecerlo todo… pero el canto libre no se compra."
         stop music
         stop sound
         scene black
-        show text "{size=80}FIN{/size}" at truecenter
+        show text "{size=80}FIN: Final Bueno.{/size}" at truecenter
         with slowfade
         pause 3
         jump creditos_produccion

@@ -195,5 +195,5 @@ label payada_final_bueno_terminar:
     show fondo_negro
     with dissolve
     play sound aplausos volume 0.7 fadein 0.5
-    narrator "Y esa noche, entre amigos, risas, el vino y la guitarra, Santos entendió su destino.{w}No necesitaba fama ni gloria. Su canto ya era eterno… porque nacía de su alma libre."
+    narrator "Esa noche, entre risas, música y amigos, la sombra de la Salamanca se disolvió en el aire. Santos no ganó la fama eterna... pero ganó el poder descansar tranquilo."
     return

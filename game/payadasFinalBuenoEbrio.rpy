@@ -32,28 +32,64 @@ label payada_final_bueno_vega_ebrio:
         from python.payadas.FrasePayada import FrasePayada
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
-        verso1 = FrasePayada("Anduve sí, por lo oscuro,")
 
-        verso2 = FrasePayada("y el humo me dio su abrazo,")
-        verso3 = FrasePayada("y la sombra fue mi lazo,")
+        #verso1 = FrasePayada("Anduve sí, por lo oscuro,")
+        #verso2 = FrasePayada("y el humo me dio su abrazo,")
+        #verso3 = FrasePayada("y la sombra fue mi lazo,")
 
-        verso4 = FrasePayada("mas si el diablo me invitó al truco,")
-        verso5 = FrasePayada("el diablo me hablo despacio,")
+        #verso4 = FrasePayada("mas si el diablo me invitó al truco,")
+        #verso5 = FrasePayada("el diablo me hablo despacio,")
         
-        verso6 = FrasePayada("el vino me dio su manto,")
-        verso7 = FrasePayada("la tentación buscó mi rumbo,")
+        #verso6 = FrasePayada("el vino me dio su manto,")
+        #verso7 = FrasePayada("la tentación buscó mi rumbo,")
 
-        verso8 = FrasePayada("yo le gané con un cuatro.")
-        verso9 = FrasePayada("le cante y pedió su paso.")
+        #verso8 = FrasePayada("yo le gané con un cuatro.")
+        #verso9 = FrasePayada("le cante y perdió su paso.")
 
-        verso10 = FrasePayada("y al mal no le di mi brazo.")
-        verso11 = FrasePayada("y escapé de su regazo.")
+        #verso10 = FrasePayada("y al mal no le di mi brazo.")
+        #verso11 = FrasePayada("y escapé de su regazo.")
         
-        verso12 = FrasePayada("y brindé por su fracaso.")
-        verso13 = FrasePayada("y salí buscando el vaso.")
+        #verso12 = FrasePayada("y brindé por su fracaso.")
+        #verso13 = FrasePayada("y salí buscando el vaso.")
         
-        verso14 = FrasePayada("pero la esquivé sin fracaso.")
-        verso15 = FrasePayada("y no caí en su abrazo.")
+        #verso14 = FrasePayada("pero la esquivé sin fracaso.")
+        #verso15 = FrasePayada("y no caí en su abrazo.")
+        # --- NIVEL 1 (RAÍZ) ---
+        verso1 = FrasePayada("Si canto, canto sin pena,")
+
+
+        # --- NIVEL 2 (LA ELECCIÓN) ---
+
+        # RAMA IZQUIERDA: Cambié "pa' mi pena" por "en la arena" para no repetir la palabra "pena".
+        verso2 = FrasePayada("buscando plata en la arena,")
+
+        # RAMA DERECHA: Cambié "y una bota" por "aunque la bota" para que conecte con el verso 1.
+        verso3 = FrasePayada("aunque la bota me aprieta,")
+
+
+        # --- NIVEL 3 (DESARROLLO) ---
+
+        # RAMA IZQUIERDA (Excavación):
+        verso4 = FrasePayada("cavé, sí, pa’ ver si hallaba,")
+        verso5 = FrasePayada("pero el suelo estaba duro...")
+
+        # RAMA DERECHA (Surrealista):
+        verso6 = FrasePayada("y la luna que me inquieta,")
+        verso7 = FrasePayada("y mi caballo me habla,")
+
+
+        # --- NIVEL 4 (REMATES) ---
+
+        # RAMA IZQUIERDA (Excavación):
+        verso8 = FrasePayada("¡y mi pala era una espuela!")
+        verso9 = FrasePayada("¡y encontré solo una muela!")
+
+        # RAMA DERECHA (Surrealista):
+        verso12 = FrasePayada("es que relinchó en la siesta.")
+        verso13 = FrasePayada("¡pero el lucero me contesta...!")
+        # Reutilización
+        verso14 = verso12
+        verso15 = verso13
 
         # Enlazar nodos manualmente (sig_izq / sig_der)
         
@@ -174,7 +210,7 @@ label payada_final_bueno_payador_ebrio:
         ypos 1.1
         
     with dissolve
-    payador "Muy bien, Vega. Es buen momento para una payada."
+    payador "¡Ahora si, Vega, es momento para una buena payada!"
     play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
     hide rival_payador
     with dissolve
@@ -203,5 +239,5 @@ label payada_final_bueno_terminar_ebrio:
     show fondo_negro
     with dissolve
     play sound aplausos volume 0.7 fadein 0.5
-    narrator "Y esa noche, entre amigos, risas, el vino y la guitarra, Santos entendió su destino.{w}No necesitaba fama ni gloria. Su canto ya era eterno… porque nacía de su alma libre."
+    narrator "Esa noche, entre risas, música y amigos, la sombra de la Salamanca se disolvió en el aire. Santos no ganó la fama eterna... pero ganó el poder descansar tranquilo."
     return
