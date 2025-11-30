@@ -268,7 +268,7 @@ label final_malo_incendio:
     play sound sfx_grito_derrota
     sanV "¡Me lleva mandinga!"
 
-    "mostrar exterior"
+    # "mostrar exterior"
 
     jump exterior_pulperia_incendio
 
