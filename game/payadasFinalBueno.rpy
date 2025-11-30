@@ -191,9 +191,13 @@ label payada_final_bueno_payador:
 
 label payada_final_bueno_terminar:
     #hide show rival_payador
-    #stop music fadeout 2.0
+    stop music fadeout 2.0
+    stop sound fadeout 0.5
     show fondo_negro
     with dissolve
-    play sound aplausos volume 0.7 fadein 0.5
+    
+    play sound aplausos volume 0.4 fadein 0.5
+    pause 1.5
+    play music paya_1_final volume 2 noloop
     narrator "Esa noche, entre risas, música y amigos, la sombra de la Salamanca se disolvió en el aire. Santos no ganó la fama eterna... pero ganó el poder descansar tranquilo."
     return

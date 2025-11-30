@@ -15,15 +15,22 @@ label final_bueno:
     pause 0.5
     scene exteriorPulperia
     with fade
-    play sound murmullo volume 0.3 loop 
-
-    show santos_ext_pulperia at right
+    play sound caballo_galope volume 0.3 fadein 1.0 
+    play music misterio volume 0.5 fadein 1.0
+    pause 4
+    show santos_ext_pulperia at right:
+        xpos 2300        # FUERA de cámara a la derecha
+        linear 4 xpos 1920  # posición final dentro a la derecha
+        
     with dissolve
+    stop sound fadeout 2.0
 
-    "Las noches de Santos podrían haber estado llenas de reconocimiento y fama. Pero en cambio se convirtieron en momentos de tranquilidad y diversión."
+    #"Las noches de Santos podrían haber estado llenas de reconocimiento y fama. Pero en cambio se convirtieron en momentos de tranquilidad y diversión."
 
     san "Tanto estuve buscando ser el mejor cantor, que casi me olvido por qué canto." 
     san "El canto no es pa' la fama, es pa' compartir la pena, el vino y la risa entre amigos. "
+    
+    play sound murmullo volume 0.3 loop 
     san "El cantor fiel a su alma, nunca pierde en esta gran payada que es la vida."
 
     hide santos_ext_pulperia
@@ -47,6 +54,7 @@ label final_bueno:
     "La pulpería es un nido de risas y humo... hasta que la figura de Santos cruza el umbral."
     stop music fadeout 1.5
     stop sound fadeout 1.5
+    play sound ohhh_pulperia volume 0.5 fadein 0.5
 
     show rival_payador at right:
         ypos 1.1
@@ -64,13 +72,13 @@ label final_bueno:
         "Aceptar el duelo al payador.":
             python:
                 subir_ambicion()
-            san "¡Vamos, pasame la guitarra amigo! ¿Qué esperás?"
+            san "¡Vamos, pasame la guitarra, amigo! ¿Qué esperás?"
             stop sound fadeout 1.5
             jump payada_final_bueno
         "Embriagarse primero y luego aceptar el duelo.":
             python:
                 subir_humildad()
-            san "La guitarra no se va a ir a ningún lado, primero voy a curarme el garguero del calor que hacía allá..."
+            san "La guitarra no se va a ir a ningún lado. Primero voy a curarme el garguero del calor que hacía allá..."
             stop sound fadeout 1.5
             jump escena_final_bueno_ebrio
    
@@ -87,17 +95,19 @@ label final_bueno:
     
     show santos_payando at left
     with dissolve
-    "Santos acepta con orgullo el duelo, sereno pero con voz firme, no vacila..."
-    "y canta con su alma en la voz renacida en aquellas tinieblas, ahora más fuerte, más libre y fiel a sus raíces."
+    #"Santos acepta con orgullo el duelo, sereno pero con voz firme, no vacila..."
+    
 
     call payada_final_bueno_manager(musicPlaying=True) from _call_payada_final_bueno_manager
     
-    "Santos siente orgullo, rodeado de aplausos y risas. Su canto no busca vencer, sino unir. Ha encontrado su verdadera victoria."
+    
+    #"Santos siente orgullo, rodeado de aplausos y risas. Su canto no busca vencer, sino unir. Ha encontrado su verdadera victoria."
+    
     #hide santos_payando
     #hide payador_cantando
     #hide fondo_negro
     #with dissolve
-    pause 2
+    pause 1
     scene pantalla_negra
     with slowfade
     
@@ -114,8 +124,8 @@ label final_bueno:
         show santos_con_cania at left
         with dissolve
         "Esa noche Santos dejó de lado la gloria y volvió a lo que siempre fue suyo: la risa entre amigos, el vino y la guitarra. "
-        "En ese bullicio que tanto extrañaba, entendió que ningún diablo vale más que un buen rato en la pulpería."
-        #payador "Finalmente es momento de una divertida payada."
+        #"En ese bullicio que tanto extrañaba, entendió que ningún diablo vale más que un buen rato en la pulpería."
+        #play sound aplausos volume 0.5 fadein 0.5
         
         
         call payada_final_bueno_ebrio_manager(musicPlaying=False) from _call_payada_final_bueno_ebrio_manager
@@ -125,6 +135,9 @@ label final_bueno:
         #hide payador_cantando
         #scene pantalla_negra 
         #with slowfade
+        pause 1
+        scene pantalla_negra
+        with slowfade
         
     
     #ESCENA FINAL RANCHO ##############################################################################
@@ -132,9 +145,9 @@ label final_bueno:
         scene exteriorRanchoNoche with fade
         play sound brisa volume 0.3 fadein 1.0 loop
         play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
-        "Esa noche, entre risas y guitarra, Santos volvió a ser dueño de su propia sombra."
-        "El pago lo vio renacer: sereno, humilde, fiel a su alma."
-        "Porque el diablo podrá ofrecerlo todo… pero el canto libre no se compra."
+        "Santos ahora canta con su alma en la voz, renacida en aquellas tinieblas, ahora más fuerte, más libre y fiel a sus raíces."
+        "El pago lo vió renacer: sereno y humilde."
+        "Porque el diablo podrá ofrecerlo todo… pero el canto libre no se negocia."
         stop music
         stop sound
         scene black

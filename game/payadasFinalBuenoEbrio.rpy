@@ -238,6 +238,10 @@ label payada_final_bueno_terminar_ebrio:
     #stop music fadeout 2.0
     show fondo_negro
     with dissolve
-    play sound aplausos volume 0.7 fadein 0.5
-    narrator "Esa noche, entre risas, música y amigos, la sombra de la Salamanca se disolvió en el aire. Santos no ganó la fama eterna... pero ganó el poder descansar tranquilo."
+    
+    payador  "{cps=17}Entonces cante, paisano,{w=0.5}\nque su historia es un consuelo, {w=0.5}\nsi el vino le dio palabras,{w=0.5}\nque el canto le dé el cielo."
+    play sound aplausos volume 0.4 fadein 0.5
+    pause 1.5
+    play music paya_1_final volume 2 noloop
+    #narrator "Esa noche, entre risas, música y amigos, la sombra de la Salamanca se disolvió en el aire. Santos no ganó la fama eterna... pero ganó el poder descansar tranquilo."
     return

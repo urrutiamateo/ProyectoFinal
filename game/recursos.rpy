@@ -169,6 +169,8 @@ define carcajadasFinSalamanca = "audio/sonidos_nuevos/carcajadasDiabolicasFinSal
 define suspiro_scare = "audio/sonidos_nuevos/suspiro_ghost-sigh3.wav"
 define campo_noche = "audio/sonidos_nuevos/campoNoche.wav"
 define campo_dia = "audio/sonidos_nuevos/amanecerCampo.wav"
+define ohhh_pulperia = "audio/sonidos_nuevos/ohhh.mp3"
+define caballo_galope = "audio/sonidos_nuevos/caballoCaminando.mp3"
 
 transform saltito:
     zoom 1.05
