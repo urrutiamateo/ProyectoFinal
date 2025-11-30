@@ -96,7 +96,7 @@ label dentro_de_la_cueva:
             #"Santos se sacude algunos bichos..."
 
             python:
-                subir_humildad()
+                subir_ambicion()
 
             jump serpiente_enojada
         
@@ -106,7 +106,8 @@ label dentro_de_la_cueva:
             play sound alimanias_2
             
             python:
-                subir_ambicion()
+                
+                subir_humildad()
             jump sale_serpiente
 
     label serpiente_enojada:
@@ -132,7 +133,7 @@ label dentro_de_la_cueva:
             #"Santos se sacude algunos bichos ..."
 
             python:
-                subir_humildad()
+                subir_ambicion()
             jump serpiente_enojada
         
             
@@ -140,7 +141,7 @@ label dentro_de_la_cueva:
             play sound alimanias_2
             
             python:
-                subir_ambicion()
+                subir_humildad()
             jump sale_serpiente
 
     #aparece basilisco
@@ -169,7 +170,7 @@ label dentro_de_la_cueva:
             #"Santos quiere salir corriendo, no resiste el terror que le provoca esta monstruosa cueva, pero ya no hay vuelta atrás..."
 
             python:
-                subir_humildad()
+                subir_ambicion()
 
             jump aparece_basilisco
             
@@ -178,7 +179,8 @@ label dentro_de_la_cueva:
             
             
             python:
-                subir_ambicion()
+                
+                subir_humildad()
 
             jump desaparece_basilisco
 
@@ -226,7 +228,7 @@ label dentro_de_la_cueva:
             "“Cueva del centro”":
 
                 python:
-                    subir_ambicion()
+                    subir_humildad()
 
                 jump trono_mandinga
             "“Cueva a la derecha”":
@@ -256,7 +258,7 @@ label dentro_de_la_cueva:
                 jump cueva_equivocada2
             "“Cueva del centro”":
                 python:
-                    subir_ambicion()
+                    subir_humildad()
 
                 jump trono_mandinga
             "“Cueva a la derecha”":
@@ -285,7 +287,7 @@ label dentro_de_la_cueva:
                 jump cueva_equivocada2
             "“Cueva del centro”":
                 python:
-                    subir_ambicion()
+                    subir_humildad()
 
                 jump trono_mandinga
             "“Cueva a la derecha”":
@@ -368,7 +370,7 @@ label dentro_de_la_cueva:
 
             "Negarse a firmar":
                 python:
-                    subir_humildad()
+                    subir_humildad(3)
 
                 scene trono_mandinga_2 with fade
                 show mandinga at center:
