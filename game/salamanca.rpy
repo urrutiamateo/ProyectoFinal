@@ -32,7 +32,13 @@ label palabra_clave:
             jump dentro_de_la_cueva
 
         "Sandía":
+            stop music fadeout 1.0
+            play sound sfx_grillos volume 0.3 loop fadein 2
+            san "¡Sandía!"
             "Vamos, hace un poco de memoria, Santos."
+            pause 2
+            stop sound fadeout 1.0
+            play music misterio volume 0.5 fadeout 2.0 fadein 1.0
             $ subir_humildad()
             # Bloque de código Python para hacer el log
             $ print(f"DEBUG: La HUMILDAD actual es: {humildad}")
@@ -118,7 +124,7 @@ label dentro_de_la_cueva:
             xzoom -1
         with dissolve
         
-        "Lo mejor ante las bestias, es permanecer inmóvil, y dejarlas que sigan por donde vinieron."
+        "Lo mejor ante las bestias es permanecer inmóvil, y dejarlas que sigan por donde vinieron."
         san "¡Que lo parió! ¡No me quieren dejar tranquilo!"
 
     menu:
@@ -185,7 +191,7 @@ label dentro_de_la_cueva:
         #play sound latidos_scare volume 1
         #play sound latidos_completo volume 1
         play sound sound_heart volume 1 loop
-        
+        play music latidos_scare volume 0.5 fadein 0.5
         
         #Aca se esconde el basilisco
         hide basilisco
@@ -366,8 +372,13 @@ label dentro_de_la_cueva:
                 show mandinga at center:
                     zoom 0.8    
                     xalign 0.4   
+                show santos_int_cueva at right
+                with dissolve
+                stop music fadeout 1.0
                 play sound carcajadasFinSalamanca volume 1
                 pause 10
+
+                play music latidos_completo volume 0.5 fadein 1.0
 
                 diablo "Nadie rechaza al Mandinga sin pagar el precio..."
                 diablo "¡Nadie se va de acá y vive para contarlo!"
@@ -375,7 +386,7 @@ label dentro_de_la_cueva:
 
                 hide santos_int_cueva
                 with dissolve
-                pause 10
+                pause 2
                 
                 
                 jump final_bueno

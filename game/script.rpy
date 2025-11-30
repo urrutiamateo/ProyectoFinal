@@ -38,7 +38,7 @@ label start:
     "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
     # play music musica_intro fadein 0.2
     #with fade
-    "En las llanuras abiertas de la pampa vive un {b}jóven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
+    "En las llanuras abiertas de la pampa vive un {b}joven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
     # dissolve
     "Dicen que su voz puede calmar al caballo más bravo y que canta con la fuerza del que sueña, aunque le falta camino por andar antes de {b}ganarse un nombre y el brillo en su tierra{/b}."
     #with dissolve
@@ -92,7 +92,10 @@ label start:
     #with dissolve
     #"Santos salta del caballo, se acomoda la guitarra al hombro y decide entrar."
     play sound sonido_caballo volume 0.3
+    pause 3
+    play sound murmullo volume 0.2 loop fadein 2
     san "Si quiero que mi voz llegue a toda la pampa, tengo que empezar por algún lado..."
+    
     hide santos_ext_pulperia
     with dissolve
     stop music fadeout 1.0
@@ -262,7 +265,7 @@ label camino_a_salamanca:
     scene viaje with fade
     show santos_en_viaje at center
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
-    play sound brisa volume 0.3
+    play sound brisa volume 0.3 loop 
 
     "Atrás quedaron las risas y las luces de la pulpería. Adelante, solo la Pampa infinita y el eco del acertijo."
 

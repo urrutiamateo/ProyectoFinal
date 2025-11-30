@@ -124,7 +124,7 @@ define sfx_grunido="/audio/SFX marcos/Santos_Enojado_Murmuro.ogg"
 define sfx_guitarra_rota="/audio/SFX marcos/SFX_Guitarra_Rota.ogg"
 define sfx_risa_jactante="/audio/SFX marcos/Risa_2.ogg"
 define sfx_grito_derrota="/audio/SFX marcos/Grito_Derrota.ogg"
-
+define sfx_grillos = "audio/Sonidos/grillo.mp3"
 
 define brisa = "audio/Sonidos/brisa.mp3"
 define puerta = "audio/Sonidos/puerta.mp3"
