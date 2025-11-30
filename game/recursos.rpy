@@ -1,6 +1,7 @@
 define san = Character("Santos Vega", color = "#d6b707")
 #define p_san = Character("Santos Vega", color = "#d6b707")   #PARA CLASE PERSONAJE
 define viejo = Character("Don Ernesto", color= "#b81c07")
+
 #define p_viejo = Character("Don Ernesto", color= "#b81c07")     #PARA CLASE PERSONAJE
 define diablo = Character("Mandinga", color= "#b81c07")
 define payador = Character("Payador del Pueblo", color = "#0abe79")  
@@ -33,6 +34,11 @@ image santos_guitarra_rota ="/images/sprites/de ultimo momento/SV tocando la gui
 image santos_recostado="/images/sprites/de ultimo momento/SV durmiendo con los ojos abiertos.png"
 image santos_hablando_guitarra="/images/sprites/de ultimo momento/SantosHablandoConGuitarra.png"
 
+image santos_arrogante_1 ="/images/sprites/de ultimo momento/Arrogante1.png"
+image santos_arrogante_2 ="/images/sprites/de ultimo momento/Arrogante2.png"
+
+image santos_asustado = "/images/sprites/de ultimo momento/SantosAsustado.png"
+
 # Sprites de salamanca
 image caballo_cueva = "images/sprites/caballo_en_extCueva.png"
 image basilisco = "images/sprites/basilisco.png"
@@ -44,11 +50,15 @@ image mandinga = "images/sprites/mandinga.png"
 image viejo_en_la_pulperia = "images/sprites/Viejo_en_interiorPulperia.png"
 image viejo_neutro_ = "images/sprites/viejo_neutro.png"
 image viejo_neutro = "images/sprites/viejo_neutro_s.png"
-image viejo_malo = "images/sprites/viejo_malo_s.png"
+# image viejo_malo = "images/sprites/viejo_malo_s.png"
 image viejo_hablando = "images/sprites/viejo de la pulperia de pie hablando.png"
+image viejo_diabolico ="/images/sprites/de ultimo momento/viejoDiabolico.png"
+
 
 image rival_payador = "images/sprites/Payador_2_en_interiorPulperia_2.png"
 image payador_cantando = "images/sprites/Payador_guitarra_en_interiorPulperia_2.png"
+image payador_enojado="images/sprites/de ultimo momento/payador cara de enojado-Photoroom.png"
+image payador_sentado = "/images/sprites/de ultimo momento/payador con un baso.png"
 
 
 image pulperiaGuitarra = "images/fondos/escena_pulperia_guitar.png"
@@ -124,13 +134,15 @@ define sfx_grunido="/audio/SFX marcos/Santos_Enojado_Murmuro.ogg"
 define sfx_guitarra_rota="/audio/SFX marcos/SFX_Guitarra_Rota.ogg"
 define sfx_risa_jactante="/audio/SFX marcos/Risa_2.ogg"
 define sfx_grito_derrota="/audio/SFX marcos/Grito_Derrota.ogg"
-<<<<<<< Updated upstream
 define sfx_grillos = "audio/Sonidos/grillo.mp3"
-=======
 
 define sfx_pisadas_pasto ="/audio/SFX marcos/Pisadas_Pasto.ogg"
 
->>>>>>> Stashed changes
+define sfx_murmuro_enojado = "/audio/SFX marcos/Murmuro_Enojado_1.ogg"
+define sfx_murmuro_viejo = "/audio/SFX marcos/sfxMurmuro_viejo.ogg"
+define sfx_sorbo = "/audio/SFX marcos/sfx_sorbo.ogg"
+
+define sfx_risa_mandinga = "/audio/SFX marcos/Risa_Mandinga.ogg"
 
 define brisa = "audio/Sonidos/brisa.mp3"
 define puerta = "audio/Sonidos/puerta.mp3"
