@@ -164,6 +164,12 @@ label payada_JuanSinRopa:
     play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
     show juan_guitarra at right:
         zoom 1.2
-    juan "{cps=17} Yo vengo del polvo oscuro,{w=0.5}\ndonde el alma pierde el paso,{w=0.5}\nmi canto no tiene lazo,{w=0.5}\nni cielo, ni nombre puro."
-    juan "{cps=17}Tu voz fue un fuego maduro,{w=0.5}\nmas todo fuego es escaso;{w=0.5}\ncantás, Santos, tu fracaso:{w=0.5}\nque el alma ya dio su paso."
+    juan "{cps=17} Yo vengo del polvo oscuro,
+    {w=0.5}\ndonde el alma pierde el paso,
+    {w=0.5}\nmi canto no tiene lazo,
+    {w=0.5}\nni cielo, ni nombre puro."
+    juan "{cps=17}Tu voz fue un fuego maduro,
+    {w=0.5}\nmas todo fuego es escaso;
+    {w=0.5}\ncantás, Santos, tu fracaso:
+    {w=0.5}\nque el alma ya dio su paso."
     return
