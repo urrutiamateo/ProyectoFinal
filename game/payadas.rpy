@@ -184,5 +184,5 @@ label payada_terminar:
     #hide show rival_payador
     show fondo_negro
     # with dissolve
-    narrator "{color=#F5D627}{size=35}{b}Aro, aro, aro.... Igual no es motivo para 'peliarse', el que se anima a los versos, también a la derrota. {/b}{/size}{/color}"
+    narrator "{color=#F5D627}{size=35}{b}Aro, aro, aro.... Igual no es motivo pa' 'peliarse', el que se anima a los versos, también a la derrota. {/b}{/size}{/color}"
     return

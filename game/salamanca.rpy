@@ -11,11 +11,13 @@ label exterior_de_la_cueva:
     play sound sonido_caballo volume 0.5
     pause 2
 
-    san "Tranquilo, tranquilo… De nerviosos está lleno el cementerio..."
+    san "Shhh... Tranquilo, tranquilo… De nerviosos está lleno el cementerio..."
 
-    san "Ahora quedate piola acá y cuidame la guitarra."
+    san "Ahora quedate quietito acá y cuidame la guitarra."
 
-    san "“Una piedra roja marca el camino”..."
+    san "“Donde la tierra ruge”..."
+
+    san "¡Ahí en la piedra roja!"
 
 label palabra_clave:
 
@@ -24,15 +26,15 @@ label palabra_clave:
     menu:
         "Cueva":
             $ subir_ambicion()
-            # Bloque de código Python para hacer el logging
+            # Bloque de código Python para hacer el log
             $ print(f"DEBUG: La AMBICION actual es: {ambicion}")
-            
+            san "¡CUEVA!"
             jump dentro_de_la_cueva
 
         "Sandía":
             "Vamos, hace un poco de memoria, Santos."
             $ subir_humildad()
-            # Bloque de código Python para hacer el logging
+            # Bloque de código Python para hacer el log
             $ print(f"DEBUG: La HUMILDAD actual es: {humildad}")
 
             jump palabra_clave
@@ -50,9 +52,11 @@ label dentro_de_la_cueva:
     play sound sonido_rocaCueva volume 1
     
     # se abre la cueva
-    san "¡CUEVA!"
-    "La entrada a la cueva de la Salamanca se abre con un resplandor rojizo."
+    
+    #"La entrada a la cueva de la Salamanca se abre con un resplandor rojizo."
     san "Qué tanto..."
+    san "¡Pucha, qué olor a azufre!"
+    
 
     #"Santos ingresa a la cueva, dejando sus dudas atrás, por el momento..."
 
@@ -66,29 +70,24 @@ label dentro_de_la_cueva:
     pause 0.5
     show santos_int_cueva at right
 
-
-    "'Como quien no quiere la cosa', Santos se va metiendo en la cueva..."
-
     san "¡Pah..! Que olorcito a humedad y a tierra vieja... "
 
-    san "Si se me llega a cruzar algún lagarto fiero, no traje nada para pegarle..."
+    san "Si se me llega a cruzar algún lagarto fiero, no traje nada pa' pegarle..."
 
-
-    #narrador
-    # "De repente, una cantidad de alimañas de todo tipo se trepan por el cuerpo de Santos, haciéndolo sudar en frío."
 
     show serpienteA at center: 
         xzoom -1
     with dissolve
 
     play sound sfx_asustado
+    show santos_int_cueva at salto_tiembla
     san "¡Que lo parió!"
     
 
 
     menu:
         "“Sacudirse las alimañas”":
-            "Santos se sacude algunos bichos..."
+            #"Santos se sacude algunos bichos..."
 
             python:
                 subir_humildad()
@@ -99,12 +98,6 @@ label dentro_de_la_cueva:
         "“Aguantarse quieto ”":
 
             play sound alimanias_2
-
-            "Santos sabe lo que quiere, 
-            y aguanta cualquier cosa por la recompensa que le prometieron.
-            La serpiente se retira. 
-            Pero el silencio dura poco. 
-            Algo más grande se arrastra en la oscuridad."
             
             python:
                 subir_ambicion()
@@ -118,19 +111,19 @@ label dentro_de_la_cueva:
         with dissolve
         
         play sound serpiente
-        
+        show santos_int_cueva at saltito
         pause 1
         hide serpienteB
         show serpienteA at center: 
             xzoom -1
         with dissolve
-        #santos
+        
         "Lo mejor ante las bestias, es permanecer inmóvil, y dejarlas que sigan por donde vinieron."
         san "¡Que lo parió! ¡No me quieren dejar tranquilo!"
 
     menu:
         "“Sacudirse las alimañas”":
-            "Santos se sacude algunos bichos ..."
+            #"Santos se sacude algunos bichos ..."
 
             python:
                 subir_humildad()
@@ -139,11 +132,6 @@ label dentro_de_la_cueva:
             
         "“Aguantarse quieto”":
             play sound alimanias_2
-            "Santos sabe lo que quiere, 
-            y aguanta cualquier cosa por la recompensa que le prometieron.
-            La serpiente se retira. 
-            Pero el silencio dura poco. 
-            Algo más grande se arrastra en la oscuridad."
             
             python:
                 subir_ambicion()
@@ -158,14 +146,16 @@ label dentro_de_la_cueva:
     hide serpiente
     with dissolve
     pause 0.5
-    "La serpiente se retira huyendo, al ver que Santos no se inmuta."
+    "Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+    "Superó la primera prueba, pero el silencio dura poco." 
+    "Algo más grande se arrastra en la oscuridad..."
     # APARECE BASILISCO ##############################################################################
     label aparece_basilisco:
     show basilisco at center 
     with dissolve
     play sound alimanias_1
     basilisco "¡QUIETO AHÍ!"
-    basilisco "Si tu idea es ir más allá de esta penumbra, deberás superar esta prueba."
+    basilisco "Si tu idea es ir más allá de esta penumbra, deberás tener el valor de mirarme a los ojos."
     
     menu:
         
@@ -189,10 +179,12 @@ label dentro_de_la_cueva:
     label desaparece_basilisco:
         # DESAPARECE BASILISCO ##############################################################################
         #scene pantalla_negra with fade
-        #play sound sound_heart volume 1 loop
+        
         
         stop music fadeout 1.0
-        play sound latidos_scare volume 1
+        #play sound latidos_scare volume 1
+        #play sound latidos_completo volume 1
+        play sound sound_heart volume 1 loop
         
         
         #Aca se esconde el basilisco
@@ -213,10 +205,11 @@ label dentro_de_la_cueva:
         play sound suspiro_scare volume 0.5
         pause 5
         play music misterio volume 0.5 fadeout 2.0 fadein 1.0
-        "La valentía es una virtud que pocos poseen. Santos demuestra tenerla y se aventura hacia lo más profundo de la demoníaca cueva."
-        san "Muy bien, parece que eso funcionó..."
+        "La mirada de la bestia no encontró presa y regresó a la penumbra."
+        san "¡Uff, se fue!... "
+        san "Ni las bestias del infierno me van a frenar. Ahora... "
+        san "¿Cuál de estas tres cuevas me lleva a lo del Mandinga?"
 
-        san "Ahora tengo que elegir qué camino seguir.."
         play sound arpa_1 volume 1 fadeout 5.0
         menu:
             "“Cueva a la izquierda”":
@@ -247,9 +240,8 @@ label dentro_de_la_cueva:
         pause 0.8
         hide murcielagos
         with dissolve
-        "Un grupo de murciélagos salen volando y asustan a Santos."
 
-        san "Mejor por ahí no... me da mala espina."
+        san "¡La pucha...! Mejor por ahí no... me da mala espina."
         menu:
             "“Cueva a la izquierda”":
                 python:
@@ -277,8 +269,8 @@ label dentro_de_la_cueva:
         pause 0.8
         hide murcielagos
         with dissolve
-        "Un grupo de murciélagos salen volando y asustan a Santos."
-        san "Que julepe! mejor por ahí no voy."
+        
+        san "¡Que julepe! Mejor por ahí no voy."
         menu:
             "“Cueva a la izquierda”":
                 python:
@@ -307,17 +299,17 @@ label dentro_de_la_cueva:
         show santos_int_cueva at right
         with fade
         
-        diablo "Has demostrado ser digno, Santos Vega."
-        diablo "Tu canto atravesó el miedo, y tus pasos desafiaron lo prohibido."
-        diablo "Pocos hombres llegan hasta mi trono... y aún menos se van de aquí con vida."
+        diablo "Has demostrado valentía, Santos Vega, o quizás inconsciencia."
+        diablo "Tu alma atravesó el miedo, y tus pasos desafiaron lo prohibido. "
+        diablo "Pocos hombres llegan hasta mi trono... y aún menos se van de aquí sin dejarme algo a cambio."
 
-        san "¿Y qué quiere usted, Mandinga?"
-
-        diablo "Nada que no desees tú mismo... fama, talento sin igual, el don de que nadie te supere jamás."
+        san "¡Mandinga! Me trajo mi cuerpo, arrastrando el peso de una duda."
+        san "¿Qué cosa desean los hombres, que se emparejan con tu deseo?"
+        diablo "Ja! Todos queremos lo mismo.. fama, talento sin igual, el don de que nadie te supere jamás."
 
         san "¿Y a qué precio?"
 
-        diablo "Toda ambición tiene su costo, cantor. Solo una firma, y el mundo entero conocerá tu nombre."
+        diablo "Toda ambición tiene su costo, cantor. ¡Firma!, y el mundo entero conocerá tu nombre."
 
         # Cambio de fondo: aparecen los brujos
         scene trono_mandinga_2 
@@ -328,18 +320,17 @@ label dentro_de_la_cueva:
         show santos_int_cueva at right
         with dissolve
         #play sound "risas_brujos.wav" volume 0.5
-        "Un coro de brujos aparece entre las sombras. Sus risas retumban en la cueva, mezcladas con ecos y sonidos lejanos."
 
         diablo "Ellos serán testigos del pacto. ¡Elige, Santos Vega!"
         
 
         # Escena del contrato
         scene contrato with fade
-        "El papel parece brillar con fuego. Santos observa el contrato... sus manos sudan y tiemblan."
-
+        
         diablo "Solo una gota de tu sangre, y el don eterno del canto será tuyo. No te arrepentirás"
 
-        san "El don del canto eterno... que todos conozcan mi nombre... ¡que tentador!"
+        san "El don del canto eterno... que todos me conozcan... ¡Pucha!"
+        san "Ya me puedo imaginar paseándome con mi renombre, la gloria acompañándome con mi guitarra. ¡Qué tentador!"
 
         "En la mente de Santos resuena aquella frase de padrino... "
         "No hay canto más fuerte que el que nace del alma libre..."
@@ -350,17 +341,27 @@ label dentro_de_la_cueva:
                     subir_ambicion()
 
                 play sound carcajadasFinSalamanca volume 1
-                "Santos firma sin dudarlo, lo que le ofrece el mandinga es todo lo que deseó siempre."
+                #"La sangre fresca y la ambición sellan el papel. No hubo duda en la mano, ni temblor en el trazo."
                 scene contratoFirmado with dissolve
-                diablo "Desde hoy, tu voz no conocerá silencio... Ni en tus sueños encontrarás silencio..."
+                diablo "¡Excelente elección, Santos Vega!"
+                diablo "¡Bienvenido a mis huestes, desgraciado!"
+                diablo "Desde hoy, tu voz no conocerá el silencio... Ni en tus sueños encontrarás la paz."
                 pause 10
-                jump final_malo_ombu_2
+                
+                # LÓGICA DE DECISIÓN DE FINALES
+                # si la Humildad es mayor o igual a la Ambición, va al final del ombú.
+                if humildad >= ambicion:
+                    jump final_malo_ombu
+    
+                # si la Ambición es mayor que la humildad, va al final del incendio.
+                else:
+                    jump final_malo_incendio
+                #jump final_malo_ombu
 
             "Negarse a firmar":
                 python:
                     subir_humildad()
 
-                "Santos decide no firmar. El recuerdo de su padrino fue más fuerte que su ambición. Los brujos gritan, el fuego se apaga, y el Mandinga le grita con desprecio."
                 scene trono_mandinga_2 with fade
                 show mandinga at center:
                     zoom 0.8    
@@ -369,7 +370,12 @@ label dentro_de_la_cueva:
                 pause 10
 
                 diablo "Nadie rechaza al Mandinga sin pagar el precio..."
+                diablo "¡Nadie se va de acá y vive para contarlo!"
+                san "¡Yo me voy al mazo!"
+
+                hide santos_int_cueva
+                with dissolve
                 pause 10
-                "Santos corre lo más rápido que puede, saliendo de la cueva antes de que el Mandinga y sus brujos puedan alcanzarlo."
+                
                 
                 jump final_bueno

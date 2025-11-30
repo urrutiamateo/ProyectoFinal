@@ -143,6 +143,20 @@ define suspiro_scare = "audio/sonidos_nuevos/suspiro_ghost-sigh3.wav"
 define campo_noche = "audio/sonidos_nuevos/campoNoche.wav"
 define campo_dia = "audio/sonidos_nuevos/amanecerCampo.wav"
 
+transform saltito:
+    zoom 1.05
+    yoffset 0
+    linear 0.08 yoffset 10
+    linear 0.08 yoffset 0
+    linear 0.08 yoffset 10
+    linear 0.08 yoffset 0
+    zoom 1.0
+
+transform salto_tiembla:
+    xoffset 0
+    linear 0.08 xoffset 15
+    linear 0.08 xoffset 0
+    repeat 2
 
 #animacion murcielagos
 image murcielagos = Animation(
