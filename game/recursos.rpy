@@ -1,4 +1,6 @@
-define san = Character("Santos Vega", color = "#d6b707")
+define san = Character("Santos", color = "#d6b707")
+define sanV = Character("Santos Vega", color = "#d6b707")
+
 #define p_san = Character("Santos Vega", color = "#d6b707")   #PARA CLASE PERSONAJE
 define viejo = Character("Don Ernesto", color= "#b81c07")
 

@@ -21,7 +21,7 @@ label payada_ombu(musicPlaying=False):
     show santos_hablando_guitarra at left:
         zoom 0.5
         
-    san "Adelante..."
+    sanV "Adelante..."
 
     hide juan_hablando 
 
@@ -109,7 +109,7 @@ label payada_vega_ombu:
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
         if payada_texto == "":
             $ payada_texto = "..."
-        $ san("[payada_texto]", interact=False)
+        $ sanV("[payada_texto]", interact=False)
 
         # Construir menú con las opciones actuales (pueden ser 1 o 2)
         python:
@@ -151,11 +151,11 @@ label payada_vega_ombu:
 
         # Mostrar la payada actualizada
         $ payada_texto = "\n".join([f.MostrarFrase() for f in payadaVega])
-        $ san("[payada_texto]", interact=False)
+        $ sanV("[payada_texto]", interact=False)
 
         # Reinicio la lista de texto para que se pueda leer
         if nivel_actual == 4:
-            $ san("[payada_texto]")
+            $ sanV("[payada_texto]")
             $ payadaVega = []
 
 

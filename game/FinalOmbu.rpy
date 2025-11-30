@@ -12,7 +12,7 @@ label final_malo_ombu_2:
     play audio campo_dia volume 0.2 fadein 1.0 loop
     play audio sfx_afligido volume 0.9
 
-    san "No... No... Padrino... Sangre... Ayúdeme..."
+    sanV "No... No... Padrino... Sangre... Ayúdeme..."
 
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
 
@@ -28,7 +28,7 @@ label final_malo_ombu_2:
     show santos_recostado at left:
         zoom 0.8
 
-    san "¿Qué quiere hombre?"
+    sanV "¿Qué quiere hombre?"
 
     juan_oculto "¡Abrió sus ojos risueños! Estoy 
                 buscando a Santos Vega. Desde lejos 
@@ -42,26 +42,26 @@ label final_malo_ombu_2:
     # Parte 2
     menu: 
         "Averiguar que busca el paisano.":
-            san "No se deje engañar, no todos son tan 
+            sanV "No se deje engañar, no todos son tan 
                 fieros como parece. Cualquiera puede 
                 perder si anda poco avispado."
             juan_oculto "En eso tiene razón, amigo. Yo estoy
                         buscando con quien payar y mejorar mi 
                         canto."
-            san "Tóquese algo paisano, y cuente lo que 
+            sanV "Tóquese algo paisano, y cuente lo que 
                 tiene para decir."
             pass 
         "Aceptar el reconocimiento.":
-            san "¡A ese ya lo humillé hace rato! Y a 
+            sanV "¡A ese ya lo humillé hace rato! Y a 
                 pesar de que, en ese entonces, todavía 
                 no era tan bueno en el canto."
             juan_oculto "Parece que no se dedica a otra cosa 
                         que no sea la guitarra..."
-            san " Puedo pecar de talentoso, pero no de 
+            sanV " Puedo pecar de talentoso, pero no de 
                 abandonado..."
             juan_oculto "Le propongo payar, a ver quien sale 
                 ganado."
-            san "Empiece cuando quiera, de acá acostado 
+            sanV "Empiece cuando quiera, de acá acostado 
                 lo escucho..."
 
     hide juan_hablando
@@ -78,9 +78,9 @@ label final_malo_ombu_2:
 
     play sound sfx_risa_hombre
 
-    san "Ja ja ja..."
+    sanV "Ja ja ja..."
 
-    san "Yo le voy a enseñar cuantos pares son tres botas."
+    sanV "Yo le voy a enseñar cuantos pares son tres botas."
     
     hide juan_guitarra
     show juan_hablando at right
@@ -108,23 +108,26 @@ label final_malo_ombu_2:
 
     play sound sfx_grunido
 
-    san "¡No me voy a ir sin pelearla!"
+    sanV "¡No me voy a ir sin pelearla!"
     hide santos_hablando_guitarra
     show santos_payando at left:
         zoom 0.75
     
+    # define config.menu_clear_window = False
     play music paya_1_A volume 0.8
     menu: 
         "Bajo el Ombú solitario":
-            san "Bajo el Ombú solitario" 
+            # renpy.say(sanV,"Bajo el Ombú solitario",False)
+            sanV "Bajo el Ombú solitario" 
         "Como un eco del quebranto":
-            san "Como un eco del quebranto"
+            # renpy.say(sanV,"Como un eco del quebranto",False)
+            sanV "Como un eco del quebranto"
     queue music paya_1_B volume 0.8
     menu: 
         "Cruza el viento temerario.":
-            san "Cruza el viento temerario."
+            sanV "Cruza el viento temerario."
         "Mi canto al cielo levanto.":
-            san "Mi canto al cielo levanto."
+            sanV "Mi canto al cielo levanto."
     
     stop music
     play sound sfx_guitarra_rota
@@ -135,10 +138,10 @@ label final_malo_ombu_2:
     
     
     
-    san "¡Cosa e 'Mandinga!"
+    sanV "¡Cosa e 'Mandinga!"
     play music musica_mandinga fadein 0.2 volume 0.8
 
-    san "¡Mi guitarra! ¿Qué le hiciste?"
+    sanV "¡Mi guitarra! ¿Qué le hiciste?"
 
     play sound sfx_risa_jactante
 
@@ -163,7 +166,7 @@ label final_malo_ombu_2:
 
 
     scene black
-    show text "{size=80}FIN: Final Incendio{/size}" at truecenter
+    show text "{size=80}FIN: Final Ombú{/size}" at truecenter
     with slowfade
     pause 3
     jump creditos_narrativa

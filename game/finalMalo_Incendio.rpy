@@ -18,7 +18,7 @@ label final_malo_incendio:
         zoom 0.6
     with dissolve
 
-    san "¡Buenas noches a la burrada! ¿Otra vez 
+    sanV "¡Buenas noches a la burrada! ¿Otra vez 
     papando moscas en este sucucho?"
 
     show payador_sentado at right:
@@ -28,7 +28,7 @@ label final_malo_incendio:
 
     payador "¡Eh! Tranquilo, gaucho..."
 
-    san "Ma' si, no llore' borrego."
+    sanV "Ma' si, no llore' borrego."
 
     hide payador_sentado
     show payador_enojado at right:
@@ -40,7 +40,7 @@ label final_malo_incendio:
 
     menu:
         "Tranquilizar al payador.":
-            san "Bueno bueno, mi amigo, no se ponga 
+            sanV "Bueno bueno, mi amigo, no se ponga 
                 fiero, al final de cuentas, debería 
                 estar contento de tenerme acá. ¡Hasta 
                 un aplauso merezco!"
@@ -52,7 +52,7 @@ label final_malo_incendio:
 
             hide payador_enojado
 
-            san "Vaya tranquilo, 'amigo'..."
+            sanV "Vaya tranquilo, 'amigo'..."
 
         "Ignorar al payador y seguir de farra.":
             hide santos_arrogante_1
@@ -67,7 +67,7 @@ label final_malo_incendio:
             payador "Pesado..."
             hide rival_payador
 
-            san "¡Pulpero! Sirva una caña, me hace el 
+            sanV "¡Pulpero! Sirva una caña, me hace el 
                 favor, que vengo cortando el viento 
                 arriba del flete hace rato... Voy a 
                 necesitar un trago si me van a hacer 
@@ -93,7 +93,7 @@ label final_malo_incendio:
     hide santos_arrogante_2
     show santos_con_cania at left
 
-    san "Gracias, viejo."
+    sanV "Gracias, viejo."
 
     play sound sfx_sorbo volume 0.7
 
@@ -111,10 +111,10 @@ label final_malo_incendio:
         zoom 0.6
     with dissolve
 
-    san "Al fin se dan cuenta. 
+    sanV "Al fin se dan cuenta. 
     Si no fuera por este gaucho, la pulpería se viene abajo..."
 
-    san "Deberían aprender estos payadores..."
+    sanV "Deberían aprender estos payadores..."
 
     viejo "Permítame una pregunta..."
 
@@ -126,14 +126,14 @@ label final_malo_incendio:
 
     viejo "Alguien de su talento, de su altura, ¿tiene rival en las payadas?"
 
-    san "Pero claro que no, como se atreve. 
+    sanV "Pero claro que no, como se atreve. 
     De norte a sur de esta provincia se escucha silencio si yo no canto."
 
-    san "Desde el ser más luminoso al más oscuro yo lo paseo con la guitarra."
+    sanV "Desde el ser más luminoso al más oscuro yo lo paseo con la guitarra."
 
-    san "¿Ah, sí? Hasta al diablo mismo parece que dijera..."
+    sanV "¿Ah, sí? Hasta al diablo mismo parece que dijera..."
 
-    san "¡Hasta al malo mismo!"
+    sanV "¡Hasta al malo mismo!"
 
     hide viejo_en_la_pulperia
     show viejo_diabolico at right:
@@ -153,7 +153,7 @@ label final_malo_incendio:
 
     play sound sfx_asustado volume 0.5
 
-    san "¡Cosa e'Mandinga!"
+    sanV "¡Cosa e'Mandinga!"
 
     diablo "No es lo mismo llamar al diablo, que verlo venir"
 
@@ -166,7 +166,7 @@ label final_malo_incendio:
                 zoom 0.6
             with dissolve
 
-            san "A mí nadie me corre con la vaina."
+            sanV "A mí nadie me corre con la vaina."
 
             play sound sfx_risa_mandinga volume 0.8
 
@@ -181,7 +181,7 @@ label final_malo_incendio:
                 zoom 0.6
             with dissolve
 
-            san "A vos no te debo nada, viejo. 
+            sanV "A vos no te debo nada, viejo. 
             Y si te sobra guapura, plantate a una payada."
 
             play sound sfx_risa_mandinga volume 0.8
@@ -197,10 +197,10 @@ label final_malo_incendio:
 
             menu:
                 "Frase romántica":
-                    san "Le dije a mi china que vuelva, 
+                    sanV "Le dije a mi china que vuelva, 
                         pero no quiso saber nada.."
                 "Frase épica":
-                    san "Yo soy la nube cercana, 
+                    sanV "Yo soy la nube cercana, 
                         que en la desierta llanura.."
 
             stop music
@@ -212,9 +212,9 @@ label final_malo_incendio:
             pause 5
             play music musica_mandinga fadein 1 volume 0.8
 
-            san "¡Mi guitarra!"
+            sanV "¡Mi guitarra!"
             
-            san "¡Esto ha sido obra maligna!"
+            sanV "¡Esto ha sido obra maligna!"
             play sound sfx_risa_mandinga volume 0.8
 
             # hide santos_guitarra_rota
@@ -241,9 +241,9 @@ label final_malo_incendio:
         zoom 0.75
     pass
 
-    san "¡Las puertas! ¡¿Qué clase de gualicho es este?!"
+    sanV "¡Las puertas! ¡¿Qué clase de gualicho es este?!"
 
-    san "¡Mejor quédese tranquilo! ¡Estamos entre peones inocentes!"
+    sanV "¡Mejor quédese tranquilo! ¡Estamos entre peones inocentes!"
 
 
     diablo "Usté sigue sin entender Santos. 
@@ -257,7 +257,7 @@ label final_malo_incendio:
 
     play sound sfx_fuego_crepitar 
 
-    san "¡Fuego!"
+    sanV "¡Fuego!"
 
     show fuego at right:
         zoom 0.2
@@ -266,7 +266,7 @@ label final_malo_incendio:
     pause 5
 
     play sound sfx_grito_derrota
-    san "¡Me lleva mandinga!"
+    sanV "¡Me lleva mandinga!"
 
     "mostrar exterior"
 
@@ -284,7 +284,7 @@ label exterior_pulperia_incendio:
     siempre se cobra con yapa."
 
     scene black
-    show text "{size=80}FIN: Final Ombú{/size}" at truecenter
+    show text "{size=80}FIN: Final Incendio{/size}" at truecenter
     with slowfade
     pause 3
     jump creditos_narrativa
