@@ -4,17 +4,33 @@ label payada_ombu(musicPlaying=False):
     # if not musicPlaying:
     #     # play music payada_intensa volume 0.5 fadein 1.0
     #     play music paya_1_A volume 0.5 fadein 0
-    play music paya_2_intro  volume 0.5 fadein 0.1 noloop
-    queue music paya_2_A volume 0.5 fadein 0.1
+    play music paya_2_intro  volume 0.8 fadein 0.1 noloop
+    queue music paya_2_A volume 0.8 fadein 0.1
     call payada_vega_ombu from _call_payada_vega_ombu
-    queue music paya_2_Final volume 0.5 fadein 0 noloop
-    hide santos_payando
+    queue music paya_2_Final volume 0.8 fadein 0 noloop
+    pause 8
 
+    juan_oculto "¡Pero que lindo!"
+
+    hide santos_payando
     show santos_hablando_guitarra at left:
-        zoom 0.75
+        zoom 0.5
+
+    juan_oculto "Me parece que ya entendí como es la cosa... 
+    Si me permite, voy a intentar de nuevo.."
+
+    san "Adelante..."
+
+    hide juan_hablando 
+
+    show juan_guitarra at right:
+        zoom 1.2
 
     call payada_JuanSinRopa from _call_payada_JuanSinRopa
-    play music fin_payada_intensa volume 0.5 fadein 1.0 noloop
+    stop music
+    
+
+    # play music fin_payada_intensa volume 0.5 fadein 1.0 noloop
 
     return
 
@@ -124,11 +140,11 @@ label payada_vega_ombu:
 
         # Seleccionar musica segun nivel y encolar para transición suave
         if nivel_actual == 2:
-            play music paya_2_B volume 0.5 
+            play music paya_2_B volume 0.8 
         if nivel_actual == 3:
-            play music paya_2_A volume 0.5 
+            play music paya_2_A volume 0.8
         if nivel_actual == 4:
-            play music paya_2_B volume 0.5 
+            play music paya_2_B volume 0.8 
             
 
         # Mostrar la payada actualizada
@@ -161,20 +177,13 @@ label payada_vega_ombu:
 
 label payada_JuanSinRopa:
     
-
-    juan_oculto "Me parece que ya entendí como es la cosa... 
-    Si me permite, voy a intentar de nuevo.."
-
-    hide juan_hablando 
-
     play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
-    show juan_guitarra at right:
-        zoom 1.2
-    juan "{cps=17} Yo vengo del polvo oscuro,
+    
+    juan_oculto "{cps=17} Yo vengo del polvo oscuro,
     {w=0.5}\ndonde el alma pierde el paso,
     {w=0.5}\nmi canto no tiene lazo,
     {w=0.5}\nni cielo, ni nombre puro."
-    juan "{cps=17}Tu voz fue un fuego maduro,
+    juan_oculto "{cps=17}Tu voz fue un fuego maduro,
     {w=0.5}\nmas todo fuego es escaso;
     {w=0.5}\ncantás, Santos, tu fracaso:
     {w=0.5}\nque el alma ya dio su paso."

@@ -70,7 +70,7 @@ label final_malo_ombu_2:
                 chichón en la frente...{w=2} y una canción 
                 en la maaaaanooooo..."
 
-    stop music fadeout 0.2
+    stop music fadeout 2
 
     play sound sfx_risa_hombre
 
@@ -87,47 +87,79 @@ label final_malo_ombu_2:
         zoom 0.75
     call payada_ombu(musicPlaying=True) from _call_payada_ombu_2
 
-    san ""
+    play music musica_mandinga fadein 0.1 volume 0.9
 
 
+    play sound sfx_indignado
+    san"¡Lo suyo fue un engaño!, 
+    esos versos no son de borrego en el canto. 
+    Diga entero su nombre, 
+    si no quiere terminar apuntalado."
+    
+    play sound sfx_risa_diabolica
 
- 
-label ombu_final2:
-    scene ombu2 
-    show juan_hablando at right:
-        zoom 1.25
-    with dissolve
-    narrator "SANTOS VEGA Se levanta con su guitarra y empieza a cantar."
+    juan "No hay facón que me alcance, 
+    no soy hombre ni sombra, soy Juan Sin Ropa. 
+    Y vengo a cobrarme su alma empeñada."
 
-    show santos_payando at left with fade:
+    play sound sfx_grunido
+
+    san "¡No me voy a ir sin pelearla!"
+    hide santos_hablando_guitarra
+    show santos_payando at left:
         zoom 0.75
+    
+    play music paya_1_A volume 0.8
+    menu: 
+        "Bajo el Ombú solitario":
+            san "Bajo el Ombú solitario" 
+        "Como un eco del quebranto":
+            san "Como un eco del quebranto"
+    queue music paya_1_B volume 0.8
+    menu: 
+        "Cruza el viento temerario.":
+            san "Cruza el viento temerario."
+        "Mi canto al cielo levanto.":
+            san "Mi canto al cielo levanto."
+    
+    stop music
+    play sound sfx_guitarra_rota
 
-    # call payada_ombu(musicPlaying=True) from _call_payada_ombu_2
+    hide santos_payando
+    show santos_guitarra_rota at left:
+        zoom 0.75
+    
+    
+    
+    san "¡Cosa e 'Mandinga!"
+    play music musica_mandinga fadein 0.2 volume 0.8
 
-    show santos_ojos_cerrados at left:
-        zoom 0.5
+    san "¡Mi guitarra! ¿Qué le hiciste?"
 
-    san "Lo acepto, estoy vencido."
+    play sound sfx_risa_jactante
+
+    juan "Se acabó tu gloria, Santos. De esta no safás ni cantando."
 
     hide juan_guitarra with dissolve
-
     show serpiente_ombu at right
-    
+    pause 3
     play sound serpiente volume 0.3
 
-    narrator "Juan Sin Ropa se convierte en serpiente mientras el cuerpo de Santos se desvanece."
+    play sound sfx_grito_derrota
+    hide santos_guitarra_rota with dissolve
 
-    hide santos_ojos_cerrados with dissolve
-
-    narrator "El gaucho Santos Vega siempre será recordado como el gran cantor que recorrió las pampas y donde fue regalo las mejores payas."
+    pause 3
 
     hide serpiente_ombu with dissolve
     
-    narrator "Pero pocos saben que su canto también fue su condena."
-    narrator "Dicen que aún se oye su voz en la llanura… no por gloria, sino por pena. Porque quien canta con el diablo nunca calla en paz."
+    narrator "El canto del que firma el pacto, 
+            queda sellado como su destino."
+    #narrator "El canto vanidoso nunca encontrará la paz."
+
+
 
     scene black
-    show text "{size=80}FIN{/size}" at truecenter
+    show text "{size=80}FIN: Final Ombú{/size}" at truecenter
     with slowfade
     pause 3
     jump creditos_produccion
