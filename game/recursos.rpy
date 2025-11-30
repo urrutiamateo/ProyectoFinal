@@ -4,7 +4,8 @@ define viejo = Character("Don Ernesto", color= "#b81c07")
 
 #define p_viejo = Character("Don Ernesto", color= "#b81c07")     #PARA CLASE PERSONAJE
 define diablo = Character("Mandinga", color= "#b81c07")
-define payador = Character("Payador del Pueblo", color = "#0abe79")  
+define payador = Character("Payador del Pueblo", color = "#0abe79")
+define payador1 = Character("Payador del Pueblo 1", color = "#bebe0a")  
 define narrator = Character(None)
 define basilisco = Character("Basilisco", color= "#ff7300")
 define juan = Character("Juan Sin Ropa", color= "#b81c07")
