@@ -1,113 +1,98 @@
-label final_malo_ombu:
-    scene viaje with fade
-    play sound brisa volume 0.3 fadein 1.0 loop
-    play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
-
-    narrator "Santos Vega se convirtió en el mejor payador, hechizaba a todos con su canto. Iba de pueblo en pueblo y a donde iba no quedaba nadie sin escucharlo."
-
-    "Una madrugada, mientras Santos Vega duerme entre viaje y viaje, en sus oscuros sueños oye unas voces."
-
-    stop sound fadeout 2.0
-
-    #show pantalla_gris:
-    #    alpha 0.0
-    #    linear 1.0 alpha 0.7  # sube opacidad a 0.5 en 1 segundo
-    
-    pause 1.5
-    
-    scene trono_mandinga 
-    show overlay_pesadilla onlayer dreamlayer
-    with irisout
-    pause 0.1
-    
-    #hide pantalla_gris
-
-    play music musica_mandinga volume 0.5 fadeout 2.0 fadein 1.0
-    play sound latidos_completo volume 0.5
-
-    voz_sueño1 "{color=#f5272e}{i}¿Qué desea el que me busca?{/i}{/color}"
-
-    voz_sueño2 "{color=#F5D627}{i}Hechizar la pampa con mi canto.{/i}{/color}"
-
-    voz_sueño1 "{color=#f5272e}{i}Pero eso cuesta... el alma. ¿Estás dispuesto…?{/i}{/color}"
-
-    voz_sueño2 "{color=#F5D627}{i}¿Adónde hay que firmar?{/i}{/color}"
-
-    scene contratoFirmado 
-    with fade
-
-    narrator "Toda promesa tiene un precio. Y en sus sueños, Santos comenzó a pagarlo. Las voces no venían de afuera… sino de adentro. La pampa escuchó su canto, pero también su condena…"
-    hide overlay_pesadilla onlayer dreamlayer
-    with dissolve
-    
-    ##CHORREA SANGRE EN LA PANTALLA
-    show sangre at truecenter
-    play sound suspiro_scare volume 0.5
-    #with dissolve
-    pause 0.25
-    #hide sangre
-    #with dissolve
-
-    show pantalla_roja onlayer dreamlayer
-    with fade 
-        #alpha 0.0
-        #linear 1 alpha 1  # sube opacidad a 0.7 en 1.5 segundos
-
-    pause 1
-    stop sound fadeout 1
-    
-    
-    
+label final_malo_ombu_2:
+    stop sound
+    stop music
+    # Parte 1
     scene ombu 
-    hide pantalla_roja onlayer dreamlayer
     show santos_durmiendo_ombu
-    hide pantalla_roja
-    with irisout
-    #with fade
+
+    play audio campo_dia volume 0.2 fadein 1.0 loop
+    play audio sfx_afligido volume 0.9
+
+    san "No... No... Padrino... Sangre... Ayúdeme..."
 
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
-    play sound campo_dia volume 0.2 fadein 1.0 loop
 
-    "Una tarde Santos estaba descansando a la sombra de un Ombú, cuando de repente aparece un desconocido gaucho y se para delante de Santos."
+    play audio sfx_pasos_pasto volume 0.9
+
+    pause 3
 
     show juan_hablando at right:
-        zoom 1.25
-    juan "Despierta Santos. Veámos cuál de los dos es el mejor."
+            zoom 1.25
+    juan_oculto "Disculpe, muchacho..."
+  
+    hide santos_durmiendo_ombu
+    show santos_recostado at left:
+        zoom 0.8
 
-    menu:
-        "{space=350}{size=40}¿Qué hará Santos?{/size}"
-        "Mirar al gaucho y preguntarle su nombre":
-            python:
-                subir_ambicion()
-            hide santos_durmiendo_ombu with dissolve
-            jump preguntarle
-        "Ignorar al gaucho y seguir acostado sobre el ombú":
-            python:
-                subir_humildad()
-            jump ignorar
-        
-label preguntarle:
-    hide juan_hablando with dissolve
+    san "¿Qué quiere hombre?"
 
-    show santos_neutro at left with fade:
-        zoom 0.75
-    san "¿Quién se atreve a cortar mi sueño?"
+    juan_oculto "¡Abrió sus ojos risueños! Estoy 
+                buscando a Santos Vega. Desde lejos 
+                vengo preguntando..."
+
+    juan_oculto "Pasé recién por un poblado vecino y me 
+                han dicho que hace tiempo a su mejor 
+                cantor, Santos lo ha humillado. ¡Qué 
+                pena por el pobre gaucho!"
     
-    show juan_hablando at right:
-        zoom 1.25
-    juan "No soy hombre ni sombra, soy Juan Sin Ropa. Y vengo a cobrar una deuda de canto."
-    hide santos_neutro with dissolve
+    # Parte 2
+    menu: 
+        "Averiguar que busca el paisano.":
+            san "No se deje engañar, no todos son tan 
+                fieros como parece. Cualquiera puede 
+                perder si anda poco avispado."
+            juan_oculto "En eso tiene razón, amigo. Yo estoy
+                        buscando con quien payar y mejorar mi 
+                        canto."
+            san "Tóquese algo paisano, y cuente lo que 
+                tiene para decir."
+            pass 
+        "Aceptar el reconocimiento.":
+            san "¡A ese ya lo humillé hace rato! Y a 
+                pesar de que, en ese entonces, todavía 
+                no era tan bueno en el canto."
+            juan_oculto "Parece que no se dedica a otra cosa 
+                        que no sea la guitarra..."
+            san " Puedo pecar de talentoso, pero no de 
+                abandonado..."
+            juan_oculto "Le propongo payar, a ver quien sale 
+                ganado."
+            san "Empiece cuando quiera, de acá acostado 
+                lo escucho..."
 
-    jump ombu_final
+    hide juan_hablando
+    show juan_guitarra at right
+    play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
 
-label ignorar:
-    show juan_hablando at right:
-        zoom 1.25
-    juan "Vamos, despierte, Santos. Levántese y agarre su guitarra. No puede escapar de mí, es su destino."
-    hide santos_durmiendo_ombu with dissolve
-    jump ombu_final
 
-label ombu_final:
+    juan_oculto "{cps=17}{w=1 }Deje que agarre paisano,{w=2} a la 
+                corrida... mi guitarra. {w=1}Que tengo un 
+                chichón en la frente...{w=2} y una canción 
+                en la maaaaanooooo..."
+
+    stop music fadeout 0.2
+
+    play sound sfx_risa_hombre
+
+    san "Ja ja ja..."
+
+    san "Yo le voy a enseñar cuantos pares son tres botas."
+    
+    hide juan_guitarra
+    show juan_hablando at right
+
+
+    hide santos_recostado
+    show santos_payando at left with fade:
+        zoom 0.75
+    call payada_ombu(musicPlaying=True) from _call_payada_ombu_2
+
+    san ""
+
+
+
+ 
+label ombu_final2:
     scene ombu2 
     show juan_hablando at right:
         zoom 1.25
@@ -117,7 +102,7 @@ label ombu_final:
     show santos_payando at left with fade:
         zoom 0.75
 
-    call payada_ombu(musicPlaying=True) from _call_payada_ombu
+    # call payada_ombu(musicPlaying=True) from _call_payada_ombu_2
 
     show santos_ojos_cerrados at left:
         zoom 0.5

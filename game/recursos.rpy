@@ -7,6 +7,7 @@ define payador = Character("Payador del Pueblo", color = "#0abe79")
 define narrator = Character(None)
 define basilisco = Character("Basilisco", color= "#ff7300")
 define juan = Character("Juan Sin Ropa", color= "#b81c07")
+define juan_oculto = Character("Gaucho", color= "#b81c07")
 define voz_sueño1 = Character(None)
 define voz_sueño2 = Character(None)
 #$ titulo_texto = "{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"
@@ -28,6 +29,9 @@ image santos_payando = "images/sprites/Santos_guitarra_en_interiorPulperia.png"
 image santos_en_viaje = "images/sprites/Santos_en_viaje.png"
 image santos_ext_cueva = "images/sprites/Santos_en_extCueva.png"
 image santos_int_cueva = "images/sprites/Santos_en_Trono.png"
+image santos_guitarra_rota ="/images/sprites/de ultimo momento/SV tocando la guitarra sorprendido-Photoroom.png"
+image santos_recostado="/images/sprites/de ultimo momento/SV durmiendo con los ojos abiertos.png"
+image santos_hablando_guitarra="/images/prites/de ultimo momento/SantosHablandoConGuitarra.png"
 
 # Sprites de salamanca
 image caballo_cueva = "images/sprites/caballo_en_extCueva.png"
@@ -110,6 +114,17 @@ define sfx_asustado = "audio/SFX marcos/SantosAsustado.ogg"
 
 define arpa_1 = "audio/SFX marcos/Arpa_1.ogg"
 define arpa_2 = "audio/SFX marcos/Arpa_2.ogg"
+
+define sfx_afligido = "/audio/SFX marcos/SFX_Gemido2.ogg"
+define sfx_pasos_pasto = "/audio/SFX marcos/Pisadas_JuansSinRopa.ogg"
+define sfx_risa_hombre = "/audio/SFX marcos/SFX-risa-santos.ogg"
+define sfx_indignado ="/audio/SFX marcos/Sorpresa enojado.ogg"
+define sfx_risa_diabolica="/audio/SFX marcos/Risa_3.ogg"
+define sfx_grunido="/audio/SFX marcos/Santos_Enojado_Murmuro.ogg"
+define sfx_guitarra_rota="/audio/SFX marcos/SFX_Guitarra_Rota.ogg"
+define sfx_risa_jactante="/audio/SFX marcos/Risa_2.ogg"
+define sfx_grito_derrota="/audio/SFX marcos/Grito_Derrota.ogg"
+
 
 define brisa = "audio/Sonidos/brisa.mp3"
 define puerta = "audio/Sonidos/puerta.mp3"

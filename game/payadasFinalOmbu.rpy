@@ -10,6 +10,9 @@ label payada_ombu(musicPlaying=False):
     queue music paya_2_Final volume 0.5 fadein 0 noloop
     hide santos_payando
 
+    show santos_hablando_guitarra at left:
+        zoom 0.75
+
     call payada_JuanSinRopa from _call_payada_JuanSinRopa
     play music fin_payada_intensa volume 0.5 fadein 1.0 noloop
 
@@ -158,9 +161,12 @@ label payada_vega_ombu:
 
 label payada_JuanSinRopa:
     
-    juan "Fue una gran payada, pero ahora es mi turno."
-    hide juan_hablando with fade
-    
+
+    juan_oculto "Me parece que ya entendí como es la cosa... 
+    Si me permite, voy a intentar de nuevo.."
+
+    hide juan_hablando 
+
     play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
     show juan_guitarra at right:
         zoom 1.2

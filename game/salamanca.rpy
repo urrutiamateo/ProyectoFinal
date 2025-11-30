@@ -354,7 +354,7 @@ label dentro_de_la_cueva:
                 scene contratoFirmado with dissolve
                 diablo "Desde hoy, tu voz no conocerá silencio... Ni en tus sueños encontrarás silencio..."
                 pause 10
-                jump final_malo_ombu
+                jump final_malo_ombu_2
 
             "Negarse a firmar":
                 python:
