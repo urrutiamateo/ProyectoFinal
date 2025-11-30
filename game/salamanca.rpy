@@ -35,7 +35,7 @@ label palabra_clave:
             stop music fadeout 1.0
             play sound sfx_grillos volume 0.3 loop fadein 2
             san "¡Sandía!"
-            "Vamos, hace un poco de memoria, Santos."
+            "Vamos, hacé un poco de memoria, Santos."
             pause 2
             stop sound fadeout 1.0
             play music misterio volume 0.5 fadeout 2.0 fadein 1.0
@@ -354,7 +354,7 @@ label dentro_de_la_cueva:
         san "El don del canto eterno... que todos me conozcan... ¡Pucha!"
         san "Ya me puedo imaginar paseándome con mi renombre, la gloria acompañándome con mi guitarra. ¡Qué tentador!"
 
-        "En la mente de Santos resuena aquella frase de padrino... "
+        "En la mente de Santos resuena aquella frase de su padrino... "
         "No hay canto más fuerte que el que nace del alma libre..."
 
         menu:

@@ -80,11 +80,11 @@ label start:
 
     scene exteriorPulperia
     with fade
-    
-    #"Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
-    "Esa misma noche el murmullo de la pulpería lo invita a acercarse."
-    play sound caballo_galope volume 0.3 fadein 1.0 
     play music misterio volume 0.5 fadein 1.0
+    #"Las risas y el murmullo de los hombres llegan hasta el camino. La pulpería brilla bajo la luna, iluminada por dentro con un farol cansado."
+    
+    play sound caballo_galope volume 0.3 fadein 1.0 
+    
     pause 4
     show santos_ext_pulperia at right:
         xpos 2300        # FUERA de cámara a la derecha
@@ -101,6 +101,7 @@ label start:
     #"Santos salta del caballo, se acomoda la guitarra al hombro y decide entrar."
     play sound sonido_caballo volume 0.3
     pause 3
+    "Esa misma noche el murmullo de la pulpería lo invita a acercarse."
     play sound murmullo volume 0.2 loop fadein 2
     san "Si quiero que mi voz llegue a toda la pampa, tengo que empezar por algún lado..."
     
