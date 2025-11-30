@@ -307,17 +307,31 @@ label dentro_de_la_cueva:
         show santos_int_cueva at right
         with fade
         
-        diablo "Has demostrado valentía, Santos Vega, o quizás inconsciencia."
-        diablo "Tu alma atravesó el miedo, y tus pasos desafiaron lo prohibido. "
-        diablo "Pocos hombres llegan hasta mi trono... y aún menos se van de aquí sin dejarme algo a cambio."
+        play sound sfx_risa_mandinga
 
-        san "¡Mandinga! Me trajo mi cuerpo, arrastrando el peso de una duda."
-        san "¿Qué cosa desean los hombres, que se emparejan con tu deseo?"
-        diablo "Ja! Todos queremos lo mismo.. fama, talento sin igual, el don de que nadie te supere jamás."
+        diablo "Parece que alguien ha equivocado el camino..."
+        
+        play sound sfx_grunido
+        san "Venía a buscarlo, Mandinga."
 
-        san "¿Y a qué precio?"
+        play sound sfx_jactante_mandinga
+        diablo "Ja! Muchos bajan a mi trono, pocos llegan a encontrarme, Santos Vega."
+    
+        diablo "{b}Santos Vega...{/b} Es un buen nombre, digno de reconocimiento."
 
-        diablo "Toda ambición tiene su costo, cantor. ¡Firma!, y el mundo entero conocerá tu nombre."
+        diablo "¿Te gustaría ser recordado con respeto? Puedo ayudarte con eso..."
+
+        diablo "Solo tienes que decirme lo que deseas."
+
+        san "{b}¡Quiero hechizar a todos con mi canto!{/b}"
+
+        play sound sfx_jactante_mandinga
+
+        diablo "Toda ambición tiene su costo, cantor. 
+        {b}Pero lo prometido es deuda. {/b}
+        ¡Firma!, y el mundo entero conocerá tu nombre."
+
+
 
         # Cambio de fondo: aparecen los brujos
         scene trono_mandinga_2 

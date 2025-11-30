@@ -139,6 +139,7 @@ define sfx_guitarra_rota="/audio/SFX marcos/SFX_Guitarra_Rota.ogg"
 define sfx_risa_jactante="/audio/SFX marcos/Risa_2.ogg"
 define sfx_grito_derrota="/audio/SFX marcos/Grito_Derrota.ogg"
 define sfx_grillos = "audio/Sonidos/grillo.mp3"
+define sfx_jactante_mandinga = "/audio/Nuevos/PayadaEpica/mandinga_jacta.ogg"
 
 define sfx_pisadas_pasto ="/audio/SFX marcos/Pisadas_Pasto.ogg"
 

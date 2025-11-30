@@ -163,7 +163,7 @@ label final_malo_ombu_2:
 
 
     scene black
-    show text "{size=80}FIN: Final Ombú{/size}" at truecenter
+    show text "{size=80}FIN: Final Incendio{/size}" at truecenter
     with slowfade
     pause 3
     jump creditos_narrativa

@@ -210,7 +210,7 @@ label start:
 
         "Ignorar la historia del viejo y quedarse en la pulpería":
             python:
-                subir_humildad()
+                subir_humildad(3)
             jump payada_madiocre
             
 
