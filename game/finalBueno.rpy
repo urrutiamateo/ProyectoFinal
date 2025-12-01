@@ -26,8 +26,9 @@ label final_bueno:
     stop sound fadeout 2.0
 
     #"Las noches de Santos podrían haber estado llenas de reconocimiento y fama. Pero en cambio se convirtieron en momentos de tranquilidad y diversión."
-
+    play sound murmullo volume 0.3 loop 
     san "Tanto estuve buscando ser el mejor cantor, que casi me olvido por qué canto." 
+
     san "El canto no es pa' la fama, es pa' compartir la pena, el vino y la risa entre amigos. "
     
     play sound murmullo volume 0.2 loop 
@@ -54,7 +55,8 @@ label final_bueno:
     "La pulpería es un nido de risas y humo... hasta que la figura de Santos cruza el umbral."
     # stop music fadeout 1.5
     stop sound fadeout 1.5
-    # play sound ohhh_pulperia volume 0.5 fadein 0.5
+    #play sound ohhh_pulperia volume 0.5 fadein 0.5
+    play sound sfx_asustado volume 0.7
 
     show rival_payador at right:
         ypos 1.1
@@ -144,7 +146,7 @@ label final_bueno:
     
     #ESCENA FINAL RANCHO ##############################################################################
     label escena_final_rancho:
-        scene exteriorRanchoNoche with fade
+        scene rancho_amanecer with fade
         play sound brisa volume 0.3 fadein 1.0 loop
         play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
         "Santos ahora canta con su alma en la voz, renacida en aquellas tinieblas, ahora más fuerte, más libre y fiel a sus raíces."
