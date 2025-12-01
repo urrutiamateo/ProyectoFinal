@@ -145,6 +145,8 @@ label start:
     #with dissolve
     san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
     san "¿Qué podés saber de la Salamanca?"
+
+    play sound sfx_risa_viejo
     viejo "Sé de muchas cosas, muchacho."
     viejo "La ubicación de ese lugar donde el {b}{color=#a10000}Señor de la Salamanca{/color}{/b} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {b}{color=#a10000}pacto{/color}{/b}."
 
@@ -185,7 +187,11 @@ label start:
     with dissolve
 
     san "Tome viejo, se lo manda el pulpero"
+
+    #play sound sfx_sorbo
+
     san "Y...{w=0.5} ¿Pa' dónde dice que queda ese lugar?"
+
     hide viejo_en_la_pulperia
     #with dissolve
 
@@ -272,17 +278,25 @@ label camino_a_salamanca:
     # pause 0.5
     scene viaje with fade
     play sound caballo_galope volume 1 fadein 1.0 
+    # show santos_en_viaje at center:
+    #     align -0.9      # empieza fuera de cámara a la derecha
+    #     zoom 1.1        # empieza más grande (zoom-in)
+    #     linear 6 xalign 0.5 zoom 1.0    # va al centro y vuelve al tamaño normal
+    pause 1.0
     show santos_en_viaje at center:
-        xalign -0.9      # empieza fuera de cámara a la derecha
-        zoom 1.1        # empieza más grande (zoom-in)
-        linear 6 xalign 0.5 zoom 1.0    # va al centro y vuelve al tamaño normal
+        yoffset 200.9      # empieza fuera de cámara a la derecha
+        xoffset -200
+        zoom 1.5        # empieza más grande (zoom-in)
+        pause 1.0
+        linear 10 yoffset -100 xoffset 0 zoom 1.0    # va al centro y vuelve al tamaño normal
+ 
 
     #stop sound fadeout 1.0
     play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
     
 
     "Atrás quedaron las risas y las luces de la pulpería. Adelante, solo la Pampa infinita y el eco del acertijo."
-    play sound brisa volume 0.3 loop 
+    queue sound brisa volume 0.5 loop 
     "Santos emprende un viaje hacia las tinieblas, acompañado por la sombra de su propia ambición."
 
     jump exterior_de_la_cueva

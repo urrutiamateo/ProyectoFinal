@@ -1,4 +1,6 @@
 # Acá hacer el final del incendio
+
+
 label final_malo_incendio:
     # "este es el final del incendio"
     
@@ -13,27 +15,22 @@ label final_malo_incendio:
     play sound murmullo volume 0.2 loop
     queue sound puerta volume 0.8
 
-    show santos_arrogante_1 at left:
+    show Incendio_santos_arrogante at left
         # linear 5 xpos 120
-        zoom 0.6
     with dissolve
 
     sanV "¡Buenas noches a la burrada! ¿Otra vez 
     papando moscas en este sucucho?"
 
-    show payador_sentado at right:
-        # linear 5 xpos 120
-        zoom 0.8
+    show Incendio_payador_bebiendo at right
     with dissolve
 
     payador "¡Eh! Tranquilo, gaucho..."
 
     sanV "Ma' si, no llore' borrego."
 
-    hide payador_sentado
-    show payador_enojado at right:
-        # linear 5 xpos 120
-        zoom 0.8
+    hide Incendio_payador_bebiendo
+    show Incendio_payador_enojado at right
     with dissolve
 
     payador "No es manera de hablar a la paisanada..."
@@ -46,34 +43,36 @@ label final_malo_incendio:
                 un aplauso merezco!"
 
             play sound sfx_murmuro_enojado volume 0.5
-            payador "(Murmurando) Es verdad, es un milagro 
+            payador "Es verdad, es un milagro 
                 tenerlo con nosotros. De agrandado que 
                 viene casi se atranca en la puerta..."
 
-            hide payador_enojado
+            hide Incendio_payador_enojado with dissolve
 
             sanV "Vaya tranquilo, 'amigo'..."
 
         "Ignorar al payador y seguir de farra.":
-            hide santos_arrogante_1
-            show santos_arrogante_2 at left:
-                # linear 5 xpos 120
-                zoom 0.6
+            hide Incendio_santos_arrogante
+            show Incendio_santos_arrogante2 at left
             # El payador deja de pelear y se va
-            hide payador_enojado
+            hide Incendio_payador_enojado with dissolve
             show rival_payador:
-                zoom 0.8
+                zoom 0.95
+                yoffset 100
             with dissolve
             payador "Pesado..."
             hide rival_payador
+            with dissolve
+
 
             sanV "¡Pulpero! Sirva una caña, me hace el 
                 favor, que vengo cortando el viento 
                 arriba del flete hace rato... Voy a 
                 necesitar un trago si me van a hacer 
                 hablar pavadas."
-
-            show viejo_hablando at right
+            
+            show viejo_hablando at right 
+            # with moveinright 
             with dissolve
             
             viejo "Si, muchacho, ya se lo alcanzo."
@@ -89,8 +88,8 @@ label final_malo_incendio:
     show viejo_en_la_pulperia at right #desplazar
     viejo "Tome muchacho..."
 
-    hide santos_arrogante_1
-    hide santos_arrogante_2
+    hide Incendio_santos_arrogante
+    hide Incendio_santos_arrogante2
     show santos_con_cania at left
 
     sanV "Gracias, viejo."
@@ -99,16 +98,12 @@ label final_malo_incendio:
 
     hide santos_con_cania
     
-    show santos_arrogante_1 at left:
-    # linear 5 xpos 120
-        zoom 0.6
+    show Incendio_santos_arrogante at left
     with dissolve
 
     viejo "¡Qué bueno tenerlo acá!"
-    hide santos_arrogante_1
-    show santos_arrogante_2 at left:
-    # linear 5 xpos 120
-        zoom 0.6
+    hide Incendio_santos_arrogante
+    show Incendio_santos_arrogante2 at left
     with dissolve
 
     sanV "Al fin se dan cuenta. 
@@ -118,10 +113,8 @@ label final_malo_incendio:
 
     viejo "Permítame una pregunta..."
 
-    hide santos_arrogante_2
-    show santos_arrogante_1 at left:
-    # linear 5 xpos 120
-        zoom 0.6
+    hide Incendio_santos_arrogante2
+    show Incendio_santos_arrogante at left
     with dissolve
 
     viejo "Alguien de su talento, de su altura, ¿tiene rival en las payadas?"
@@ -136,8 +129,7 @@ label final_malo_incendio:
     sanV "¡Hasta al malo mismo!"
 
     hide viejo_en_la_pulperia
-    show viejo_diabolico at right:
-        ypos 1500
+    show Incendio_viejo_demonio at right
 
     play music musica_mandinga fadein 0.1 volume 0.8
     play sound sfx_risa_mandinga volume 0.8
@@ -145,10 +137,9 @@ label final_malo_incendio:
     diablo "Usté es un bocón Santos Vega, 
     más le vale que demuestre lo que dice."
 
-    hide santos_arrogante_1
-    hide santos_arrogante_2 
-    show santos_asustado at left:
-        zoom 0.6
+    hide Incendio_santos_arrogante
+    hide Incendio_santos_arrogante2 
+    show Incendio_santos_asustado at left
     with dissolve
 
     play sound sfx_asustado volume 0.5
@@ -161,24 +152,23 @@ label final_malo_incendio:
         "Intentar huir":
 
             diablo "Que pasa, Santito, ¿Está asustado?"
-            hide santos_asustado 
-            show santos_arrogante_1 at left:
-                zoom 0.6
+            hide Incendio_santos_asustado 
+            show Incendio_santos_arrogante at left
             with dissolve
 
             sanV "A mí nadie me corre con la vaina."
 
             play sound sfx_risa_mandinga volume 0.8
 
+            play sound sfx_murmuro_diabolico
             diablo "Esta vez andás equivocado, 
             te topaste con el facón de frente."
 
 
             pass
         "Hacerle frente al viejo":
-            hide santos_asustado 
-            show santos_arrogante_1 at left:
-                zoom 0.6
+            hide Incendio_santos_asustado 
+            show Incendio_santos_arrogante at left
             with dissolve
 
             sanV "A vos no te debo nada, viejo. 
@@ -188,9 +178,8 @@ label final_malo_incendio:
 
             diablo "Payá si querés, así me divierto un rato."
 
-            hide santos_arrogante_1 
-            show santos_payando at left:
-                zoom 0.6
+            hide Incendio_santos_arrogante 
+            show santos_payando at left
             with dissolve
             
             play music paya_1_AyB fadein 0.1 volume 0.8
@@ -207,8 +196,7 @@ label final_malo_incendio:
             play sound sfx_guitarra_rota
             pause 0.5
             hide santos_payando
-            show santos_guitarra_rota at left:
-                zoom 0.75
+            show Incendio_santos_rompeGuitarra at left
             pause 5
             play music musica_mandinga fadein 1 volume 0.8
 
@@ -223,9 +211,10 @@ label final_malo_incendio:
     
             # pass
     
-    play sound sfx_murmuro_diabolico
+    
 
-    diablo "*murmuro inentendible*"
+    # diablo "No hay fuego que arda suficiente, \n
+    # para apaciguar a quien ya perdió a su alma."
 
     play sound sfx_puertas_cerrando volume 2
 
@@ -235,10 +224,9 @@ label final_malo_incendio:
 
     # Si eligio opcion A viene de Santos Arrogante
     # Si eligio opcion b viene de santos guitarra rota
-    hide santos_guitarra_rota
-    hide santos_arrogante_1
-    show santos_asustado at left:
-        zoom 0.75
+    hide Incendio_santos_rompeGuitarra
+    hide Incendio_santos_arrogante
+    show Incendio_santos_asustado at left
     pass
 
     sanV "¡Las puertas! ¡¿Qué clase de gualicho es este?!"
@@ -252,28 +240,31 @@ label final_malo_incendio:
     play sound sfx_risa_mandinga volume 0.8
     diablo "Y tu fama ya la perdiste, por jugarla de insolente."
 
-    play sound sfx_murmuro_diabolico
-    diablo "*murmuro inentendible*"
-
-    play sound sfx_fuego_crepitar 
-
-    sanV "¡Fuego!"
-
-    show fuego at right:
-        zoom 0.2
-    show fuego at left:
-        zoom 0.2
-    pause 5
-
-    play sound sfx_grito_derrota
-    sanV "¡Me lleva mandinga!"
-
-    # "mostrar exterior"
-
     jump exterior_pulperia_incendio
+
+    # play sound sfx_murmuro_diabolico
+    # diablo "*murmuro inentendible*"
+
+    # play sound sfx_fuego_crepitar 
+
+    # sanV "¡Fuego!"
+
+    # show fuego at right:
+    #     zoom 0.2
+    # show fuego at left:
+    #     zoom 0.2
+    # pause 5
+
+    # play sound sfx_grito_derrota
+    # sanV "¡Me lleva mandinga!"
+
+    # # "mostrar exterior"
+
+    # jump exterior_pulperia_incendio
 
 label exterior_pulperia_incendio:
     scene pulperia_incendio
+    with fade
     play sound sfx_fuego_exterior loop
 
     "La pulpería ardió hasta los cimientos, 
@@ -287,6 +278,7 @@ label exterior_pulperia_incendio:
     show text "{size=80}FIN: Final Incendio{/size}" at truecenter
     with slowfade
     pause 3
+    stop sound fadeout 6
     jump creditos_narrativa
     return
 

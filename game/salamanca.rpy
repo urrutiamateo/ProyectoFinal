@@ -2,7 +2,8 @@
 label exterior_de_la_cueva:
     #show fondo_negro
     #with fade
-   
+    stop music fadeout 2
+    stop sound fadeout 3
     pause 0.5
     play music misterio volume 0.5 fadeout 2.0 fadein 1.0
     scene extCuevaCerrada with fade
@@ -56,6 +57,7 @@ label dentro_de_la_cueva:
     show caballo_cueva at right
     with dissolve
     play sound sonido_rocaCueva volume 1
+    queue sound sonido_caballo volume 0.5
     
     # se abre la cueva
     

@@ -82,6 +82,16 @@ image trono_mandinga_2 = "images/fondos/Trono_Sr_m_v3.jpg"
 image overlay_pesadilla = "images/fondos/ensuenio.png"
 image pulperia_incendio = "/images/sprites/de ultimo momento/ExteriorPulperiaIncendio.jpg"
 
+# Incendio
+image Incendio_viejo_demonio =   "/images/sprites/FinalIncendio/viejo_demonio_incendio.png"
+image Incendio_payador_bebiendo ="/images/sprites/FinalIncendio/payador_bebiendo_incendio.png"
+image Incendio_payador_enojado = "/images/sprites/FinalIncendio/payador_enojado_incendio.png"
+image Incendio_santos_arrogante ="/images/sprites/FinalIncendio/Santos_incendio_arrogante.png"
+image Incendio_santos_arrogante2 ="/images/sprites/FinalIncendio/Santos_incendio_arrogante3.png"
+image Incendio_santos_asustado =  "/images/sprites/FinalIncendio/Santos_incendio_asustado.png"
+image Incendio_santos_rompeGuitarra = "/images/sprites/FinalIncendio/Santos_incendio_rompeGuitarra.png"
+
+
 
 # sprites ombu
 image juan_hablando = "images/sprites/JuanSinRopa_hablando.png"
@@ -138,6 +148,7 @@ define sfx_indignado ="/audio/SFX marcos/Sorpresa enojado.ogg"
 define sfx_risa_diabolica="/audio/SFX marcos/Risa_3.ogg"
 define sfx_grunido="/audio/SFX marcos/Santos_Enojado_Murmuro.ogg"
 define sfx_guitarra_rota="/audio/SFX marcos/SFX_Guitarra_Rota.ogg"
+define sfx_risa_viejo="/audio/SFX marcos/Risa_1.ogg"
 define sfx_risa_jactante="/audio/SFX marcos/Risa_2.ogg"
 define sfx_grito_derrota="/audio/SFX marcos/Grito_Derrota.ogg"
 define sfx_grillos = "audio/Sonidos/grillo.mp3"

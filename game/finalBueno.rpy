@@ -30,7 +30,7 @@ label final_bueno:
     san "Tanto estuve buscando ser el mejor cantor, que casi me olvido por qué canto." 
     san "El canto no es pa' la fama, es pa' compartir la pena, el vino y la risa entre amigos. "
     
-    play sound murmullo volume 0.3 loop 
+    play sound murmullo volume 0.2 loop 
     san "El cantor fiel a su alma, nunca pierde en esta gran payada que es la vida."
 
     hide santos_ext_pulperia
@@ -46,15 +46,15 @@ label final_bueno:
     play sound puerta volume 0.3
     #pause 0.3
     #play sound murmullo volume 0.4  
-    queue sound murmullo loop volume 0.2
+    queue sound murmullo loop volume 0.1
     show santos_entra_izquierda at left:
         linear 5 xpos 120
     with dissolve
 
     "La pulpería es un nido de risas y humo... hasta que la figura de Santos cruza el umbral."
-    stop music fadeout 1.5
+    # stop music fadeout 1.5
     stop sound fadeout 1.5
-    play sound ohhh_pulperia volume 0.5 fadein 0.5
+    # play sound ohhh_pulperia volume 0.5 fadein 0.5
 
     show rival_payador at right:
         ypos 1.1
@@ -62,29 +62,30 @@ label final_bueno:
     payador "¡Mírenlo! Dicen que el Mandinga te ofreció “la gloria”, Santos. "
     payador "¿Es verdad o volviste con la cola entre las patas?"
 
-    play music misterio volume 0.5 fadein 1.0
+    # play music misterio volume 0.5 fadein 1.0
     san "No hay criollo que no tenga como faro, los recuerdos de su padrino. Esos lo llevan a la gloria a uno."
     
    
     payador "¡Andá! ¡Mirá qué poeta el Santos! A ver si todavía podés acompañar esos versos con la guitarra."
-
+    play sound murmullo loop volume 0.1
     menu:
         "Aceptar el duelo al payador.":
             python:
                 subir_ambicion()
             san "¡Vamos, pasame la guitarra, amigo! ¿Qué esperás?"
-            stop sound fadeout 1.5
+            
             jump payada_final_bueno
         "Embriagarse primero y luego aceptar el duelo.":
             python:
                 subir_humildad()
             san "La guitarra no se va a ir a ningún lado. Primero voy a curarme el garguero del calor que hacía allá..."
-            stop sound fadeout 1.5
+            
             jump escena_final_bueno_ebrio
    
 
     #ESCENA 3A PAYADA SERIA FINAL BUENO ##############################################################################
     label payada_final_bueno:
+    stop sound fadeout 1.5
     # play music payada_intensa volume 0.5 fadeout 2.0 fadein 2.0
     #play music payada_intensa volume 0.5 fadein 0.5
     scene interiorPulperia_2
@@ -117,6 +118,7 @@ label final_bueno:
 
     #ESCENA 3B PAYADA GRACIOSA FINAL BUENO ##############################################################################
     label escena_final_bueno_ebrio:
+        stop sound fadeout 1.5
         scene interiorPulperia_1
         with fade
         hide santos_entra_izquierda
