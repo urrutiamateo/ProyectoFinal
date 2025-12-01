@@ -234,7 +234,7 @@ label final_malo_incendio:
     sanV "¡Mejor quédese tranquilo! ¡Estamos entre peones inocentes!"
 
 
-    diablo "Usté sigue sin entender Santos. 
+    diablo "Usté sigue sin entender, Santos. 
     Estas gentes son la yapa, que me gano por impaciente."
 
     play sound sfx_risa_mandinga volume 0.8

@@ -81,6 +81,7 @@ image trono_mandinga = "images/fondos/Trono_Sr_m_v2.jpg"
 image trono_mandinga_2 = "images/fondos/Trono_Sr_m_v3.jpg"
 image overlay_pesadilla = "images/fondos/ensuenio.png"
 image pulperia_incendio = "/images/sprites/de ultimo momento/ExteriorPulperiaIncendio.jpg"
+image rancho_amanecer = "images/fondos/exteriorRanchoAmanecer.jpg"
 
 # Incendio
 image Incendio_viejo_demonio =   "/images/sprites/FinalIncendio/viejo_demonio_incendio.png"
