@@ -34,7 +34,7 @@ image santos_en_viaje = "images/sprites/Santos_en_viaje.png"
 image santos_ext_cueva = "images/sprites/Santos_en_extCueva.png"
 image santos_int_cueva = "images/sprites/Santos_en_Trono.png"
 image santos_guitarra_rota ="/images/sprites/de ultimo momento/SV tocando la guitarra sorprendido-Photoroom.png"
-image santos_recostado="/images/sprites/de ultimo momento/SV durmiendo con los ojos abiertos.png"
+image santos_recostado="/images/sprites/ombu/santos_acaostado_abre_ojos.png"
 image santos_hablando_guitarra="/images/sprites/de ultimo momento/SantosHablandoConGuitarra.png"
 
 image santos_arrogante_1 ="/images/sprites/de ultimo momento/Arrogante1.png"

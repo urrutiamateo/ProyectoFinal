@@ -25,8 +25,7 @@ label final_malo_ombu_2:
     juan_oculto "Disculpe, muchacho..."
   
     hide santos_durmiendo_ombu
-    show santos_recostado at left:
-        zoom 0.8
+    show santos_recostado at left
 
     sanV "¿Qué quiere hombre?"
 
@@ -65,7 +64,8 @@ label final_malo_ombu_2:
                 lo escucho..."
 
     hide juan_hablando
-    show juan_guitarra at right
+    show juan_guitarra at right:
+        zoom 1.25
     play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
 
 
@@ -83,12 +83,14 @@ label final_malo_ombu_2:
     sanV "Yo le voy a enseñar cuantos pares son tres botas."
     
     hide juan_guitarra
-    show juan_hablando at right
+    show juan_hablando at right:
+        zoom 1.25
 
 
     hide santos_recostado
-    show santos_payando at left with fade:
-        zoom 0.75
+    show santos_payando at left
+    with dissolve
+
     call payada_ombu(musicPlaying=True) from _call_payada_ombu_2
 
     play music musica_mandinga fadein 0.1 volume 0.9
@@ -103,15 +105,15 @@ label final_malo_ombu_2:
     play sound sfx_risa_diabolica
 
     juan "No hay facón que me alcance, 
-    no soy hombre ni sombra, soy Juan Sin Ropa. 
-    Y vengo a cobrarme su alma empeñada."
+    no soy hombre ni sombra, {w=0.5}{cps=17}{b}soy Juan Sin Ropa. 
+    Y vengo a cobrarme su alma empeñada.{/b}"
 
     play sound sfx_grunido
 
     sanV "¡No me voy a ir sin pelearla!"
-    hide santos_hablando_guitarra
-    show santos_payando at left:
-        zoom 0.75
+    # hide santos_hablando_guitarra
+    # show santos_payando at left:
+    #     zoom 0.75
     
     # define config.menu_clear_window = False
     play music paya_1_A volume 0.8
@@ -133,8 +135,7 @@ label final_malo_ombu_2:
     play sound sfx_guitarra_rota
 
     hide santos_payando
-    show santos_guitarra_rota at left:
-        zoom 0.75
+    show Incendio_santos_rompeGuitarra at left
     
     
     
@@ -144,20 +145,42 @@ label final_malo_ombu_2:
     sanV "¡Mi guitarra! ¿Qué le hiciste?"
 
     play sound sfx_risa_jactante
+    hide juan_guitarra
+    show juan_hablando at right:
+        zoom 1.25
+    with dissolve
 
-    juan "Se acabó tu gloria, Santos. De esta no safás ni cantando."
+    juan "Se acabó tu gloria, Santos. {w=0.5}De esta no safaste ni cantando."
 
-    hide juan_guitarra with dissolve
+    hide juan_hablando with dissolve
     show serpiente_ombu at right
-    pause 3
+    with dissolve
     play sound serpiente volume 0.3
-
-    play sound sfx_grito_derrota
-    hide santos_guitarra_rota with dissolve
-
     pause 3
+    hide Incendio_santos_rompeGuitarra with dissolve
+    queue sound sfx_grito_derrota volume 0.8 fadein 2
 
+    pause 2
+
+    # hide serpiente_ombu with dissolve
     hide serpiente_ombu with dissolve
+    show serpiente at right:
+        zoom 1.6
+        linear 8 yoffset 600 xoffset -2500 zoom 2 
+    with dissolve
+
+    pause 10
+
+    # show serpiente at left
+    # with dissolve
+    # pause 1
+    # hide serpiente
+    # with dissolve
+    # pause 0.5
+
+    # show serpiente_ombu at right:
+    #     linear 10 yoffset -100 xoffset 0 zoom 1.0  
+        
     
     narrator "El canto del que firma el pacto, 
             queda sellado como su destino."

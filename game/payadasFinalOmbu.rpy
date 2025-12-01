@@ -17,16 +17,16 @@ label payada_ombu(musicPlaying=False):
     juan_oculto "Me parece que ya entendí como es la cosa... 
     Si me permite, voy a intentar de nuevo.."
 
-    hide santos_payando
-    show santos_hablando_guitarra at left:
-        zoom 0.5
+    # hide santos_payando
+    # show santos_hablando_guitarra at left:
+    #     zoom 0.5
         
     sanV "Adelante..."
 
     hide juan_hablando 
 
     show juan_guitarra at right:
-        zoom 1.2
+        zoom 1.25
 
     call payada_JuanSinRopa from _call_payada_JuanSinRopa
     stop music
