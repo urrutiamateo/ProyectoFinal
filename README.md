@@ -35,7 +35,5 @@ Este proyecto fue realizado por:
 * **Mateo Urrutia**
 * **Marcos Vallasciani**
 
-* **Marcos Vallasciani**
-
 ---
 *Proyecto realizado por estudiantes de la UPSO.*
