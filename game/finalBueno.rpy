@@ -147,7 +147,7 @@ label final_bueno:
     #ESCENA FINAL RANCHO ##############################################################################
     label escena_final_rancho:
         scene rancho_amanecer with fade
-        play sound brisa volume 0.3 fadein 1.0 loop
+        play sound campo_dia volume 0.3 fadein 1.0 loop
         play music musica_intro volume 0.5 fadeout 2.0 fadein 1.0
         "Santos ahora canta con su alma en la voz, renacida en aquellas tinieblas, ahora más fuerte, más libre y fiel a sus raíces."
         "El pago lo vió renacer: sereno y humilde."
