@@ -8,9 +8,11 @@ label payada_ombu(musicPlaying=False):
     queue music paya_2_A volume 0.8 fadein 0.1
     call payada_vega_ombu from _call_payada_vega_ombu
     queue music paya_2_Final volume 0.8 fadein 0 noloop
-    pause 8
+    pause 10
+    
 
     juan_oculto "¡Pero que lindo!"
+    play sound campo_dia volume 0.1 fadein 1.0 loop
 
     
 
@@ -28,6 +30,7 @@ label payada_ombu(musicPlaying=False):
     show juan_guitarra at right:
         zoom 1.25
 
+    stop sound fadeout 3
     call payada_JuanSinRopa from _call_payada_JuanSinRopa
     stop music
     

@@ -112,8 +112,7 @@ label final_malo_ombu_2:
 
     sanV "¡No me voy a ir sin pelearla!"
     # hide santos_hablando_guitarra
-    # show santos_payando at left:
-    #     zoom 0.75
+    # show santos_payando at left
     
     # define config.menu_clear_window = False
     play music paya_1_A volume 0.8
