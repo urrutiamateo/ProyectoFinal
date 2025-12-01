@@ -28,9 +28,13 @@ Podés ver un adelanto de la jugabilidad en nuestro video de presentación:
 ## 👥 Créditos - Grupo 1
 Este proyecto fue realizado por:
 
+* **Maria Giselle Coronel**
 * **Mariela Gregnoli**
-* **Mateo Urrutia**
+* **Rosalía Y Juárez**
 * **Yanina Tiribelli**
+* **Mateo Urrutia**
+* **Marcos Vallasciani**
+
 * **Marcos Vallasciani**
 
 ---
