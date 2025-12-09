@@ -132,8 +132,9 @@ label dentro_de_la_cueva:
             xzoom -1
         with dissolve
         
-        "Lo mejor ante las bestias es permanecer inmóvil, y dejarlas que sigan por donde vinieron."
+        #"Lo mejor ante las bestias es permanecer inmóvil, y dejarlas que sigan por donde vinieron."
         san "¡Que lo parió! ¡No me quieren dejar tranquilo!"
+        jump aparece_basilisco
 
     menu:
         "“Sacudirse las alimañas”":
@@ -160,9 +161,9 @@ label dentro_de_la_cueva:
     hide serpiente
     with dissolve
     pause 0.5
-    "Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+    #"Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
     "Superó la primera prueba, pero el silencio dura poco." 
-    "Algo más grande se arrastra en la oscuridad..."
+    #"Algo más grande se arrastra en la oscuridad..."
     # APARECE BASILISCO ##############################################################################
     label aparece_basilisco:
     show basilisco at center 
