@@ -124,7 +124,7 @@ label final_malo_incendio:
 
     sanV "Desde el ser más luminoso al más oscuro yo lo paseo con la guitarra."
 
-    sanV "¿Ah, sí? Hasta al diablo mismo parece que dijera..."
+    viejo "¿Ah, sí? Hasta al diablo mismo parece que dijera..."
 
     sanV "¡Hasta al malo mismo!"
 
@@ -229,13 +229,13 @@ label final_malo_incendio:
     show Incendio_santos_asustado at left
     pass
 
-    sanV "¡Las puertas! ¡¿Qué clase de gualicho es este?!"
+    sanV "¡Las puertas! ¡¿Qué clase de gualicho es éste?!"
 
     sanV "¡Mejor quédese tranquilo! ¡Estamos entre peones inocentes!"
 
 
     diablo "Usté sigue sin entender, Santos. 
-    Estas gentes son la yapa, que me gano por impaciente."
+    Esta gente son la yapa, que me gano por impaciente."
 
     play sound sfx_risa_mandinga volume 0.8
     diablo "Y tu fama ya la perdiste, por jugarla de insolente."

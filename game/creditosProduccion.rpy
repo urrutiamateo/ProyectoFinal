@@ -1,4 +1,4 @@
-transform scroll_credits:
+transform scroll_credits_produccion:
     ypos 1080  # empieza justo debajo de la pantalla
     linear 50.0 ypos -5500  # termina arriba
 
@@ -6,14 +6,14 @@ label creditos_produccion:
 
     scene black
     play music "feliz.mp3"
-    show screen creditscreen
+    show screen creditscreen_produccion
     pause 30 # tiempo total de desplazamiento
-    hide screen creditscreen
+    hide screen creditscreen_produccion
     stop music fadeout 3.0
     scene black with fade
     return
 
-screen creditscreen:
+screen creditscreen_produccion:
     frame:
         background None
         xalign 0.5
@@ -21,7 +21,7 @@ screen creditscreen:
         has vbox
         vbox:
             spacing 25
-            at scroll_credits
+            at scroll_credits_produccion
             text "SANTOS VEGA Y EL VIEJO DE LA PULPERIA":
                 size 60
                 color "#F5D627"

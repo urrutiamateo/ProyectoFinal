@@ -47,7 +47,7 @@ label final_malo_ombu_2:
             juan_oculto "En eso tiene razón, amigo. Yo estoy
                         buscando con quien payar y mejorar mi 
                         canto."
-            sanV "Tóquese algo paisano, y cuente lo que 
+            sanV "Tóquese algo, paisano. Cuente lo que 
                 tiene para decir."
             pass 
         "Aceptar el reconocimiento.":
@@ -56,7 +56,7 @@ label final_malo_ombu_2:
                 no era tan bueno en el canto."
             juan_oculto "Parece que no se dedica a otra cosa 
                         que no sea la guitarra..."
-            sanV " Puedo pecar de talentoso, pero no de 
+            sanV "Puedo pecar de talentoso, pero no de 
                 abandonado..."
             juan_oculto "Le propongo payar, a ver quien sale 
                 ganado."
@@ -69,7 +69,7 @@ label final_malo_ombu_2:
     play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
 
 
-    juan_oculto "{cps=17}{w=1 }Deje que agarre paisano,{w=2} a la 
+    juan_oculto "{cps=17}{w=1 }Deje que agarre, paisano,{w=2} a la 
                 corrida... mi guitarra. {w=1}Que tengo un 
                 chichón en la frente...{w=2} y una canción 
                 en la maaaaanooooo..."
