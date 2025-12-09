@@ -1,4 +1,5 @@
 #ESCENA 2 EXTERIOR CUEVA ##############################################################################
+default sandia_count = 0
 label exterior_de_la_cueva:
     #show fondo_negro
     #with fade
@@ -26,6 +27,7 @@ label palabra_clave:
 
     menu:
         "Cueva":
+            $ sandia_count = 0
             $ subir_ambicion()
             # Bloque de código Python para hacer el log
             $ print(f"DEBUG: La AMBICION actual es: {ambicion}")
@@ -33,6 +35,11 @@ label palabra_clave:
             jump dentro_de_la_cueva
 
         "Sandía":
+            $ sandia_count += 1
+            if sandia_count >= 3:
+                "Basta, Santos... hoy no estás para acertijos. Vamos a la cueva!"
+                $ sandia_count = 0
+                jump dentro_de_la_cueva
             stop music fadeout 1.0
             play sound sfx_grillos volume 0.3 loop fadein 2
             san "¡Sandía!"
@@ -89,9 +96,7 @@ label dentro_de_la_cueva:
 
     play sound sfx_asustado
     show santos_int_cueva at salto_tiembla
-    san "¡Que lo parió!"
-    
-
+    san "¡Qué lo parió!"
 
     menu:
         "“Sacudirse las alimañas”":
