@@ -22,8 +22,11 @@ label final_malo_incendio:
     sanV "¡Buenas noches a la burrada! ¿Otra vez 
     papando moscas en este sucucho?"
 
+    "Santos Vega entró altanero a la pulpería, ofendiendo a algunos de los payadores que frecuentaban la pulpería."
+
     show Incendio_payador_bebiendo at right
     with dissolve
+    
 
     payador "¡Eh! Tranquilo, gaucho..."
 
@@ -71,6 +74,8 @@ label final_malo_incendio:
                 necesitar un trago si me van a hacer 
                 hablar pavadas."
             
+            "El viejo de la pulpería atiende el llamado de Santos Vega."
+
             show viejo_hablando at right 
             # with moveinright 
             with dissolve

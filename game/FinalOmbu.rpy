@@ -80,7 +80,7 @@ label final_malo_ombu_2:
 
     sanV "Ja ja ja..."
 
-    sanV "Yo le voy a enseñar cuantos pares son tres botas."
+    sanV "Voy a tener que levantarme y mostrarle como se hace la cosa."
     
     hide juan_guitarra
     show juan_hablando at right:

@@ -47,8 +47,8 @@ label recuerdo_mandinga:
 
     narrator "Toda promesa tiene un precio. 
     Y en sus sueños, Santos Vega comenzó a pagarlo. 
-    Las voces no venían de afuera, sino de adentro. 
-    La pampa escuchó su canto, pero también su condena…"
+    Sus pesadillas lo perseguían hasta abajo de la cama. 
+    La pampa escuchó su canto, pero también su condena..."
     hide overlay_pesadilla onlayer dreamlayer
     with dissolve
     

@@ -27,7 +27,7 @@ label palabra_clave:
 
     menu:
         "Cueva":
-            $ sandia_count = 0
+            # $ sandia_count = 0
             $ subir_ambicion()
             # Bloque de código Python para hacer el log
             $ print(f"DEBUG: La AMBICION actual es: {ambicion}")
@@ -35,23 +35,27 @@ label palabra_clave:
             jump dentro_de_la_cueva
 
         "Sandía":
-            $ sandia_count += 1
-            if sandia_count >= 3:
-                "Basta, Santos... hoy no estás para acertijos. Vamos a la cueva!"
-                $ sandia_count = 0
-                jump dentro_de_la_cueva
+            $ subir_humildad()
+            # $ sandia_count += 1
+            # if sandia_count >= 1:
+            #     "Basta, Santos... hoy no estás para acertijos. Vamos a la cueva!"
+            #     $ sandia_count = 0
+            #     jump dentro_de_la_cueva
             stop music fadeout 1.0
             play sound sfx_grillos volume 0.3 loop fadein 2
             san "¡Sandía!"
-            "Vamos, hacé un poco de memoria, Santos."
+            # "Vamos, hacé un poco de memoria, Santos."
             pause 2
             stop sound fadeout 1.0
+            san "¿Nada? Parece que le pifié."
             play music misterio volume 0.5 fadeout 2.0 fadein 1.0
-            $ subir_humildad()
+
+            san "De alguna manera se debe poder entrar a esta {b}cueva.{/b}"
             # Bloque de código Python para hacer el log
             $ print(f"DEBUG: La HUMILDAD actual es: {humildad}")
 
-            jump palabra_clave
+            # jump palabra_clave
+            jump dentro_de_la_cueva
 
             #dejamos payada mediocre comentado por si despues queremos hacer esa parte
             #jump payada_madiocre
@@ -98,24 +102,25 @@ label dentro_de_la_cueva:
     show santos_int_cueva at salto_tiembla
     san "¡Qué lo parió!"
 
-    menu:
-        "“Sacudirse las alimañas”":
-            #"Santos se sacude algunos bichos..."
+    label menu_serpiente:
+        menu:
+            "“Sacudirse las alimañas”":
+                #"Santos se sacude algunos bichos..."
 
-            python:
-                subir_ambicion()
+                python:
+                    subir_ambicion()
 
-            jump serpiente_enojada
-        
+                jump serpiente_enojada
             
-        "“Aguantarse quieto ”":
-
-            play sound alimanias_2
-            
-            python:
                 
-                subir_humildad()
-            jump sale_serpiente
+            "“Aguantarse quieto ”":
+
+                play sound alimanias_2
+                
+                python:
+                    
+                    subir_humildad()
+                jump sale_serpiente
 
     label serpiente_enojada:
         pause 0.5
@@ -134,43 +139,46 @@ label dentro_de_la_cueva:
         
         #"Lo mejor ante las bestias es permanecer inmóvil, y dejarlas que sigan por donde vinieron."
         san "¡Que lo parió! ¡No me quieren dejar tranquilo!"
-        jump aparece_basilisco
+        jump sale_serpiente
+        # jump aparece_basilisco
 
-    menu:
-        "“Sacudirse las alimañas”":
-            #"Santos se sacude algunos bichos ..."
+    # menu:
+    #     "“Sacudirse las alimañas”":
+    #         #"Santos se sacude algunos bichos ..."
 
-            python:
-                subir_ambicion()
-            jump serpiente_enojada
+    #         python:
+    #             subir_ambicion()
+    #         jump serpiente_enojada
         
             
-        "“Aguantarse quieto”":
-            play sound alimanias_2
+    #     "“Aguantarse quieto”":
+    #         play sound alimanias_2
             
-            python:
-                subir_humildad()
-            jump sale_serpiente
+    #         python:
+    #             subir_humildad()
+    #         jump sale_serpiente
 
     #aparece basilisco
     label sale_serpiente:
-    hide serpienteA
-    show serpiente at left
-    with dissolve
-    pause 1
-    hide serpiente
-    with dissolve
-    pause 0.5
-    #"Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
-    "Superó la primera prueba, pero el silencio dura poco." 
-    #"Algo más grande se arrastra en la oscuridad..."
+        hide serpienteA
+        show serpiente at left
+        with dissolve
+        pause 1
+        hide serpiente
+        with dissolve
+        pause 0.5
+        #"Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+        "Superó la primera prueba, pero el silencio dura poco." 
+        #"Algo más grande se arrastra en la oscuridad..."
+        jump aparece_basilisco
+
     # APARECE BASILISCO ##############################################################################
     label aparece_basilisco:
-    show basilisco at center 
-    with dissolve
-    play sound alimanias_1
-    basilisco "¡QUIETO AHÍ!"
-    basilisco "Si tu idea es ir más allá de esta penumbra, deberás tener el valor de mirarme a los ojos."
+        show basilisco at center 
+        with dissolve
+        play sound alimanias_1
+        basilisco "¡QUIETO AHÍ!"
+        basilisco "Si tu idea es ir más allá de esta penumbra, deberás tener el valor de mirarme a los ojos."
     
     menu:
         
@@ -180,7 +188,7 @@ label dentro_de_la_cueva:
             python:
                 subir_ambicion()
 
-            jump aparece_basilisco
+            jump desaparece_basilisco
             
         "“Cerrar los ojos”":
             #"Santos cierra los ojos aguantando el temor que le provoca el basilisco, sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
@@ -227,52 +235,42 @@ label dentro_de_la_cueva:
         san "¿Cuál de estas tres cuevas me lleva a lo del Mandinga?"
 
         play sound arpa_1 volume 1 fadeout 5.0
-        menu:
-            "“Cueva a la izquierda”":
-                python:
-                    subir_ambicion()
 
-                jump cueva_equivocada2
-            "“Cueva del centro”":
+        $ elegida_izq = False
+        $ elegida_der = False
 
-                python:
-                    subir_humildad()
+        label eleccion_cuevas:
+            # config.menu_include_disabled
+            menu:
+                "“Cueva a la izquierda”" if not elegida_izq:
+                    python:
+                        subir_ambicion()
+                    $ elegida_izq = True
+                    jump cueva_equivocada2
 
-                jump trono_mandinga
-            "“Cueva a la derecha”":
+                "“Cueva del centro”":
+                    python:
+                        subir_humildad()
+                    jump trono_mandinga
 
-                python:
-                    subir_ambicion()
-
-                jump cueva_equivocada1
+                "“Cueva a la derecha”" if not elegida_der:
+                    python:
+                        subir_ambicion()
+                    $ elegida_der = True
+                    # jump eleccion_cuevas
+                    jump cueva_equivocada1
 
     label cueva_equivocada1:
         
         show murcielagos at truecenter
         with dissolve
-
         play sound sound_bat 
-
         pause 0.8
         hide murcielagos
         with dissolve
-
         san "¡La pucha...! Mejor por ahí no... me da mala espina."
-        menu:
-            "“Cueva a la izquierda”":
-                python:
-                    subir_ambicion()
 
-                jump cueva_equivocada2
-            "“Cueva del centro”":
-                python:
-                    subir_humildad()
-
-                jump trono_mandinga
-            "“Cueva a la derecha”":
-                python:
-                    subir_ambicion()
-                jump cueva_equivocada1
+        jump eleccion_cuevas
 
     label cueva_equivocada2:
         
@@ -287,22 +285,7 @@ label dentro_de_la_cueva:
         with dissolve
         
         san "¡Que julepe! Mejor por ahí no voy."
-        menu:
-            "“Cueva a la izquierda”":
-                python:
-                    subir_ambicion()
-
-                jump cueva_equivocada2
-            "“Cueva del centro”":
-                python:
-                    subir_humildad()
-
-                jump trono_mandinga
-            "“Cueva a la derecha”":
-                python:
-                    subir_ambicion()
-
-                jump cueva_equivocada1
+        jump eleccion_cuevas
 
 
     label trono_mandinga:
