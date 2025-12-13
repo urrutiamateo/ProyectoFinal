@@ -167,9 +167,9 @@ label dentro_de_la_cueva:
         hide serpiente
         with dissolve
         pause 0.5
-        #"Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
+        "Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
         "Superó la primera prueba, pero el silencio dura poco." 
-        #"Algo más grande se arrastra en la oscuridad..."
+        "Algo más grande se arrastra en la oscuridad..."
         jump aparece_basilisco
 
     # APARECE BASILISCO ##############################################################################
@@ -183,7 +183,7 @@ label dentro_de_la_cueva:
     menu:
         
         "“Huir del basilisco”":
-            #"Santos quiere salir corriendo, no resiste el terror que le provoca esta monstruosa cueva, pero ya no hay vuelta atrás..."
+            san "¡La pucha...! Se me aflojan las patas y se me nubla la vista del julepe..."
 
             python:
                 subir_ambicion()
