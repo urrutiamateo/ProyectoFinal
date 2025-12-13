@@ -26,11 +26,11 @@ label payada_final_bueno_vega:
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
         verso1 = FrasePayada("No fue miedo ni ambición,")
         
-        verso2 = FrasePayada("fue el consejo del que amparo:")
-        verso3 = FrasePayada("fue el alma la que mando,")
+        verso2 = FrasePayada("fue el consejo del que amparó:")
+        verso3 = FrasePayada("fue el alma la que mandó,")
         
         verso4 = FrasePayada("no hay canto más fuerte, hermano,")
-        verso5 = FrasePayada("no hay rumbo mas puro y claro")
+        verso5 = FrasePayada("no hay rumbo más puro y claro")
         
         verso6 = FrasePayada("el diablo quiso mi canto,")
         verso7 = FrasePayada("el diablo cruzo mi paso,")

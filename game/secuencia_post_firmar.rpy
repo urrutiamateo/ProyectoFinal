@@ -36,18 +36,18 @@ label recuerdo_mandinga:
 
     voz_sueño1 "{color=#f5272e}{i}¿Qué desea el que me busca?{/i}{/color}"
 
-    voz_sueño2 "{color=#F5D627}{i}Hechizar la pampa con mi canto.{/i}{/color}"
+    voz_sueño2 "{color=#F5D627}{i}Hechizar la Pampa con mi canto.{/i}{/color}"
 
     voz_sueño1 "{color=#f5272e}{i}Pero eso cuesta... el alma. ¿Estás dispuesto…?{/i}{/color}"
 
-    voz_sueño2 "{color=#F5D627}{i}¿Adónde hay que firmar?{/i}{/color}"
+    voz_sueño2 "{color=#F5D627}{i}¿A dónde hay que firmar?{/i}{/color}"
 
     scene contratoFirmado 
     with fade
 
     narrator "Toda promesa tiene un precio. 
     Y en sus sueños, Santos Vega comenzó a pagarlo. 
-    Sus pesadillas lo perseguían hasta abajo de la cama. 
+    Aquellas voces eran el eco de las sombras que ahogaban su alma. 
     La pampa escuchó su canto, pero también su condena..."
     hide overlay_pesadilla onlayer dreamlayer
     with dissolve

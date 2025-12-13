@@ -26,11 +26,11 @@ label payada_vega:
         from python.payadas.FrasePayada import FrasePayada
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
-        estimado = FrasePayada("Cómo le va mi estimado?", ambicion=0, humildad=1)
+        estimado = FrasePayada("¿Cómo le va mi estimado?", ambicion=0, humildad=1)
         cansado = FrasePayada("Lo veo cansado y sucio", ambicion=1, humildad=0)
 
         tirarse = FrasePayada("Venga a tirarse un rato", ambicion=0, humildad=1)
-        banio = FrasePayada("Por que no se pega un baño", ambicion=1, humildad=0)
+        banio = FrasePayada("¿Por qué no se pega un baño?", ambicion=1, humildad=0)
 
         yuyos = FrasePayada("A la sombra de los yuyos", ambicion=1, humildad=0)
         pucho1 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1)
@@ -167,7 +167,7 @@ label payada_payador:
     #with dissolve
     # Respuesta buena
     if humildad_resultante > ambicion_resultante: 
-        payador "{cps=17}Buena payada compadre,\nle voy a tomar consejo,\nle aseguro que si tata 'dios quiere,\nde yapa también ceno conejo."
+        payador "{cps=17}Buena payada compadre,\nle voy a tomar consejo,\nle aseguro que, si tata 'dios quiere,\nde yapa también ceno conejo."
 
     elif ambicion_resultante > humildad_resultante:
         payador "{cps=17}Con afanes de macho y lanudo,\nno está en condiciones de dar consejo.\nMejor practique un rato largo,\nsi su intención es llegar más lejos."

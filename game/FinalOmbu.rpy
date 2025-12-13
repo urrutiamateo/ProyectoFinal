@@ -40,15 +40,15 @@ label final_malo_ombu_2:
     
     # Parte 2
     menu: 
-        "Averiguar que busca el paisano.":
+        "Averiguar qué busca el paisano.":
             sanV "No se deje engañar, no todos son tan 
                 fieros como parece. Cualquiera puede 
                 perder si anda poco avispado."
             juan_oculto "En eso tiene razón, amigo. Yo estoy
-                        buscando con quien payar y mejorar mi 
+                        buscando con quién payar y mejorar mi 
                         canto."
-            sanV "Tóquese algo, paisano. Cuente lo que 
-                tiene para decir."
+            sanV "Tóquese algo, paisano, y cuente lo que 
+                tiene pa' decir."
             pass 
         "Aceptar el reconocimiento.":
             sanV "¡A ese ya lo humillé hace rato! Y a 
@@ -58,8 +58,8 @@ label final_malo_ombu_2:
                         que no sea la guitarra..."
             sanV "Puedo pecar de talentoso, pero no de 
                 abandonado..."
-            juan_oculto "Le propongo payar, a ver quien sale 
-                ganado."
+            juan_oculto "Le propongo payar, a ver quién sale 
+                ganando."
             sanV "Empiece cuando quiera, de acá acostado 
                 lo escucho..."
 

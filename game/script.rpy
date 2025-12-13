@@ -125,7 +125,7 @@ label start:
     #play sound murmullo volume 0.4  
     
     
-    san "Pucha que está espeso. Especial para una ronda de caña y cartas.\nA ver si esta noche pinta la buena racha."
+    san "¡Pucha que está espeso! Especial para una ronda de caña y cartas.\nA ver si esta noche pinta la buena racha."
     
     "Un {b}viejo{/b} de mirada extraña lo observa desde el fondo de una mesa mientras habla de la Salamanca, {b}{color=#a10000}la cueva donde dicen que el diablo concede dones{/color}{/b}."
     #show santos_neutro_iz at left:
@@ -163,7 +163,7 @@ label start:
         linear 6 xpos 820 #alpha 1.0
     with dissolve
     san "Andá a saber cuánto hace que ese viejo anda dando vueltas por acá."
-    san "Si le llevo un trago capaz que afloja la lengua.\nEstos viejos saben más de lo que dicen. Y cuando hablan, nunca es de gusto."
+    san "Si le llevo un trago, capaz que afloja la lengua.\nEstos viejos saben más de lo que dicen. Y cuando hablan, nunca es de gusto."
     
 
     

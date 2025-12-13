@@ -306,7 +306,7 @@ label dentro_de_la_cueva:
         san "Venía a buscarlo, Mandinga."
 
         play sound sfx_jactante_mandinga
-        diablo "Ja! Muchos bajan a mi trono, pocos llegan a encontrarme, Santos Vega."
+        diablo "¡Ja! Muchos bajan a mi trono, pocos llegan a encontrarme, Santos Vega."
     
         diablo "{b}Santos Vega...{/b} Es un buen nombre, digno de reconocimiento."
 
@@ -346,7 +346,7 @@ label dentro_de_la_cueva:
         san "Ya me puedo imaginar paseándome con mi renombre, la gloria acompañándome con mi guitarra. ¡Qué tentador!"
 
         "En la mente de Santos resuena aquella frase de su padrino... "
-        "No hay canto más fuerte que el que nace del alma libre..."
+        "{space=60}{cps=20}{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre{/i}{/b}{/color}"
 
         menu:
             "Firmar el contrato":
