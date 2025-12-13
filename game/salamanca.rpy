@@ -108,7 +108,7 @@ label dentro_de_la_cueva:
                 #"Santos se sacude algunos bichos..."
 
                 python:
-                    subir_ambicion()
+                    subir_humildad()
 
                 jump serpiente_enojada
             
@@ -119,7 +119,7 @@ label dentro_de_la_cueva:
                 
                 python:
                     
-                    subir_humildad()
+                    subir_ambicion()
                 jump sale_serpiente
 
     label serpiente_enojada:
@@ -186,7 +186,7 @@ label dentro_de_la_cueva:
             san "¡La pucha...! Se me aflojan las patas y se me nubla la vista del julepe..."
 
             python:
-                subir_ambicion()
+                subir_humildad()
 
             jump desaparece_basilisco
             
@@ -196,7 +196,7 @@ label dentro_de_la_cueva:
             
             python:
                 
-                subir_humildad()
+                subir_ambicion()
 
             jump desaparece_basilisco
 
@@ -250,12 +250,12 @@ label dentro_de_la_cueva:
 
                 "“Cueva del centro”":
                     python:
-                        subir_humildad()
+                        subir_ambicion()
                     jump trono_mandinga
 
                 "“Cueva a la derecha”" if not elegida_der:
                     python:
-                        subir_ambicion()
+                        subir_humildad()
                     $ elegida_der = True
                     # jump eleccion_cuevas
                     jump cueva_equivocada1
