@@ -608,17 +608,21 @@ screen creditos():
 
             #text "Créditos" size 60 xalign 0.5
 
-
-            text "Game Desing: Mariela Gregnoli / Rosalía Juárez"
+            
+            text "Guión:Mariela Gregnoli / Marcos Vallasciani"
+            text "Co-guión: Gisela Coronel / Yanina Tiribelli"
+            text "Game Desing: Mariela Gregnoli / Rosalía Juárez" 
+            text "                        Marcos Vallasciani"
             text "Producción: Yanina Tiribelli"
-            text "Guión: Mariela Gregnoli / Yanina Tiribelli / Mateo Urrutia"
             text "Arte: Rosalía Juárez / Yanina Tiribelli "
-            text "Programación: Mariela Gregnoli / Mateo Urrutia / Yanina Tiribelli"
+            text "Programación: Mariela Gregnoli / Marcos Vallasciani"
+            text "                         Yanina Tiribelli"
+            text "Tester: Gisela Coronel"
             text "Música: Maximiliano Ftulis / Marcos Vallasciani"
             text " "
             text "Inspirado en los cuentos “La Salamanca” y “Santos Vega”, "
             text "del libro Mitos y leyendas de la Argentina de Iris Rivera."
-            text " "
+            #text " "
 
             #textbutton "Volver" action Return() xalign 0.5
 

@@ -89,7 +89,7 @@ label dentro_de_la_cueva:
     pause 0.5
     show santos_int_cueva at right
 
-    san "¡Pah..! Que olorcito a humedad y a tierra vieja... "
+    san "¡Pah..! Éste lugar no es para los vivos... "
 
     san "Si se me llega a cruzar algún lagarto fiero, no traje nada pa' pegarle..."
 
