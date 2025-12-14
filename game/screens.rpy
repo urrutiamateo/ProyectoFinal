@@ -610,14 +610,14 @@ screen creditos():
 
             
             text "Guión:Mariela Gregnoli / Marcos Vallasciani"
-            text "Co-guión: Gisela Coronel / Yanina Tiribelli"
+            text "Co-guión: Maria Giselle Coronel / Yanina Tiribelli"
             text "Game Desing: Mariela Gregnoli / Rosalía Juárez" 
             text "                        Marcos Vallasciani"
             text "Producción: Yanina Tiribelli"
             text "Arte: Rosalía Juárez / Yanina Tiribelli "
             text "Programación: Mariela Gregnoli / Marcos Vallasciani"
             text "                         Yanina Tiribelli"
-            text "Tester: Gisela Coronel"
+            text "Tester: Maria Giselle Coronel"
             text "Música: Maximiliano Ftulis / Marcos Vallasciani"
             text " "
             text "Inspirado en los cuentos “La Salamanca” y “Santos Vega”, "

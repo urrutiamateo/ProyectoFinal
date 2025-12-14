@@ -49,7 +49,7 @@ screen creditscreen_narrativa:
                 size 40
                 bold True
                 xalign 0.5
-            text "Gisela Coronel\nMariela Gregnoli\nYanina Tiribelli\nMarcos Vallasciani ":     
+            text "Maria Giselle Coronel\nMariela Gregnoli\nYanina Tiribelli\nMarcos Vallasciani ":     
                 size 35
                 xalign 0.5
             # GAME DESIGNER
@@ -87,7 +87,7 @@ screen creditscreen_narrativa:
                 size 40
                 bold True
                 xalign 0.5
-            text "Gisela Coronel":          
+            text "Maria Giselle Coronel":          
                 size 35
                 xalign 0.5
 
