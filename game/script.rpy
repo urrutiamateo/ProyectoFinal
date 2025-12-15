@@ -35,7 +35,7 @@ label start:
     stop music fadeout 0.5
     play music musica_intro fadein 0.2 volume 0.7
     scene exteriorRanchoAtardecer with irisout
-    "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERIA{/b}{/size}{/color}"  
+    "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERÍA{/b}{/size}{/color}"  
     # play music musica_intro fadein 0.2
     #with fade
     "En las llanuras abiertas de la pampa vive un {b}joven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
@@ -64,7 +64,7 @@ label start:
     show santos_ojos_cerrados at left:
         zoom 0.5
     with dissolve
-    "{space=60}{cps=20}{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre{/i}{/b}{/color}" #buscar recurso
+    "{space=60}{cps=20}{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre.{/i}{/b}{/color}" #buscar recurso
     
     #"Santos cierra los ojos, sin saber que esa {b}frase{/b} será la última luz que lo guíe antes de que la oscuridad lo llame por su nombre."
 

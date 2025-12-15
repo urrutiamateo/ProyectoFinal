@@ -27,7 +27,7 @@ label final_malo_ombu_2:
     hide santos_durmiendo_ombu
     show santos_recostado at left
 
-    sanV "¿Qué quiere hombre?"
+    sanV "¿Qué quiere, hombre?"
 
     juan_oculto "¡Abrió sus ojos risueños! Estoy 
                 buscando a Santos Vega. Desde lejos 
@@ -80,7 +80,7 @@ label final_malo_ombu_2:
 
     sanV "Ja ja ja..."
 
-    sanV "Voy a tener que levantarme y mostrarle como se hace la cosa."
+    sanV "Voy a tener que levantarme y mostrarle cómo se hace la cosa."
     
     hide juan_guitarra
     show juan_hablando at right:
@@ -138,7 +138,7 @@ label final_malo_ombu_2:
     
     
     
-    sanV "¡Cosa e 'Mandinga!"
+    sanV "¡Cosa 'e Mandinga!"
     play music musica_mandinga fadein 0.2 volume 0.8
 
     sanV "¡Mi guitarra! ¿Qué le hiciste?"
@@ -149,7 +149,7 @@ label final_malo_ombu_2:
         zoom 1.25
     with dissolve
 
-    juan "Se acabó tu gloria, Santos. {w=0.5}De esta no safaste ni cantando."
+    juan "Se acabó tu gloria, Santos. {w=0.5}De esta no zafaste ni cantando."
 
     hide juan_hablando with dissolve
     show serpiente_ombu at right

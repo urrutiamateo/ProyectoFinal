@@ -7,14 +7,10 @@ label viaje_post_firmar:
     play sound brisa volume 0.8 fadein 1.0 loop
     
 
-    narrator "Santos Vega se convirtió en el mejor payador, 
-    hechizaba a todos con su canto. 
-    Iba de pueblo en pueblo 
-    y nadie quedaba sin escucharlo."
-
-    "Una madrugada, mientras Santos Vega duerme 
-    entre viaje y viaje, en sus oscuros sueños 
-    oye voces."
+    narrator "La pampa entera se rindió ante su guitarra. De fogón en fogón, Santos Vega 
+    tejía un hechizo del que nadie quería escapar. Y no hubo rincón del pago que no conociera su nombre. 
+    Mas la noche siempre cobra su parte. Una madrugada, cuando el cansancio venció al camino, 
+    {b}en sus oscuros sueños, oyó voces.{/b}"
 
     #show pantalla_gris:
     #    alpha 0.0

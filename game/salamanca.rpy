@@ -169,7 +169,7 @@ label dentro_de_la_cueva:
         pause 0.5
         "Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
         "Superó la primera prueba, pero el silencio dura poco." 
-        "Algo más grande se arrastra en la oscuridad..."
+        #"Algo más grande se arrastra en la oscuridad..."
         jump aparece_basilisco
 
     # APARECE BASILISCO ##############################################################################
@@ -284,7 +284,7 @@ label dentro_de_la_cueva:
         hide murcielagos
         with dissolve
         
-        san "¡Que julepe! Mejor por ahí no voy."
+        san "¡Qué julepe! Mejor por ahí no voy."
         jump eleccion_cuevas
 
 
@@ -340,13 +340,13 @@ label dentro_de_la_cueva:
         # Escena del contrato
         scene contrato with fade
         
-        diablo "Solo una gota de tu sangre, y el don eterno del canto será tuyo. No te arrepentirás"
+        diablo "Solo una gota de tu sangre, y el don eterno del canto será tuyo. No te arrepentirás."
 
         san "El don del canto eterno... que todos me conozcan... ¡Pucha!"
         san "Ya me puedo imaginar paseándome con mi renombre, la gloria acompañándome con mi guitarra. ¡Qué tentador!"
 
         "En la mente de Santos resuena aquella frase de su padrino... "
-        "{space=60}{cps=20}{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre{/i}{/b}{/color}"
+        "{space=60}{cps=20}{color=#F5D627}{b}{i}No hay canto más fuerte que el que nace del alma libre.{/i}{/b}{/color}"
 
         menu:
             "Firmar el contrato":

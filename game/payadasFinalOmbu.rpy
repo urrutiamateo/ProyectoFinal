@@ -11,12 +11,12 @@ label payada_ombu(musicPlaying=False):
     pause 10
     
 
-    juan_oculto "¡Pero que lindo!"
+    juan_oculto "¡Pero qué lindo!"
     play sound campo_dia volume 0.1 fadein 1.0 loop
 
     
 
-    juan_oculto "Me parece que ya entendí como es la cosa... 
+    juan_oculto "Me parece que ya entendí cómo es la cosa... 
     Si me permite, voy a intentar de nuevo.."
 
     # hide santos_payando
@@ -46,7 +46,7 @@ label payada_vega_ombu:
         # Importar solo la clase FrasePayada y construir nodos manualmente (sin ArbolPayadas)
         from python.payadas.FrasePayada import FrasePayada
 
-        verso1 = FrasePayada("La pampa sabe quien es dueño,")
+        verso1 = FrasePayada("La pampa sabe quién es dueño,")
 
         verso2 = FrasePayada("mi canto vuela y resplandece,")
         verso3 = FrasePayada("mi canto nunca se apaga,")

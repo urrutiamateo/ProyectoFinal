@@ -70,7 +70,7 @@ label payada_final_bueno_vega_ebrio:
         # --- NIVEL 3 (DESARROLLO) ---
 
         # RAMA IZQUIERDA (Excavación):
-        verso4 = FrasePayada("cavé, sí, pa’ ver si hallaba,")
+        verso4 = FrasePayada("cavé, sí, pa' ver si hallaba,")
         verso5 = FrasePayada("pero el suelo estaba duro...")
 
         # RAMA DERECHA (Surrealista):
@@ -210,7 +210,7 @@ label payada_final_bueno_payador_ebrio:
         ypos 1.1
         
     with dissolve
-    payador "¡Ahora si, Vega, es momento para una buena payada!"
+    payador "¡Ahora sí, Vega, es momento para una buena payada!"
     play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
     hide rival_payador
     with dissolve

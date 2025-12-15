@@ -52,7 +52,7 @@ label final_bueno:
         linear 5 xpos 120
     with dissolve
 
-    "La pulpería es un nido de risas y humo... hasta que la figura de Santos cruza el umbral."
+    #"La pulpería es un nido de risas y humo... hasta que la figura de Santos cruza el umbral."
     # stop music fadeout 1.5
     stop sound fadeout 1.5
     #play sound ohhh_pulperia volume 0.5 fadein 0.5

@@ -22,7 +22,7 @@ label final_malo_incendio:
     sanV "¡Buenas noches a la burrada! ¿Otra vez 
     papando moscas en este sucucho?"
 
-    "Santos Vega entró altanero a la pulpería, ofendiendo a algunos de los payadores que frecuentaban la pulpería."
+    #"Santos Vega entró altanero a la pulpería, ofendiendo a algunos de los payadores que frecuentaban la pulpería."
 
     show Incendio_payador_bebiendo at right
     with dissolve
@@ -30,7 +30,7 @@ label final_malo_incendio:
 
     payador "¡Eh! Tranquilo, gaucho..."
 
-    sanV "Ma' si, no llore' borrego."
+    sanV "Ma' sí, no llore', borrego."
 
     hide Incendio_payador_bebiendo
     show Incendio_payador_enojado at right
@@ -74,13 +74,13 @@ label final_malo_incendio:
                 necesitar un trago si me van a hacer 
                 hablar pavadas."
             
-            "El viejo de la pulpería atiende el llamado de Santos Vega."
+            #"El viejo de la pulpería atiende el llamado de Santos Vega."
 
             show viejo_hablando at right 
             # with moveinright 
             with dissolve
             
-            viejo "Si, muchacho, ya se lo alcanzo."
+            viejo "Sí, muchacho, ya se lo alcanzo."
             hide viejo_hablando
             show viejo_en_la_pulperia at right
 
@@ -124,7 +124,7 @@ label final_malo_incendio:
 
     viejo "Alguien de su talento, de su altura, ¿tiene rival en las payadas?"
 
-    sanV "Pero claro que no, como se atreve. 
+    sanV "Pero claro que no, ¿cómo se atreve? 
     De norte a sur de esta provincia se escucha silencio si yo no canto."
 
     sanV "Desde el ser más luminoso al más oscuro yo lo paseo con la guitarra."
@@ -139,7 +139,7 @@ label final_malo_incendio:
     play music musica_mandinga fadein 0.1 volume 0.8
     play sound sfx_risa_mandinga volume 0.8
 
-    diablo "Usté es un bocón Santos Vega, 
+    diablo "Usté es un bocón, Santos Vega, 
     más le vale que demuestre lo que dice."
 
     hide Incendio_santos_arrogante
@@ -149,14 +149,14 @@ label final_malo_incendio:
 
     play sound sfx_asustado volume 0.5
 
-    sanV "¡Cosa e'Mandinga!"
+    sanV "¡Cosa 'e Mandinga!"
 
-    diablo "No es lo mismo llamar al diablo, que verlo venir"
+    diablo "No es lo mismo llamar al diablo, que verlo venir."
 
     menu:
         "Intentar huir":
 
-            diablo "Que pasa, Santito, ¿Está asustado?"
+            diablo "¿Qué pasa, Santito? ¿Está asustado?"
             hide Incendio_santos_asustado 
             show Incendio_santos_arrogante at left
             with dissolve
@@ -274,7 +274,7 @@ label exterior_pulperia_incendio:
 
     "La pulpería ardió hasta los cimientos, 
     silenciando risas y guitarras por igual. 
-    La ambición de Santos Vega, 
+    La ambición de Santos Vega 
     se pagó con la sangre de todos. 
     Porque Mandinga nunca da vuelto... 
     siempre se cobra con yapa."

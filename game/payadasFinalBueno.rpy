@@ -33,7 +33,7 @@ label payada_final_bueno_vega:
         verso5 = FrasePayada("no hay rumbo más puro y claro")
         
         verso6 = FrasePayada("el diablo quiso mi canto,")
-        verso7 = FrasePayada("el diablo cruzo mi paso,")
+        verso7 = FrasePayada("el diablo cruzó mi paso,")
 
         verso8 = FrasePayada("que el que nace del alma libre.")
         verso9 = FrasePayada("que el que canta sin reparo.")
