@@ -125,7 +125,7 @@ label start:
     #play sound murmullo volume 0.4  
     
     
-    san "¡Pucha que está espeso! Especial para una ronda de caña y cartas.\nA ver si esta noche pinta la buena racha."
+    san "¡Pucha que está espeso! Especial para una ronda de caña y cartas.A ver si esta noche pinta la buena racha."
     
     "Un {b}viejo{/b} de mirada extraña lo observa desde el fondo de una mesa mientras habla de la Salamanca, {b}{color=#a10000}la cueva donde dicen que el diablo concede dones{/color}{/b}."
     #show santos_neutro_iz at left:
@@ -186,7 +186,7 @@ label start:
         linear 4 xpos 130
     with dissolve
 
-    san "Tome viejo, se lo manda el pulpero"
+    san "Tome, viejo, se lo manda el pulpero."
 
     #play sound sfx_sorbo
 
@@ -297,7 +297,7 @@ label camino_a_salamanca:
 
     "Atrás quedaron las risas y las luces de la pulpería. Adelante, solo la Pampa infinita y el eco del acertijo."
     queue sound brisa volume 0.5 loop 
-    "Santos emprende un viaje hacia las tinieblas, acompañado por la sombra de su propia ambición."
+    "Con cada paso, Santos se desdibujaba fundiéndose con las tinieblas, acompañado por la sombra de su propia ambición."
 
     jump exterior_de_la_cueva
     

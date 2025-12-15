@@ -27,16 +27,16 @@ label payada_vega:
 
         # Crear nodos (niveles: 1..4). Los leaves están en nivel 4.
         estimado = FrasePayada("¿Cómo le va mi estimado?", ambicion=0, humildad=1)
-        cansado = FrasePayada("Lo veo cansado y sucio", ambicion=1, humildad=0)
+        cansado = FrasePayada("Lo veo cansado y sucio,", ambicion=1, humildad=0)
 
-        tirarse = FrasePayada("Venga a tirarse un rato", ambicion=0, humildad=1)
+        tirarse = FrasePayada("Venga a tirarse un rato,", ambicion=0, humildad=1)
         banio = FrasePayada("¿Por qué no se pega un baño?", ambicion=1, humildad=0)
 
         yuyos = FrasePayada("A la sombra de los yuyos", ambicion=1, humildad=0)
         pucho1 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1)
 
-        tufo = FrasePayada("Que me está matando el tufo", ambicion=2, humildad=0)
-        pucho2 = FrasePayada("Y después se me fuma un pucho", ambicion=0, humildad=1)
+        tufo = FrasePayada("Que me está matando el tufo.", ambicion=2, humildad=0)
+        pucho2 = FrasePayada("Y después se me fuma un pucho.", ambicion=0, humildad=1)
 
         # Enlazar nodos manualmente (sig_izq / sig_der)
         estimado.sig_izq = cansado
