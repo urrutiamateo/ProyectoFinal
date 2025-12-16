@@ -139,19 +139,52 @@ label start:
     show viejo_en_la_pulperia
     with dissolve
     viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
-    #viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
+    
 
-    #show santos_neutro at left
-    #with dissolve
-    san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
-    san "¿Qué podés saber de la Salamanca?"
+    $ opcion1= False
+    $ opcion2= False
+label menu_con_viejo:
+    menu:
+        "Ignorar al viejo." if not opcion1:
+            python:
+                subir_humildad()
+            $ opcion1= True
 
-    play sound sfx_risa_viejo
-    viejo "Sé de muchas cosas, muchacho."
-    viejo "La ubicación de ese lugar donde el {b}{color=#a10000}Señor de la Salamanca{/color}{/b} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {b}{color=#a10000}pacto{/color}{/b}."
+            san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
+            play sound sfx_risa_viejo
+            viejo "Sé de muchas cosas, muchacho."
+            jump menu_con_viejo
+
+        "Preguntarle al viejo sobre la Salamanca." if not opcion2:
+            python:
+                subir_ambicion()
+            $ opcion2= True
+            san "¿Qué podés saber de la Salamanca?"
+            viejo "La ubicación de ese lugar donde el {b}{color=#a10000}Señor de la Salamanca{/color}{/b} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {b}{color=#a10000}pacto{/color}{/b}."
+            jump luego_del_menu1
+
+label luego_del_menu1:
+    menu:
+        "Preguntarle al viejo sobre el pacto.":
+            python:
+                subir_ambicion()
+            san "¿Su... pacto?"
+            viejo "Así es… Pero quizás me equivoqué contigo, muchacho…."
+            jump ir_a_la_barra
+        "Preguntarle al viejo sobre esos valientes.":
+            python:
+                subir_humildad()
+            san "¿Y sólo a los valientes le da dones?"
+            viejo "Así es… Pero quizás me equivoqué contigo, muchacho…."
+            jump ir_a_la_barra
+
+           
+
+label ir_a_la_barra:
 
     hide viejo_en_la_pulperia 
     with dissolve
+    pause 1
     hide santos_entra_izquierda
     with dissolve
     
