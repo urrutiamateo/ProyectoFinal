@@ -101,7 +101,7 @@ label start:
     #"Santos salta del caballo, se acomoda la guitarra al hombro y decide entrar."
     play sound sonido_caballo volume 0.3
     pause 3
-    "Esa misma noche el murmullo de la pulpería lo invita a acercarse."
+    #"Esa misma noche el murmullo de la pulpería lo invita a acercarse."
     play sound murmullo volume 0.2 loop fadein 2
     san "Si quiero que mi voz llegue a toda la pampa, tengo que empezar por algún lado..."
     
@@ -125,7 +125,7 @@ label start:
     #play sound murmullo volume 0.4  
     
     
-    san "¡Pucha que está espeso! Especial para una ronda de caña y cartas.A ver si esta noche pinta la buena racha."
+    san "¡Pucha que está espeso! Especial para una ronda de caña y cartas. A ver si esta noche pinta la buena racha."
     
     "Un {b}viejo{/b} de mirada extraña lo observa desde el fondo de una mesa mientras habla de la Salamanca, {b}{color=#a10000}la cueva donde dicen que el diablo concede dones{/color}{/b}."
     #show santos_neutro_iz at left:
