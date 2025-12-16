@@ -22,7 +22,7 @@ screen creditscreen_produccion:
         vbox:
             spacing 25
             at scroll_credits_produccion
-            text "SANTOS VEGA Y EL VIEJO DE LA PULPERIA":
+            text "SANTOS Y EL VIEJO DE LA PULPERIA":
                 size 60
                 color "#F5D627"
                 xalign 0.5

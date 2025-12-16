@@ -35,7 +35,7 @@ label start:
     stop music fadeout 0.5
     play music musica_intro fadein 0.2 volume 0.7
     scene exteriorRanchoAtardecer with irisout
-    "{space=110}{cps=25}{color=#F5D627}{size=40}{b}SANTOS VEGA Y EL VIEJO DE LA PULPERÍA{/b}{/size}{/color}"  
+    "{space=130}{cps=25}{color=#F5D627}{size=40}{b}SANTOS Y EL VIEJO DE LA PULPERÍA{/b}{/size}{/color}"  
     # play music musica_intro fadein 0.2
     #with fade
     "En las llanuras abiertas de la pampa vive un {b}joven payador{/b} llamado {color=#F5D627}{b}Santos{/b}{/color}."
