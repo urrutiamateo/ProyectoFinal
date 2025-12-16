@@ -45,13 +45,12 @@ label final_bueno:
     scene interiorPulperia_2
     with fade
     play sound puerta volume 0.3
-    #pause 0.3
-    #play sound murmullo volume 0.4  
-    queue sound murmullo loop volume 0.1
+    queue sound murmullo volume 0.2 loop
+    #pause 0.3 
     show santos_entra_izquierda at left:
         linear 5 xpos 120
     with dissolve
-
+    pause 4
     #"La pulpería es un nido de risas y humo... hasta que la figura de Santos cruza el umbral."
     # stop music fadeout 1.5
     stop sound fadeout 1.5

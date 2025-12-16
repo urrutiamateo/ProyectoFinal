@@ -166,7 +166,7 @@ label payada_final_bueno_payador:
         ypos 1.1
         
     with dissolve
-    payador "Muy bien, Vega. Ahora es mi turno."
+    payador "¡Muy bien, Vega! Ahora es mi turno."
     play music payada_intensa volume 0.5 fadeout 0.5 fadein 0.5
     hide rival_payador
     with dissolve

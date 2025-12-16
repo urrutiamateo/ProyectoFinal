@@ -17,7 +17,7 @@ label payada_ombu(musicPlaying=False):
     
 
     juan_oculto "Me parece que ya entendí cómo es la cosa... 
-    Si me permite, voy a intentar de nuevo.."
+    Si me permite, voy a intentar de nuevo."
 
     # hide santos_payando
     # show santos_hablando_guitarra at left:

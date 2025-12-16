@@ -91,7 +91,7 @@ label final_malo_incendio:
 
 
     show viejo_en_la_pulperia at right #desplazar
-    viejo "Tome muchacho..."
+    viejo "Tome, muchacho..."
 
     hide Incendio_santos_arrogante
     hide Incendio_santos_arrogante2

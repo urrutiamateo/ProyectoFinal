@@ -621,7 +621,7 @@ screen creditos():
             text "Música: Maximiliano Ftulis / Marcos Vallasciani"
             text " "
             text "Inspirado en los cuentos “La Salamanca” y “Santos Vega”, "
-            text "del libro Mitos y leyendas de la Argentina de Iris Rivera."
+            text "del libro “Mitos y leyendas de la Argentina” de Iris Rivera."
             #text " "
 
             #textbutton "Volver" action Return() xalign 0.5

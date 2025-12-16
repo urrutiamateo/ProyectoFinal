@@ -8,9 +8,9 @@ label viaje_post_firmar:
     
 
     narrator "La pampa entera se rindió ante su guitarra. De fogón en fogón, Santos Vega 
-    tejía un hechizo del que nadie quería escapar. Y no hubo rincón del pago que no conociera su nombre. 
-    Mas la noche siempre cobra su parte. Una madrugada, cuando el cansancio venció al camino, 
-    {b}en sus oscuros sueños, oyó voces.{/b}"
+    tejía un hechizo del que nadie quería escapar. Y no hubo rincón del pago que no conociera su nombre."
+    narrator "Pero la noche siempre cobra su parte. Una madrugada, cuando el cansancio lo venció en el camino, 
+    {color=#f5272e}{b}en sus oscuros sueños, oyó voces.{/b}"
 
     #show pantalla_gris:
     #    alpha 0.0
@@ -34,7 +34,7 @@ label recuerdo_mandinga:
 
     voz_sueño2 "{color=#F5D627}{i}Hechizar la Pampa con mi canto.{/i}{/color}"
 
-    voz_sueño1 "{color=#f5272e}{i}Pero eso cuesta... el alma. ¿Estás dispuesto…?{/i}{/color}"
+    voz_sueño1 "{color=#f5272e}{i}Pero eso cuesta el alma. ¿Estás dispuesto?{/i}{/color}"
 
     voz_sueño2 "{color=#F5D627}{i}¿A dónde hay que firmar?{/i}{/color}"
 

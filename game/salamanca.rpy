@@ -89,7 +89,7 @@ label dentro_de_la_cueva:
     pause 0.5
     show santos_int_cueva at right
 
-    san "¡Pah..! Éste lugar no es para los vivos... "
+    san "¡Pah..! Este lugar no es para los vivos... "
 
     san "Si se me llega a cruzar algún lagarto fiero, no traje nada pa' pegarle..."
 
@@ -100,7 +100,7 @@ label dentro_de_la_cueva:
 
     play sound sfx_asustado
     show santos_int_cueva at salto_tiembla
-    san "¡Qué lo parió!"
+    san "¡Que lo parió!"
 
     label menu_serpiente:
         menu:
@@ -167,8 +167,8 @@ label dentro_de_la_cueva:
         hide serpiente
         with dissolve
         pause 0.5
-        "Santos sabe lo que quiere, y aguanta cualquier cosa por la recompensa que le prometieron."
-        "Superó la primera prueba, pero el silencio dura poco." 
+        "El deseo de Santos es un fuego que no se apaga. No hay penuria que no aguante por la gloria prometida."
+        "Ha vencido el primer desafío, pero el silencio dura poco..." 
         #"Algo más grande se arrastra en la oscuridad..."
         jump aparece_basilisco
 
@@ -229,7 +229,7 @@ label dentro_de_la_cueva:
         play sound suspiro_scare volume 0.5
         pause 5
         play music misterio volume 0.5 fadeout 2.0 fadein 1.0
-        "La mirada de la bestia no encontró presa y regresó a la penumbra."
+        "La mirada de la bestia no encontró presa y su figura se disolvió en la penumbra."
         san "¡Uff, se fue!... "
         san "Ni las bestias del infierno me van a frenar. Ahora... "
         san "¿Cuál de estas tres cuevas me lleva a lo del Mandinga?"

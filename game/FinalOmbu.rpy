@@ -97,8 +97,8 @@ label final_malo_ombu_2:
 
 
     play sound sfx_indignado
-    san"¡Lo suyo fue un engaño!, 
-    esos versos no son de borrego en el canto. 
+    sanV "¡Lo suyo fue un engaño! 
+    Esos versos no son de borrego en el canto. 
     Diga entero su nombre, 
     si no quiere terminar apuntalado."
     
@@ -117,12 +117,12 @@ label final_malo_ombu_2:
     # define config.menu_clear_window = False
     play music paya_1_A volume 0.8
     menu: 
-        "Bajo el Ombú solitario.":
+        "Bajo el Ombú solitario,":
             # renpy.say(sanV,"Bajo el Ombú solitario",False)
-            sanV "Bajo el Ombú solitario." 
-        "Como un eco del quebranto.":
+            sanV "Bajo el Ombú solitario," 
+        "Como un eco del quebranto,":
             # renpy.say(sanV,"Como un eco del quebranto",False)
-            sanV "Como un eco del quebranto."
+            sanV "Como un eco del quebranto,"
     queue music paya_1_B volume 0.8
     menu: 
         "Cruza el viento temerario.":
