@@ -125,9 +125,12 @@ label start:
     #play sound murmullo volume 0.4  
     
     
-    san "¡Pucha que está espeso! Especial para una ronda de caña y cartas. A ver si esta noche pinta la buena racha."
+    san "¡Pucha que está espeso! Especial para una ronda de caña y cartas. 
+    A ver si esta noche pinta la buena racha."
     
-    "Un {b}viejo{/b} de mirada extraña lo observa desde el fondo de una mesa mientras habla de la Salamanca, {b}{color=#a10000}la cueva donde dicen que el diablo concede dones{/color}{/b}."
+    "Un {b}viejo{/b} de mirada extraña lo observa desde el fondo de 
+    una mesa mientras habla de la Salamanca, {b}{color=#a10000}la cueva 
+    donde dicen que el diablo concede dones{/color}{/b}."
     #show santos_neutro_iz at left:
         #xzoom -1
     #with dissolve
@@ -140,47 +143,37 @@ label start:
     with dissolve
     viejo "Dicen que tenés buena voz, muchacho... aunque todavía suena verde, como canto sin raíz."
     
+    san "Y vos, viejo... {w=0.5} {cps=20} ¿Qué sabés de voces y de raíces? {cps=10}¿Qué podés saber de la Salamanca?"
+    play sound sfx_risa_viejo
+    viejo "Sé de muchas cosas, {w=0.5} {cps=20}muchacho."
+    viejo "La ubicación de ese lugar 
+    donde el {b}{color=#a10000}Señor de la Salamanca{/color}{/b} 
+    da dones a los valientes, a los que sueñan en grande... {w=1.0}
+    si están dispuestos a aceptar su {b}{color=#a10000}pacto{/color}{/b}."
+    jump menu_pregunta1
 
-    $ opcion1= False
-    $ opcion2= False
-label menu_con_viejo:
-    menu:
-        "Ignorar al viejo." if not opcion1:
-            python:
-                subir_humildad()
-            $ opcion1= True
-
-            san "Y vos, viejo... {w=0.6}¿Qué sabés de voces y de raíces?"
-            play sound sfx_risa_viejo
-            viejo "Sé de muchas cosas, muchacho."
-            jump menu_con_viejo
-
-        "Preguntarle al viejo sobre la Salamanca." if not opcion2:
-            python:
-                subir_ambicion()
-            $ opcion2= True
-            san "¿Qué podés saber de la Salamanca?"
-            viejo "La ubicación de ese lugar donde el {b}{color=#a10000}Señor de la Salamanca{/color}{/b} da dones a los valientes, a los que sueñan en grande... {w=1.0}si están dispuestos a aceptar su {b}{color=#a10000}pacto{/color}{/b}."
-            jump luego_del_menu1
-
-label luego_del_menu1:
+label menu_pregunta1:
     menu:
         "Preguntarle al viejo sobre el pacto.":
             python:
                 subir_ambicion()
-            san "¿Su... pacto?"
-            viejo "Así es… Pero quizás me equivoqué contigo, muchacho…."
+
+            san "¿Un pacto?{w=0.5} Más vale que sea de sangre y no de vino, viejo."
+            viejo "Muchos son los que quieren ir. Pero, así como llegan, se vuelven."
+            san "Conmigo no se hacen tajos, yo doy el 'faconazo' entero."
             jump ir_a_la_barra
-        "Preguntarle al viejo sobre esos valientes.":
+
+        "Preguntarle al viejo sobre el señor de la salamanca.":
             python:
                 subir_humildad()
-            san "¿Y sólo a los valientes le da dones?"
-            viejo "Así es… Pero quizás me equivoqué contigo, muchacho…."
+            san "¿Y quién es ese?"
+            viejo "Le dicen 'Mandinga'... {w=0.3} {cps=10} Pero no conviene llamarlo."
             jump ir_a_la_barra
 
            
-
 label ir_a_la_barra:
+
+    viejo "No voy a seguir hablando con la boca seca."
 
     hide viejo_en_la_pulperia 
     with dissolve
