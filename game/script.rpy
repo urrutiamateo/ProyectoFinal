@@ -163,11 +163,11 @@ label menu_pregunta1:
             san "Conmigo no se hacen tajos, yo doy el 'faconazo' entero."
             jump ir_a_la_barra
 
-        "Preguntarle al viejo sobre el señor de la salamanca.":
+        "Preguntarle al viejo sobre el Señor de la Salamanca.":
             python:
                 subir_humildad()
             san "¿Y quién es ese?"
-            viejo "Le dicen 'Mandinga'... {w=0.3} {cps=10} Pero no conviene llamarlo."
+            viejo "Le dicen 'Mandinga'... {w=0.3} {cps=10}Pero no conviene llamarlo."
             jump ir_a_la_barra
 
            
